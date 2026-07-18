@@ -1,6 +1,6 @@
 # Local data (full archive stays local; only docs/data JSON is published)
-data/
-logs/
+/data/
+/logs/
 *.db
 *.db-journal
 
