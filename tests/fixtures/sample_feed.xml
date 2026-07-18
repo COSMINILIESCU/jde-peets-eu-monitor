@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>EU Food Policy News</title>
+    <link>https://example.eu/news</link>
+    <item>
+      <title>Commission proposes revision of packaging waste rules for coffee capsules</title>
+      <link>https://example.eu/news/ppwr-capsules?utm_source=rss&amp;utm_medium=feed</link>
+      <description>The European Commission today proposed new rules on packaging waste affecting single-serve coffee capsules.</description>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>EUDR implementation guidance published for coffee importers</title>
+      <link>https://example.eu/news/eudr-guidance</link>
+      <description>New guidance clarifies due diligence obligations for coffee and cocoa importers under the Deforestation Regulation.</description>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title></title>
+      <link>https://example.eu/news/no-title</link>
+    </item>
+  </channel>
+</rss>
