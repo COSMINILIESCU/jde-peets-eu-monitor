@@ -33,7 +33,8 @@ const PERIODS = [
 ];
 const PAGE = 40;
 
-const state = { tab: "brief", q: "", period: "31", country: "", lang: "", entity: "", brand: "", impact: "", confidence: "", shown: PAGE };
+const DEFAULT_PERIOD = "92";
+const state = { tab: "brief", q: "", period: DEFAULT_PERIOD, country: "", lang: "", entity: "", brand: "", impact: "", confidence: "", shown: PAGE };
 let ITEMS = [], SOURCES = [], META = {}, BRIEF = null, INDEX = new Map();
 
 const $ = (id) => document.getElementById(id);
@@ -241,7 +242,7 @@ function bind() {
     $(id).addEventListener("change", (e) => { state[key] = e.target.value; state.shown = PAGE; render(); });
   }
   $("btn-reset").addEventListener("click", () => {
-    Object.assign(state, { q: "", period: "31", country: "", lang: "", entity: "", brand: "", impact: "", confidence: "", shown: PAGE });
+    Object.assign(state, { q: "", period: DEFAULT_PERIOD, country: "", lang: "", entity: "", brand: "", impact: "", confidence: "", shown: PAGE });
     $("search").value = ""; initFilters(); render();
   });
   $("btn-more").addEventListener("click", () => { state.shown += PAGE; renderItems(); });

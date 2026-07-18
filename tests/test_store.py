@@ -44,6 +44,19 @@ def test_distinct_items_both_stored(conn):
     assert count == 2
 
 
+def test_within_since_window():
+    from datetime import UTC, datetime
+
+    from src.collectors.collect import within_since
+    cutoff = datetime(2026, 6, 1, tzinfo=UTC)
+    assert within_since("2026-06-15T10:00:00+00:00", cutoff)      # inside window
+    assert within_since("2026-07-18T00:00:00+00:00", cutoff)      # inside window
+    assert not within_since("2026-05-31T23:00:00+00:00", cutoff)  # before window
+    assert within_since(None, cutoff)                             # undated -> kept
+    assert within_since("garbage", cutoff)                        # unparseable -> kept
+    assert within_since("2020-01-01T00:00:00+00:00", None)        # no window -> kept
+
+
 def test_run_lifecycle(conn):
     run_id = db.start_run(conn, "weekly")
     db.finish_run(conn, run_id, {"new": 5})

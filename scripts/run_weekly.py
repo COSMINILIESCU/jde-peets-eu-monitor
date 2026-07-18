@@ -64,7 +64,15 @@ def main() -> int:
     parser.add_argument("--no-publish", action="store_true")
     parser.add_argument("--no-analyze", action="store_true")
     parser.add_argument("--sample", type=int, default=0)
+    parser.add_argument("--since", default="", help="only keep items published on/after YYYY-MM-DD")
+    parser.add_argument("--max-items", type=int, default=0, help="override max items per source")
     args = parser.parse_args()
+
+    since = None
+    if args.since:
+        since = datetime.fromisoformat(args.since).replace(tzinfo=UTC)
+    if args.max_items:
+        settings()["collection"]["max_items_per_source_per_run"] = args.max_items
 
     stamp = datetime.now(UTC).strftime("%Y%m%d_%H%M")
     logfile = setup_logging(stamp)
@@ -81,14 +89,17 @@ def main() -> int:
         sources = active_sources()
         if args.sample:
             sources = sources[:args.sample]
-        log.info("collecting %d active sources", len(sources))
-        collect_stats = collect_all(conn, sources, run_id)
+        log.info("collecting %d active sources%s", len(sources),
+                 f" (since {args.since})" if since else "")
+        collect_stats = collect_all(conn, sources, run_id, since=since)
         failed = [s for s in collect_stats if s["status"] != "ok"]
         report["collection"] = {
             "sources_total": len(sources),
             "sources_failed": len(failed),
             "new_items": sum(s["new"] for s in collect_stats),
             "duplicates": sum(s["duplicates"] for s in collect_stats),
+            "skipped_old": sum(s.get("skipped_old", 0) for s in collect_stats),
+            "since": args.since or None,
             "failed_sources": [{"id": s["source_id"], "status": s["status"], "error": s["error"]}
                                for s in failed],
         }

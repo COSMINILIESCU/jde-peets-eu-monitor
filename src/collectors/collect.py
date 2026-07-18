@@ -2,6 +2,7 @@
 
 import logging
 import sqlite3
+from datetime import UTC, datetime
 
 from src.collectors.discovery import discover
 from src.collectors.fetcher import Fetcher, FetchError, RobotsDisallowed
@@ -14,6 +15,20 @@ from src.processing.dedup import find_duplicate
 from src.processing.normalize import canonical_url, clean_text, content_hash, detect_lang
 
 log = logging.getLogger("collect")
+
+
+def within_since(published_at: str | None, since: datetime | None) -> bool:
+    """Keep item if no date window, or it has no date (on the current listing => recent),
+    or its publication date is on/after the cutoff."""
+    if since is None or not published_at:
+        return True
+    try:
+        d = datetime.fromisoformat(published_at)
+    except ValueError:
+        return True
+    if d.tzinfo is None:
+        d = d.replace(tzinfo=UTC)
+    return d >= since
 
 
 def _get_state(conn: sqlite3.Connection, source_id: str) -> sqlite3.Row | None:
@@ -46,11 +61,12 @@ def store_item(conn: sqlite3.Connection, source_id: str, item: dict, run_id: int
     return "new"
 
 
-def collect_source(conn: sqlite3.Connection, fetcher: Fetcher, source: dict, run_id: int) -> dict:
+def collect_source(conn: sqlite3.Connection, fetcher: Fetcher, source: dict, run_id: int,
+                   since: datetime | None = None) -> dict:
     """Collect one source. Returns per-source stats dict."""
     cfg = settings()["collection"]
     sid = source["id"]
-    stats = {"source_id": sid, "new": 0, "duplicates": 0, "status": "ok", "error": ""}
+    stats = {"source_id": sid, "new": 0, "duplicates": 0, "skipped_old": 0, "status": "ok", "error": ""}
     state = _get_state(conn, sid)
     method = state["method"] if state and state["method"] != "auto" else "auto"
     feed_url = state["feed_url"] if state else ""
@@ -83,6 +99,9 @@ def collect_source(conn: sqlite3.Connection, fetcher: Fetcher, source: dict, run
                                  max_items=cfg["max_items_per_source_per_run"])
 
         for item in items:
+            if not within_since(item.get("published_at"), since):
+                stats["skipped_old"] += 1
+                continue
             result = store_item(conn, sid, item, run_id)
             stats["new" if result == "new" else "duplicates"] += 1
         _save_state(conn, sid, last_run_at=now_iso(), last_ok_at=now_iso(), fail_count=0, last_error="")
@@ -104,12 +123,13 @@ def _mark_fail(conn: sqlite3.Connection, sid: str, state: sqlite3.Row | None, er
     _save_state(conn, sid, last_run_at=now_iso(), fail_count=fail_count, last_error=error)
 
 
-def collect_all(conn: sqlite3.Connection, sources: list[dict], run_id: int) -> list[dict]:
+def collect_all(conn: sqlite3.Connection, sources: list[dict], run_id: int,
+                since: datetime | None = None) -> list[dict]:
     fetcher = Fetcher()
     results = []
     for i, source in enumerate(sources, 1):
-        stats = collect_source(conn, fetcher, source, run_id)
-        log.info("[%d/%d] %s: %s (+%d new, %d dup)", i, len(sources), source["id"],
-                 stats["status"], stats["new"], stats["duplicates"])
+        stats = collect_source(conn, fetcher, source, run_id, since=since)
+        log.info("[%d/%d] %s: %s (+%d new, %d dup, %d old)", i, len(sources), source["id"],
+                 stats["status"], stats["new"], stats["duplicates"], stats["skipped_old"])
         results.append(stats)
     return results
