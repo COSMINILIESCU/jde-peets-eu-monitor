@@ -25,7 +25,8 @@ collection:
 analysis:
   engine: "claude-code-headless"  # or "anthropic-api" (requires ANTHROPIC_API_KEY)
   claude_cmd: "C:\\Users\\CI\\.local\\bin\\claude.exe"
-  model: ""                       # empty = Claude Code session default; or e.g. "claude-haiku-4-5"
+  model: "claude-haiku-4-5-20251001"   # economical model for per-item triage/summary (conserves subscription usage)
+  brief_model: "claude-sonnet-5"       # stronger model for the single weekly executive-brief synthesis
   batch_size: 12                  # items per headless call
   max_summary_paragraphs: 2
   relevance_threshold: 0.5        # items scored below this are archived, not published

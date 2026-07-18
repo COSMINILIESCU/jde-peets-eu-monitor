@@ -38,7 +38,8 @@ def generate_brief(conn) -> dict | None:
         data.append({k: a.get(k) for k in ("title_en", "summary_en", "category", "impact",
                                            "confidence", "countries", "entities")})
     prompt = BRIEF_PROMPT % json.dumps(data, ensure_ascii=False)
-    model = settings()["analysis"].get("model") or ""
+    acfg = settings()["analysis"]
+    model = acfg.get("brief_model") or acfg.get("model") or ""
     try:
         raw = _extract_json(_run_claude_headless(prompt, model))
         text = str(raw.get("text", "")).strip()
