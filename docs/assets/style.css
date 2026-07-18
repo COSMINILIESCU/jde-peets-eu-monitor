@@ -29,7 +29,19 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--red-lt);outline-offset:2px}
 
 /* ===== Command desk: top bar ===== */
-.chrome-top{position:sticky;top:0;z-index:200;background:rgba(40,36,29,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--desk-line);padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.chrome-top{position:sticky;top:0;z-index:200;background:rgba(40,36,29,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--desk-line);padding:12px 22px}
+.chrome-main{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.chrome-sub{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:10px}
+.chrome-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.chrome-provider{text-align:right;font-family:var(--kick);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--desk-mut);line-height:1.5;flex:none}
+.chrome-provider a{display:inline-block;margin-top:2px;color:var(--desk-txt);text-decoration:none}
+.chrome-provider a b{color:var(--print);font-weight:600;font-size:10px;letter-spacing:.06em}
+.chrome-provider a:hover b{color:var(--red-lt)}
+.chrome-stats{display:flex;gap:7px}
+.stat-chip{background:var(--desk-2);border:1px solid var(--desk-line);border-radius:4px;padding:4px 13px;text-align:center;min-width:56px}
+.stat-chip b{font-family:var(--disp);font-weight:900;font-size:18px;color:var(--print);display:block;line-height:1.05}
+.stat-chip.red b{color:var(--red-lt)}
+.stat-chip span{font-family:var(--kick);font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:var(--desk-mut);white-space:nowrap}
 .chrome-brand{display:flex;flex-direction:column;line-height:1.15;flex:none}
 .chrome-brand b{font-family:var(--disp);font-weight:900;font-size:17px;color:var(--print);letter-spacing:.01em}
 .chrome-brand b i{font-style:normal;color:var(--red-lt)}
@@ -43,7 +55,7 @@ a{color:inherit}
 .chrome-actions{display:flex;gap:8px;flex:none}
 .chrome-actions button{font-family:var(--kick);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid var(--desk-line);border-radius:4px;color:var(--desk-txt);padding:8px 14px;cursor:pointer;transition:.15s}
 .chrome-actions button:hover{border-color:var(--print);color:var(--print)}
-.chrome-meta{width:100%;font-family:var(--kick);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--desk-mut);display:flex;gap:18px;flex-wrap:wrap}
+.chrome-meta{font-family:var(--kick);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--desk-mut);display:flex;gap:18px;flex-wrap:wrap}
 .chrome-meta b{color:var(--desk-txt);font-weight:500}
 
 /* Search results panel */

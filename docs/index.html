@@ -9,25 +9,36 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
 
 <!-- ===== Command desk: top bar (separate from the gazette) ===== -->
 <header class="chrome-top">
-  <div class="chrome-brand">
-    <b>THE <i>JDE PEET'S</i> GAZETTE</b>
-    <span>EU/EEA Intelligence Monitor · command desk</span>
+  <div class="chrome-main">
+    <div class="chrome-brand">
+      <b>THE <i>JDE PEET'S</i> GAZETTE</b>
+      <span>EU/EEA Intelligence Monitor · command desk</span>
+    </div>
+    <div class="chrome-search">
+      <input id="q" placeholder="Search the current edition and 12-month archive: keywords, companies, topics… (e.g. EUDR, capsules, Lavazza)">
+      <button id="btn-search" type="button">Search</button>
+    </div>
+    <div class="chrome-provider">
+      <span>Provided by</span>
+      <a href="https://www.pimasociates.ro/" target="_blank" rel="noopener"><b>Păcuraru Iliescu Măzăreanu</b><br>Attorneys at Law</a>
+    </div>
   </div>
-  <div class="chrome-search">
-    <input id="q" placeholder="Search the current edition and 12-month archive: keywords, companies, topics… (e.g. EUDR, capsules, Lavazza)">
-    <button id="btn-search" type="button">Search</button>
+  <div class="chrome-sub">
+    <div class="chrome-meta" id="chrome-meta"></div>
+    <div class="chrome-right">
+      <div class="chrome-stats" id="chrome-stats"></div>
+      <div class="chrome-actions">
+        <button id="btn-csv" type="button">Export CSV</button>
+        <button id="btn-json" type="button">Export JSON</button>
+      </div>
+    </div>
   </div>
-  <div class="chrome-actions">
-    <button id="btn-csv" type="button">Export CSV</button>
-    <button id="btn-json" type="button">Export JSON</button>
-  </div>
-  <div class="chrome-meta" id="chrome-meta"></div>
 </header>
 
 <div class="search-results" id="sr">
@@ -67,17 +78,6 @@
       </div>
       <div class="f-note">Filters re-typeset the edition: the gazette is reprinted with only the items that match your selection.</div>
     </div>
-
-    <div class="side-sec">
-      <div class="side-t">By the numbers</div>
-      <div class="side-stats" id="side-stats"></div>
-    </div>
-
-    <div class="side-provider">
-      Provided by<br>
-      <a href="https://www.pimasociates.ro/" target="_blank" rel="noopener">Păcuraru Iliescu Măzăreanu</a><br>
-      Societate Civilă de Avocați
-    </div>
   </aside>
 
   <!-- ===== The browsable gazette ===== -->
@@ -99,6 +99,6 @@
   Provided by <a href="https://www.pimasociates.ro/" target="_blank" rel="noopener">Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați</a>
 </div>
 
-<script src="assets/app.js?v=4"></script>
+<script src="assets/app.js?v=6"></script>
 </body>
 </html>

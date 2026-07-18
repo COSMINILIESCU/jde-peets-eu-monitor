@@ -387,11 +387,10 @@ function renderChrome(items) {
   $("chrome-meta").innerHTML = [
     META.generated_at ? `Updated <b>${esc(META.generated_at.replace("T", " ").slice(0, 16))} UTC</b>` : "No data yet",
     META.week ? `Week <b>${esc(META.week)}</b>` : "",
-    `<b>${c.total}</b> items / edition`, `<b>${c.week}</b> new in 7 days`,
   ].filter(Boolean).map((s) => `<span>${s}</span>`).join("");
-  $("side-stats").innerHTML = [
+  $("chrome-stats").innerHTML = [
     [c.total, "items"], [c.week, "new · 7d"], [c.high, "high impact", true], [c.countries, "countries"],
-  ].map(([v, l, hot]) => `<div><div class="n${hot ? " red" : ""}">${v}</div><div class="l">${esc(l)}</div></div>`).join("");
+  ].map(([v, l, hot]) => `<div class="stat-chip${hot ? " red" : ""}"><b>${v}</b><span>${esc(l)}</span></div>`).join("");
 }
 
 /* ---- search ---- */
