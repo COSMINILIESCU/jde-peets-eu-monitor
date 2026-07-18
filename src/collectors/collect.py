@@ -55,11 +55,16 @@ def collect_source(conn: sqlite3.Connection, fetcher: Fetcher, source: dict, run
     method = state["method"] if state and state["method"] != "auto" else "auto"
     feed_url = state["feed_url"] if state else ""
 
+    registry_rss = (source.get("access") or {}).get("rss") or ""
     try:
-        if method == "auto":
-            registry_rss = (source.get("access") or {}).get("rss") or ""
-            if registry_rss:
-                method, feed_url = "rss", registry_rss
+        # a registry-level feed override (set by the difficult-source-specialist) wins over cache
+        if registry_rss and registry_rss != feed_url:
+            method, feed_url = "rss", registry_rss
+            _save_state(conn, sid, method=method, feed_url=feed_url, etag="", last_modified="")
+        elif method == "auto":
+            registry_method = (source.get("access") or {}).get("method", "auto")
+            if registry_method in ("rss", "html", "pdf"):
+                method, feed_url = registry_method, registry_rss
             else:
                 method, feed_url = discover(fetcher, source["url"])
             _save_state(conn, sid, method=method, feed_url=feed_url)

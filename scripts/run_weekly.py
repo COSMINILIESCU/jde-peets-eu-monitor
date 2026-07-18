@@ -113,6 +113,16 @@ def main() -> int:
             week = datetime.now(UTC).isocalendar()
             published = publish(f"Weekly update {week[0]}-W{week[1]:02d} (run {run_id})")
         report["published"] = published
+
+        spec_cfg = settings().get("specialist", {})
+        if failed and spec_cfg.get("enabled") and not args.no_analyze:
+            from run_specialist import failing_sources, run_for
+            targets = failing_sources(conn, spec_cfg.get("max_sources_per_run", 5))
+            if targets:
+                log.info("invoking difficult-source-specialist for %d sources", len(targets))
+                ok, _out = run_for(targets)
+                report["specialist"] = {"invoked_for": [t["source_id"] for t in targets], "ok": ok}
+
         report["needs_human_review"] = [
             {"id": s["source_id"], "reason": s["error"]} for s in failed
         ]

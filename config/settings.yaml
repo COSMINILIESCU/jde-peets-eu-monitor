@@ -45,6 +45,10 @@ publishing:
   git_remote: "origin"
   git_branch: "main"
 
+specialist:
+  enabled: true                   # auto-invoke difficult-source-specialist after the weekly run
+  max_sources_per_run: 5
+
 source_policy:
   # monthly-source-scout: what gets auto-added vs. requires human approval
   auto_add_types: ["eu_institution", "national_authority", "court", "official_register", "regulator"]

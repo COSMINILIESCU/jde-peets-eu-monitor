@@ -1,14 +1,25 @@
 {
- "generated_at": "2026-07-18T16:51:53+00:00",
+ "generated_at": "2026-07-18T17:06:21+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
- "repo_url": "",
+ "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
  "week": "2026-W29",
  "db_counts": {
-  "analyzed": 75
+  "new": 36
  },
  "last_run": {
-  "note": "demo data"
+  "run_id": 1,
+  "started_at": "2026-07-18T17:01:03+00:00",
+  "collection": {
+   "sources_total": 6,
+   "sources_failed": 0,
+   "new_items": 36,
+   "duplicates": 16,
+   "failed_sources": []
+  },
+  "analysis": {
+   "skipped": true
+  }
  }
 }
