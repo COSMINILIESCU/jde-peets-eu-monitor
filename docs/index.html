@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JDE Peet's EU/EEA Intelligence Monitor</title>
+<meta name="description" content="Weekly EU/EEA business, legal and regulatory intelligence monitor for JDE Peet's — provided by Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>☕</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand-block">
+      <div class="logo-cup" aria-hidden="true">☕</div>
+      <div>
+        <h1>JDE Peet's <span class="accent">EU/EEA</span> Intelligence Monitor</h1>
+        <p class="tagline">Weekly business, legal &amp; regulatory monitoring across the European Union and the EEA</p>
+      </div>
+    </div>
+    <div class="provider">
+      <span>Provided by</span>
+      <a href="https://www.pimasociates.ro/" target="_blank" rel="noopener">Păcuraru Iliescu Măzăreanu<br><em>Societate Civilă de Avocați</em></a>
+    </div>
+  </div>
+  <div class="wrap meta-line" id="meta-line">Loading…</div>
+</header>
+
+<nav class="tabs wrap" id="tabs" aria-label="Sections"></nav>
+
+<section class="wrap toolbar" id="toolbar">
+  <input type="search" id="search" placeholder="Search keywords, companies, topics… (e.g. EUDR, capsules, Nespresso)" aria-label="Full-text search">
+  <select id="f-period" aria-label="Period"></select>
+  <select id="f-country" aria-label="Country"></select>
+  <select id="f-lang" aria-label="Source language"></select>
+  <select id="f-entity" aria-label="Entity"></select>
+  <select id="f-brand" aria-label="Brand"></select>
+  <select id="f-impact" aria-label="Impact"></select>
+  <select id="f-confidence" aria-label="Confidence"></select>
+  <button id="btn-reset" type="button">Reset</button>
+  <span class="spacer"></span>
+  <button id="btn-export-csv" type="button" title="Export current view as CSV">Export CSV</button>
+  <button id="btn-export-json" type="button" title="Export current view as JSON">Export JSON</button>
+</section>
+
+<main class="wrap" id="main">
+  <section id="view-brief" class="view" hidden></section>
+  <section id="view-items" class="view" hidden>
+    <div class="kpi-row" id="kpi-row"></div>
+    <p class="result-count" id="result-count"></p>
+    <div id="cards"></div>
+    <button id="btn-more" type="button" hidden>Show more</button>
+  </section>
+  <section id="view-sources" class="view" hidden></section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Disclaimer.</strong> This dashboard aggregates publicly available information and machine-generated
+    summaries for monitoring purposes only. It is not legal advice, and items are labelled by confidence level
+    (confirmed fact, company statement, third-party claim, analysis, inference, unconfirmed). Always check the
+    original source via the item title link.</p>
+    <p>Provided by <a href="https://www.pimasociates.ro/" target="_blank" rel="noopener">Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați</a>
+    · Content of external sources belongs to their respective publishers · <span id="footer-generated"></span></p>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
