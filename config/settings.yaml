@@ -19,7 +19,7 @@ collection:
   backoff_base_seconds: 2
   per_domain_delay_seconds: 3     # rate limiting: min delay between requests to same domain
   respect_robots_txt: true        # never disable
-  max_items_per_source_per_run: 40
+  max_items_per_source_per_run: 25
   lookback_days_first_run: 14     # first run looks back 2 weeks; later runs = since last run
 
 analysis:

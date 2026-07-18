@@ -68,6 +68,12 @@ def test_extract_json_strips_fences():
     assert _extract_json('Some preamble {"a": 1}') == {"a": 1}
 
 
+def test_countries_normalized_and_split():
+    item = AnalyzedItem(item_id=1, relevant=True, relevance=0.5,
+                        countries=["EU/EEA", "de", "EU/", " nl "])
+    assert item.countries == ["EU", "EEA", "DE", "NL"]
+
+
 def test_summary_clamped_to_two_paragraphs():
     item = AnalyzedItem(item_id=1, relevant=True, relevance=0.5,
                         summary_en="p1\n\np2\n\np3\n\np4")

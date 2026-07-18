@@ -42,7 +42,14 @@ class AnalyzedItem(BaseModel):
     @field_validator("countries")
     @classmethod
     def _upper_iso(cls, v: list[str]) -> list[str]:
-        return [c.strip().upper()[:3] for c in v if c.strip()]
+        import re
+        out: list[str] = []
+        for c in v:
+            for part in re.split(r"[^A-Za-z]+", c or ""):
+                token = part.strip().upper()[:4]
+                if token and token not in out:
+                    out.append(token)
+        return out
 
     @field_validator("summary_en")
     @classmethod
