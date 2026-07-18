@@ -1,0 +1,11 @@
+requests
+beautifulsoup4
+feedparser
+PyMuPDF
+pyyaml
+pydantic>=2
+tenacity
+langdetect
+truststore
+pytest
+ruff
