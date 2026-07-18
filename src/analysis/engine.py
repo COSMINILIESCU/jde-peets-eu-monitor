@@ -107,11 +107,9 @@ def analyze_new_items(conn, run_id: int, runner=None) -> dict:
         try:
             results = analyze_batch(batch, runner=runner)
         except EngineError as exc:
-            log.error("batch failed permanently: %s", str(exc)[:300])
-            for r in batch_rows:
-                conn.execute("UPDATE items SET status='error' WHERE id=?", (r["id"],))
+            # leave items as 'new' so the next run retries them
+            log.error("batch failed permanently (items stay queued): %s", str(exc)[:300])
             stats["errors"] += len(batch_rows)
-            conn.commit()
             continue
         for res in results:
             stats["analyzed"] += 1

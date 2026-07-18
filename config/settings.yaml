@@ -4,6 +4,8 @@ project:
   name: "JDE Peet's EU/EEA Intelligence Monitor"
   provider_name: "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați"
   provider_url: "https://www.pimasociates.ro/"
+  repo_url: "https://github.com/COSMINILIESCU/jde-peets-eu-monitor"
+  dashboard_url: "https://cosminiliescu.github.io/jde-peets-eu-monitor/"
   dashboard_language: "en"
 
 schedule:
