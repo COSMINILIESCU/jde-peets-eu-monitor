@@ -173,8 +173,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: kdp-news
   name: Keurig Dr Pepper - News
   url: https://www.keurigdrpepper.com/news
@@ -226,8 +228,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: jacobs-kaffee
   name: Jacobs Kaffee
   url: https://www.jacobskaffee.de/
@@ -242,8 +246,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: douwe-egberts-nl
   name: Douwe Egberts Nederland
   url: https://www.douwe-egberts.nl/
@@ -258,8 +264,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: senseo
   name: Senseo
   url: https://www.senseo.com/
@@ -277,8 +285,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: tassimo
   name: Tassimo
   url: https://www.tassimo.com/
@@ -295,8 +305,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: gevalia-se
   name: Gevalia Sweden
   url: https://www.gevalia.se/
@@ -311,8 +323,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: friele-no
   name: Friele
   url: https://www.friele.no/
@@ -327,8 +341,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: marcilla-es
   name: Marcilla
   url: https://www.marcilla.com/
@@ -343,8 +359,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pickwick-nl
   name: Pickwick Nederland
   url: https://www.pickwick.nl/
@@ -359,8 +377,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: les-2-marmottes
   name: Les 2 Marmottes
   url: https://www.les2marmottes.com/
@@ -375,8 +395,10 @@ sources:
   categories:
   - jde_peets
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nestle-news
   name: Nestle - global corporate news
   url: https://www.nestle.com/media/news
@@ -406,8 +428,10 @@ sources:
   monitoring_focus: Nestle coffee portfolio, product launches and systems.
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nespresso-sustainability
   name: Nespresso - corporate sustainability
   url: https://www.nespresso.com/sustainability/
@@ -425,8 +449,10 @@ sources:
   - competitors_direct
   - sustainability
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nespresso-newsroom
   name: Nespresso - newsroom
   url: https://nestle-nespresso.com/newsandfeatures
@@ -472,8 +498,10 @@ sources:
   monitoring_focus: Lavazza news, brand, sponsorships and products.
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: illy-company
   name: illycaffe - company
   url: https://www.illy.com/en-ww/company
@@ -504,8 +532,10 @@ sources:
   monitoring_focus: illycaffe press releases, appointments and innovation.
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: tchibo
   name: Tchibo - corporate
   url: https://www.tchibo.com/
@@ -536,8 +566,10 @@ sources:
   monitoring_focus: Tchibo news, results, products and restructuring.
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mzb-group
   name: Massimo Zanetti Beverage Group
   url: https://www.mzb-group.com/en/
@@ -568,8 +600,10 @@ sources:
   monitoring_focus: Segafredo products, out-of-home, franchising and campaigns.
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: paulig
   name: Paulig
   url: https://www.pauliggroup.com/
@@ -598,8 +632,10 @@ sources:
   monitoring_focus: Paulig news, results, innovation and climate work.
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lofbergs
   name: Lofbergs
   url: https://www.lofbergs.se/en/
@@ -712,8 +748,10 @@ sources:
   monitoring_focus: 'Direct competitor: brands, OOH, products and sustainability.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dallmayr-coffee
   name: Dallmayr Coffee
   url: https://www.dallmayr.com/coffee/
@@ -744,8 +782,10 @@ sources:
   monitoring_focus: 'Direct competitor: coffee, retail and sustainability in the Nordics.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: caffe-vergnano
   name: Caffe Vergnano
   url: https://www.caffevergnano.com/
@@ -760,8 +800,10 @@ sources:
   monitoring_focus: 'Direct competitor: products, OOH, franchising and capsules.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: kimbo
   name: Kimbo
   url: https://www.kimbo.it/
@@ -776,8 +818,10 @@ sources:
   monitoring_focus: 'Direct competitor: products, capsules, OOH and campaigns.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: gimoka-group
   name: Gimoka Group
   url: https://www.gruppogimoka.com/en/
@@ -792,8 +836,10 @@ sources:
   monitoring_focus: 'Direct competitor and private label: capsules, manufacturing and sustainability.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: caffitaly
   name: Caffitaly System
   url: https://www.caffitaly.com/
@@ -869,8 +915,10 @@ sources:
   monitoring_focus: 'Coffee-shop competitor: store expansion, menu, pricing and digital in the Nordics.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: coffee-island
   name: Coffee Island
   url: https://www.coffeeisland.gr/
@@ -885,8 +933,10 @@ sources:
   monitoring_focus: 'Coffee-shop competitor: franchising, stores, products and specialty coffee.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mcdonalds-europe
   name: McDonald's Europe newsroom
   url: https://www.mcdonalds.com/gb/en-gb/newsroom.html
@@ -901,8 +951,10 @@ sources:
   categories: &id002
   - competitors_adjacent
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: coca-cola-hbc
   name: Coca-Cola HBC - newsroom
   url: https://www.coca-colahellenic.com/en/media/news
@@ -916,8 +968,10 @@ sources:
   monitoring_focus: 'Adjacent beverages/RTD competitor: Costa RTD, distribution, packaging and retail.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: oatly-news
   name: Oatly - investor news
   url: https://investors.oatly.com/news-releases
@@ -931,8 +985,10 @@ sources:
   monitoring_focus: 'Adjacent plant-based competitor: barista drinks, OOH, packaging and sustainability.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: danone-news
   name: Danone - newsroom
   url: https://www.danone.com/newsroom.html
@@ -947,8 +1003,10 @@ sources:
   monitoring_focus: 'Adjacent dairy/plant-based competitor: Alpro, beverages, retail, packaging and ESG.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: arla-newsroom
   name: Arla Foods - newsroom
   url: https://www.arla.com/company/news-and-press/
@@ -962,8 +1020,10 @@ sources:
   monitoring_focus: 'Adjacent dairy competitor: barista milk, OOH, pricing and sustainability.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: delonghi-group
   name: De'Longhi Group
   url: https://www.delonghigroup.com/en
@@ -978,8 +1038,10 @@ sources:
   monitoring_focus: 'Adjacent appliance competitor: coffee machines, acquisitions, financials and innovation.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: delonghi-news
   name: De'Longhi Group - News
   url: https://www.delonghigroup.com/en/media/news
@@ -994,8 +1056,10 @@ sources:
   monitoring_focus: De'Longhi product launches, partnerships and investments.
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: groupe-seb
   name: Groupe SEB
   url: https://www.groupeseb.com/en
@@ -1010,8 +1074,10 @@ sources:
   monitoring_focus: 'Adjacent appliance competitor: Krups, WMF, machines, strategy and sustainability.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: versuni
   name: Versuni
   url: https://www.versuni.com/newsroom/
@@ -1025,8 +1091,10 @@ sources:
   monitoring_focus: 'Adjacent appliance competitor: Philips-branded coffee machines and innovation.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: bsh-hausgeraete
   name: BSH Hausgerate
   url: https://www.bsh-group.com/
@@ -1041,8 +1109,10 @@ sources:
   monitoring_focus: 'Adjacent appliance competitor: Bosch, Siemens, Tassimo machines and connected appliances.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: evoca-group
   name: Evoca Group
   url: https://www.evocagroup.com/
@@ -1057,8 +1127,10 @@ sources:
   monitoring_focus: 'Adjacent vending/OOH competitor: vending, professional machines, acquisitions and technology.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cimbali-group
   name: La Cimbali Group
   url: https://www.cimbaligroup.com/
@@ -1073,8 +1145,10 @@ sources:
   monitoring_focus: 'Adjacent professional machine competitor: espresso equipment, OOH and digital services.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: rancilio-group
   name: Rancilio Group
   url: https://www.ranciliogroup.com/
@@ -1089,8 +1163,10 @@ sources:
   monitoring_focus: 'Adjacent professional machine competitor: espresso machines, OOH and innovation.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: smeg-coffee
   name: Smeg - coffee appliances
   url: https://www.smeg.com/coffee-machines
@@ -1104,8 +1180,10 @@ sources:
   monitoring_focus: 'Adjacent appliance competitor: consumer machines, design and product launches.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ahold-delhaize
   name: Ahold Delhaize - news
   url: https://www.aholddelhaize.com/news/
@@ -1119,8 +1197,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, pricing, sourcing, promotions and e-commerce.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: carrefour-news
   name: Carrefour Group - newsroom
   url: https://www.carrefour.com/en/newsroom
@@ -1135,8 +1215,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, category strategy, pricing and ESG.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: schwarz-group
   name: Schwarz Group - press
   url: https://gruppe.schwarz/en/press
@@ -1151,8 +1233,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: Lidl, Kaufland, sourcing, private label and packaging.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: rewe-group
   name: REWE Group - press
   url: https://www.rewe-group.com/en/press-and-media/
@@ -1167,8 +1251,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, pricing, sustainability and logistics.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: edeka-press
   name: EDEKA - press
   url: https://verbund.edeka/presse/
@@ -1182,8 +1268,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, category, pricing and retailer negotiations.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: aldi-nord-press
   name: ALDI Nord - press
   url: https://www.aldi-nord.de/unternehmen/presse.html
@@ -1197,8 +1285,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, pricing, promotions and packaging.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: aldi-sued-press
   name: ALDI Sud - newsroom
   url: https://www.aldi-sued.de/de/newsroom.html
@@ -1212,8 +1302,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, pricing, promotions and packaging.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: auchan-news
   name: Auchan Retail - news
   url: https://www.auchan-retail.com/en/news/
@@ -1228,8 +1320,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, pricing, store strategy and ESG.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: jeronimo-martins
   name: Jeronimo Martins - news
   url: https://www.jeronimomartins.com/en/media/news/
@@ -1244,8 +1338,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: Biedronka, Pingo Doce, private label and pricing.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: colruyt-press
   name: Colruyt Group - press
   url: https://www.colruytgroup.com/en/press
@@ -1261,8 +1357,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, pricing, retail tech and sustainability.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ica-gruppen
   name: ICA Gruppen - press releases
   url: https://www.icagruppen.se/en/media/press-releases/
@@ -1277,8 +1375,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: retail, private label, pricing and e-commerce.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: kesko-media
   name: Kesko - media
   url: https://www.kesko.fi/en/media/
@@ -1293,8 +1393,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: K-food, private label, pricing and sustainability.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: s-group-news
   name: S Group - news
   url: https://s-ryhma.fi/en/news
@@ -1309,8 +1411,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: retail, private label, logistics and pricing.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mercadona-press
   name: Mercadona - newsroom
   url: https://info.mercadona.es/en/newsroom
@@ -1325,8 +1429,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: private label, supplier strategy, pricing and packaging.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: salling-group
   name: Salling Group - news
   url: https://sallinggroup.com/en/news
@@ -1341,8 +1447,10 @@ sources:
   monitoring_focus: 'Retail/private-label competitor: retail, private label, sustainability and pricing.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: northern-wonder
   name: Northern Wonder
   url: https://northern-wonder.com/
@@ -1357,8 +1465,10 @@ sources:
   monitoring_focus: 'Potential disruptor: coffee-free alternatives, ingredients and scale-up progress.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: prefer
   name: Prefer
   url: https://www.prefer.bio/
@@ -1373,8 +1483,10 @@ sources:
   monitoring_focus: 'Potential disruptor: fermented coffee alternatives, foodtech and funding.'
   categories: *id002
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eur-lex
   name: EUR-Lex
   url: https://eur-lex.europa.eu/
@@ -1423,8 +1535,10 @@ sources:
   - legislation
   - case_law_investigations
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: n-lex
   name: N-Lex
   url: https://n-lex.europa.eu/n-lex/
@@ -1490,8 +1604,10 @@ sources:
   - eu_communications
   - draft_legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ep-oeil
   name: European Parliament - Legislative Observatory (OEIL)
   url: https://oeil.secure.europarl.europa.eu/oeil/home/home.do
@@ -1556,8 +1672,10 @@ sources:
   categories:
   - draft_legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: curia
   name: CURIA - Court of Justice of the EU
   url: https://curia.europa.eu/
@@ -1620,8 +1738,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ejustice-national-case-law
   name: European e-Justice - national case law
   url: https://e-justice.europa.eu/topics/legislation-and-case-law/national-case-law_en
@@ -1636,8 +1756,10 @@ sources:
   categories:
   - case_law_investigations
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: efta-court
   name: EFTA Court
   url: https://eftacourt.int/
@@ -1669,8 +1791,10 @@ sources:
   - case_law_investigations
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: efta-eea-lex
   name: EFTA - EEA-Lex
   url: https://www.efta.int/eea-lex
@@ -1685,8 +1809,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dg-competition
   name: DG Competition
   url: https://competition-policy.ec.europa.eu/
@@ -1824,8 +1950,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: safety-gate-alerts
   name: Safety Gate - weekly alerts
   url: https://ec.europa.eu/safety-gate-alerts/screen/webReport
@@ -1856,8 +1984,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ecc-net
   name: European Consumer Centres Network
   url: https://www.eccnet.eu/
@@ -1872,8 +2002,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ec-food-safety
   name: Food Safety - European Commission
   url: https://food.ec.europa.eu/food-safety_en
@@ -1922,8 +2054,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: acn-members
   name: ACN members - national food authorities
   url: https://food.ec.europa.eu/food-safety/acn/acn-members_en
@@ -1938,8 +2072,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: agri-food-fraud-network
   name: EU Agri-Food Fraud Network
   url: https://food.ec.europa.eu/safety/agri-food-fraud_en
@@ -1955,8 +2091,10 @@ sources:
   - consumers_marketing_competition
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: food-feed-portal
   name: Food and Feed Information Portal
   url: https://food.ec.europa.eu/food-safety/chemical-safety/food-and-feed-information-portal-database_en
@@ -1971,8 +2109,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: efsa
   name: EFSA
   url: https://www.efsa.europa.eu/
@@ -2004,8 +2144,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: efsa-open-data
   name: EFSA Open Data
   url: https://www.efsa.europa.eu/en/data-report
@@ -2020,8 +2162,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-pesticides-db
   name: EU Pesticides Database
   url: https://food.ec.europa.eu/plants/pesticides/eu-pesticides-database_en
@@ -2052,8 +2196,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-novel-food-catalogue
   name: EU Novel Food Catalogue
   url: https://food.ec.europa.eu/safety/novel-food/novel-food-status-catalogue_en
@@ -2068,8 +2214,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ec-food-contact-materials
   name: Food contact materials - European Commission
   url: https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en
@@ -2085,8 +2233,10 @@ sources:
   - supply_chain
   - sustainability
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: jrc-food-fraud
   name: JRC Knowledge Centre for Food Fraud and Quality
   url: https://knowledge4policy.ec.europa.eu/food-fraud-quality_en
@@ -2101,8 +2251,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-health-claims-register
   name: EU Register of nutrition and health claims
   url: https://ec.europa.eu/food/food-feed-portal/screen/health-claims/eu-register
@@ -2117,8 +2269,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dg-environment
   name: DG Environment
   url: https://environment.ec.europa.eu/
@@ -2169,8 +2323,10 @@ sources:
   - legislation
   - draft_legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: echa-ppwr
   name: ECHA - PPWR
   url: https://echa.europa.eu/ppwr
@@ -2185,8 +2341,10 @@ sources:
   categories: &id004
   - sustainability
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: echa
   name: ECHA
   url: https://echa.europa.eu/
@@ -2217,8 +2375,10 @@ sources:
   monitoring_focus: Chemical regulatory updates and consultations.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: echa-candidate-list
   name: ECHA Candidate List
   url: https://echa.europa.eu/candidate-list-table
@@ -2232,8 +2392,10 @@ sources:
   monitoring_focus: SVHC list relevant to packaging and equipment materials.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: echa-restriction-intentions
   name: ECHA Registry of restriction intentions
   url: https://echa.europa.eu/registry-of-restriction-intentions
@@ -2249,8 +2411,10 @@ sources:
   - sustainability
   - draft_legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: echa-helpdesks
   name: ECHA national helpdesks
   url: https://echa.europa.eu/support/helpdesks
@@ -2264,8 +2428,10 @@ sources:
   monitoring_focus: National REACH/CLP/BPR contact points.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eea
   name: European Environment Agency
   url: https://www.eea.europa.eu/en
@@ -2279,8 +2445,10 @@ sources:
   monitoring_focus: Climate, waste, water, air and circularity data and reports.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eea-datahub
   name: EEA data and maps
   url: https://www.eea.europa.eu/en/datahub
@@ -2294,8 +2462,10 @@ sources:
   monitoring_focus: Environmental datasets and indicators.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: industrial-emissions-portal
   name: Industrial Emissions Portal
   url: https://industry.eea.europa.eu/
@@ -2309,8 +2479,10 @@ sources:
   monitoring_focus: Facility-level emissions and transfers, including factories in the value chain.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: jrc-bat-bref
   name: JRC BAT reference documents
   url: https://eippcb.jrc.ec.europa.eu/reference
@@ -2324,8 +2496,10 @@ sources:
   monitoring_focus: BREF documents (food, drink, milk) on best available techniques and emissions.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-ecolabel
   name: EU Ecolabel
   url: https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home_en
@@ -2341,8 +2515,10 @@ sources:
   - sustainability
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: emas
   name: EMAS
   url: https://green-business.ec.europa.eu/eco-management-and-audit-scheme-emas_en
@@ -2356,8 +2532,10 @@ sources:
   monitoring_focus: EMAS registrations, guidance and environmental performance.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: circular-economy-platform
   name: European Circular Economy Stakeholder Platform
   url: https://circulareconomy.europa.eu/platform/en
@@ -2371,8 +2549,10 @@ sources:
   monitoring_focus: Circular economy news, practices, policy and funding.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eudr
   name: EU Deforestation Regulation
   url: https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en
@@ -2438,8 +2618,10 @@ sources:
   monitoring_focus: ESRS standards, implementation guidance and consultations.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: esma-sustainable-finance
   name: ESMA - Sustainable finance
   url: https://www.esma.europa.eu/esmas-activities/sustainable-finance
@@ -2453,8 +2635,10 @@ sources:
   monitoring_focus: Sustainability disclosures, greenwashing and reporting enforcement.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-taxonomy-navigator
   name: EU Taxonomy Navigator
   url: https://ec.europa.eu/sustainable-finance-taxonomy/
@@ -2468,8 +2652,10 @@ sources:
   monitoring_focus: Taxonomy criteria, disclosure obligations and compass tools.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: csddd
   name: Corporate sustainability due diligence (CSDDD)
   url: https://commission.europa.eu/business-economy-euro/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en
@@ -2503,8 +2689,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dg-climate-action
   name: DG Climate Action
   url: https://climate.ec.europa.eu/
@@ -2518,8 +2706,10 @@ sources:
   monitoring_focus: Climate targets, ETS, carbon pricing and adaptation policy.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-climate-law
   name: EU Climate Law and policy
   url: https://climate.ec.europa.eu/eu-action/european-climate-law_en
@@ -2535,8 +2725,10 @@ sources:
   - sustainability
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-climate-advisory-board
   name: European Scientific Advisory Board on Climate Change
   url: https://climate-advisory-board.europa.eu/
@@ -2550,8 +2742,10 @@ sources:
   monitoring_focus: Scientific climate advice, reports and identified policy gaps.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eurostat-environment
   name: Eurostat - environment and energy
   url: https://ec.europa.eu/eurostat/web/environment
@@ -2565,8 +2759,10 @@ sources:
   monitoring_focus: Waste, emissions, circularity and packaging statistics.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eurostat-circular-economy
   name: Eurostat - circular economy
   url: https://ec.europa.eu/eurostat/web/circular-economy
@@ -2580,8 +2776,10 @@ sources:
   monitoring_focus: Circular economy indicators and monitoring framework.
   categories: *id004
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: access2markets
   name: Access2Markets
   url: https://trade.ec.europa.eu/access-to-markets/en/home
@@ -2612,8 +2810,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-customs-taxation-news
   name: EU Customs and Taxation news
   url: https://taxation-customs.ec.europa.eu/news_en
@@ -2646,8 +2846,10 @@ sources:
   - supply_chain
   - eu_communications
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: tron-trade-defence
   name: Trade Defence Instruments (TRON)
   url: https://tron.trade.ec.europa.eu/investigations/search
@@ -2695,8 +2897,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-agrifood-trade
   name: EU Agri-food trade analysis
   url: https://agriculture.ec.europa.eu/international/agricultural-trade/trade-and-international-policy-analysis_en
@@ -2711,8 +2915,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eurostat
   name: Eurostat
   url: https://ec.europa.eu/eurostat/
@@ -2728,8 +2934,10 @@ sources:
   - supply_chain
   - consumers_marketing_competition
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eurostat-databrowser
   name: Eurostat Data Browser
   url: https://ec.europa.eu/eurostat/databrowser/
@@ -2744,8 +2952,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ecb-data-portal
   name: ECB Data Portal
   url: https://data.ecb.europa.eu/
@@ -2760,8 +2970,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ec-economic-forecasts
   name: European Commission Economic Forecasts
   url: https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/economic-forecasts_en
@@ -2776,8 +2988,10 @@ sources:
   categories:
   - eu_communications
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ela
   name: European Labour Authority
   url: https://www.ela.europa.eu/en
@@ -2792,8 +3006,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-osha
   name: EU-OSHA
   url: https://osha.europa.eu/en
@@ -2808,8 +3024,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eurofound
   name: Eurofound
   url: https://www.eurofound.europa.eu/en
@@ -2824,8 +3042,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: european-restructuring-monitor
   name: European Restructuring Monitor
   url: https://apps.eurofound.europa.eu/restructuring-events
@@ -2841,8 +3061,10 @@ sources:
   - competitors_direct
   - competitors_adjacent
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ted
   name: TED - Tenders Electronic Daily
   url: https://ted.europa.eu/
@@ -2857,8 +3079,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-funding-tenders
   name: EU Funding & Tenders Portal
   url: https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home
@@ -2873,8 +3097,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ec-procurement-country-info
   name: Public procurement country information
   url: https://single-market-economy.ec.europa.eu/single-market/public-procurement/country-reports-and-information-eu-countries_en
@@ -2889,8 +3115,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: euipo
   name: EUIPO
   url: https://www.euipo.europa.eu/
@@ -2922,8 +3150,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: tmview
   name: TMview
   url: https://www.tmdn.org/tmview/
@@ -2938,8 +3168,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: designview
   name: DesignView
   url: https://www.tmdn.org/tmdsview-web/
@@ -2954,8 +3186,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: euipo-boa-decisions
   name: EUIPO Boards of Appeal decisions
   url: https://euipo.europa.eu/eSearchCLW/
@@ -2970,8 +3204,10 @@ sources:
   categories:
   - case_law_investigations
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: epo-espacenet
   name: EPO Espacenet
   url: https://worldwide.espacenet.com/
@@ -2987,8 +3223,10 @@ sources:
   - competitors_direct
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar+pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: epo-news
   name: European Patent Office news
   url: https://www.epo.org/en/news-events
@@ -3003,8 +3241,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ec-harmonised-standards
   name: European Commission - harmonised standards
   url: https://single-market-economy.ec.europa.eu/single-market/european-standards/harmonised-standards_en
@@ -3019,8 +3259,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nando
   name: NANDO notified bodies
   url: https://webgate.ec.europa.eu/single-market-compliance-space/notified-bodies
@@ -3035,8 +3277,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: edpb
   name: EDPB
   url: https://www.edpb.europa.eu/
@@ -3051,8 +3295,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: edpb-national-dpas
   name: EDPB - national DPAs directory
   url: https://www.edpb.europa.eu/contact/contact-dpas_en
@@ -3067,8 +3313,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: edps
   name: EDPS
   url: https://www.edps.europa.eu/
@@ -3083,8 +3331,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ec-ai-office
   name: European Commission AI Office
   url: https://digital-strategy.ec.europa.eu/en/policies/ai-office
@@ -3099,8 +3349,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ai-act-framework
   name: AI Act regulatory framework
   url: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai
@@ -3116,8 +3368,10 @@ sources:
   - tech_data_ai
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: enisa
   name: ENISA
   url: https://www.enisa.europa.eu/
@@ -3132,8 +3386,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nis2-policy
   name: NIS2 Directive policy page
   url: https://digital-strategy.ec.europa.eu/en/policies/nis2-directive
@@ -3149,8 +3405,10 @@ sources:
   - tech_data_ai
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cyber-resilience-act
   name: Cyber Resilience Act
   url: https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act
@@ -3166,8 +3424,10 @@ sources:
   - tech_data_ai
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dga-authorities
   name: Data Governance Act - national competent authorities
   url: https://digital-strategy.ec.europa.eu/en/library/national-competent-bodies-and-authorities-under-data-governance-act
@@ -3182,8 +3442,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: data-europa
   name: European data portal
   url: https://data.europa.eu/
@@ -3198,8 +3460,10 @@ sources:
   categories:
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: bris
   name: BRIS - Business Registers Interconnection
   url: https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu_en
@@ -3215,8 +3479,10 @@ sources:
   - competitors_direct
   - competitors_adjacent
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eu-insolvency-registers
   name: EU Insolvency Registers search
   url: https://e-justice.europa.eu/eir_search_registers-web/
@@ -3232,8 +3498,10 @@ sources:
   - competitors_direct
   - competitors_adjacent
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ecf
   name: European Coffee Federation
   url: https://www.ecf-coffee.org/
@@ -3267,8 +3535,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ecf-members
   name: ECF - Members
   url: https://www.ecf-coffee.org/category/members/
@@ -3284,8 +3554,10 @@ sources:
   - competitors_direct
   - supply_chain
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eva-vending
   name: European Vending & Coffee Service Association
   url: https://www.vending-europe.eu/
@@ -3301,8 +3573,10 @@ sources:
   - legislation
   - competitors_adjacent
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eva-newsroom
   name: EVA - Newsroom
   url: https://www.vending-europe.eu/newsroom/
@@ -3317,8 +3591,10 @@ sources:
   categories:
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fooddrinkeurope
   name: FoodDrinkEurope
   url: https://www.fooddrinkeurope.eu/
@@ -3350,8 +3626,10 @@ sources:
   categories:
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: aim-brands
   name: AIM - European Brands Association
   url: https://www.aim.be/
@@ -3367,8 +3645,10 @@ sources:
   - consumers_marketing_competition
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eurocommerce
   name: EuroCommerce
   url: https://www.eurocommerce.eu/
@@ -3401,8 +3681,10 @@ sources:
   - competitors_adjacent
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: hotrec
   name: HOTREC
   url: https://www.hotrec.eu/
@@ -3417,8 +3699,10 @@ sources:
   categories:
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ecommerce-europe
   name: Ecommerce Europe
   url: https://ecommerce-europe.eu/
@@ -3434,8 +3718,10 @@ sources:
   - consumers_marketing_competition
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: applia
   name: APPLiA Europe
   url: https://www.applia-europe.eu/
@@ -3451,8 +3737,10 @@ sources:
   - legislation
   - competitors_adjacent
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: orgalim
   name: Orgalim
   url: https://orgalim.eu/
@@ -3467,8 +3755,10 @@ sources:
   categories:
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cen-cenelec-news
   name: CEN-CENELEC News
   url: https://www.cencenelec.eu/news/
@@ -3483,8 +3773,10 @@ sources:
   categories:
   - legislation
   trust_tier: professional
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: europen
   name: EUROPEN
   url: https://www.europen-packaging.eu/
@@ -3533,8 +3825,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: feve
   name: FEVE
   url: https://feve.org/
@@ -3549,8 +3843,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: metal-packaging-europe
   name: Metal Packaging Europe
   url: https://metalpackagingeurope.org/
@@ -3565,8 +3861,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: flexible-packaging-europe
   name: Flexible Packaging Europe
   url: https://www.flexpack-europe.org/
@@ -3581,8 +3879,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: plasticseurope
   name: PlasticsEurope
   url: https://plasticseurope.org/
@@ -3597,8 +3897,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: recyclass
   name: RecyClass
   url: https://recyclass.eu/
@@ -3613,8 +3915,10 @@ sources:
   categories:
   - sustainability
   trust_tier: professional
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eupc
   name: EuPC - European Plastics Converters
   url: https://eupc.org/
@@ -3629,8 +3933,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: european-bioplastics
   name: European Bioplastics
   url: https://www.european-bioplastics.org/
@@ -3645,8 +3951,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: expra
   name: EXPRA
   url: https://expra.eu/
@@ -3661,8 +3969,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pro-europe
   name: PRO Europe
   url: https://www.pro-e.org/
@@ -3677,8 +3987,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: reloop
   name: Reloop Platform
   url: https://www.reloopplatform.org/
@@ -3693,8 +4005,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: zero-waste-europe
   name: Zero Waste Europe
   url: https://zerowasteeurope.eu/
@@ -3709,8 +4023,10 @@ sources:
   categories:
   - sustainability
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ecos
   name: ECOS
   url: https://ecostandard.org/
@@ -3726,8 +4042,10 @@ sources:
   - sustainability
   - consumers_marketing_competition
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: beuc
   name: BEUC
   url: https://www.beuc.eu/
@@ -3758,8 +4076,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: clientearth
   name: ClientEarth Europe
   url: https://www.clientearth.org/europe/
@@ -3792,8 +4112,10 @@ sources:
   - sustainability
   - supply_chain
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: etuc
   name: European Trade Union Confederation
   url: https://www.etuc.org/
@@ -3808,8 +4130,10 @@ sources:
   categories:
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: effat
   name: EFFAT
   url: https://effat.org/
@@ -3825,8 +4149,10 @@ sources:
   - legislation
   - supply_chain
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: eufic
   name: European Food Information Council
   url: https://www.eufic.org/en
@@ -3841,8 +4167,10 @@ sources:
   categories:
   - consumers_marketing_competition
   trust_tier: professional
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: foodnavigator-europe
   name: FoodNavigator Europe
   url: https://www.foodnavigator.com/Regions/Europe/
@@ -3958,8 +4286,10 @@ sources:
   categories:
   - case_law_investigations
   trust_tier: professional
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: kluwer-competition-blog
   name: Kluwer Competition Law Blog
   url: https://competitionlawblog.kluwercompetitionlaw.com/
@@ -4189,8 +4519,10 @@ sources:
   categories: &id010
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: at-environment
   name: Austria - Umweltbundesamt
   url: https://www.umweltbundesamt.at/
@@ -4204,8 +4536,10 @@ sources:
   categories: &id011
   - sustainability
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: at-procurement
   name: Austria - USP public procurement information
   url: https://www.usp.gv.at/
@@ -4219,8 +4553,10 @@ sources:
   categories: &id012
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: be-legislation
   name: Belgium - Belgian Official Gazette / Justel
   url: https://www.ejustice.just.fgov.be/
@@ -4279,8 +4615,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: be-environment
   name: Belgium - FPS Health - Environment
   url: https://www.health.belgium.be/
@@ -4293,8 +4631,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: be-procurement
   name: Belgium - Belgian e-Procurement
   url: https://www.publicprocurement.be/
@@ -4307,8 +4647,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: bg-legislation
   name: Bulgaria - State Gazette
   url: https://dv.parliament.bg/
@@ -4365,8 +4707,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: bg-environment
   name: Bulgaria - Ministry of Environment and Water
   url: https://www.moew.government.bg/
@@ -4379,8 +4723,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: bg-procurement
   name: Bulgaria - Public Procurement Agency / CAIS EOP
   url: https://app.eop.bg/
@@ -4393,8 +4739,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: hr-legislation
   name: Croatia - Narodne novine
   url: https://narodne-novine.nn.hr/
@@ -4451,8 +4799,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: hr-environment
   name: Croatia - Ministry of Environmental Protection
   url: https://mingo.gov.hr/
@@ -4465,8 +4815,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: hr-procurement
   name: Croatia - EOJN
   url: https://eojn.hr/
@@ -4479,8 +4831,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cy-legislation
   name: Cyprus - CyLaw legislation
   url: https://www.cylaw.org/
@@ -4496,8 +4850,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cy-competition
   name: Cyprus - Commission for Protection of Competition
   url: https://www.competition.gov.cy/
@@ -4524,8 +4880,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cy-data-protection
   name: Cyprus - Commissioner for Personal Data Protection
   url: https://www.dataprotection.gov.cy/
@@ -4538,8 +4896,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cy-environment
   name: Cyprus - Department of Environment
   url: https://environment.gov.cy/
@@ -4552,8 +4912,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cy-procurement
   name: Cyprus - eProcurement
   url: https://www.eprocurement.gov.cy/
@@ -4566,8 +4928,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cz-legislation
   name: Czechia - e-Sbirka
   url: https://e-sbirka.cz/
@@ -4624,8 +4988,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cz-environment
   name: Czechia - CENIA
   url: https://www.cenia.cz/
@@ -4638,8 +5004,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cz-procurement
   name: Czechia - National Electronic Tool (NEN)
   url: https://nen.nipez.cz/
@@ -4652,8 +5020,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dk-legislation
   name: Denmark - Retsinformation
   url: https://www.retsinformation.dk/
@@ -4668,8 +5038,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dk-competition
   name: Denmark - Competition and Consumer Authority (KFST)
   url: https://www.kfst.dk/
@@ -4696,8 +5068,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dk-data-protection
   name: Denmark - Datatilsynet
   url: https://www.datatilsynet.dk/
@@ -4710,8 +5084,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dk-environment
   name: Denmark - Environmental Protection Agency
   url: https://mst.dk/
@@ -4724,8 +5100,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dk-procurement
   name: Denmark - Udbud.dk
   url: https://udbud.dk/
@@ -4738,8 +5116,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ee-legislation
   name: Estonia - Riigi Teataja
   url: https://www.riigiteataja.ee/
@@ -4796,8 +5176,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ee-environment
   name: Estonia - Environmental Board
   url: https://keskkonnaamet.ee/
@@ -4810,8 +5192,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ee-procurement
   name: Estonia - Public Procurement Register
   url: https://riigihanked.riik.ee/
@@ -4824,8 +5208,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fi-legislation
   name: Finland - Finlex
   url: https://www.finlex.fi/
@@ -4841,8 +5227,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fi-competition
   name: Finland - Competition and Consumer Authority (KKV)
   url: https://www.kkv.fi/
@@ -4869,8 +5257,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fi-data-protection
   name: Finland - Data Protection Ombudsman
   url: https://tietosuoja.fi/
@@ -4883,8 +5273,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fi-environment
   name: Finland - Finnish Environment Institute (SYKE)
   url: https://www.syke.fi/
@@ -4897,8 +5289,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fi-procurement
   name: Finland - HILMA procurement notices
   url: https://www.hankintailmoitukset.fi/
@@ -4911,8 +5305,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fr-legislation
   name: France - Legifrance
   url: https://www.legifrance.gouv.fr/
@@ -4969,8 +5365,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fr-environment
   name: France - Ministry for Ecological Transition
   url: https://www.ecologie.gouv.fr/
@@ -4983,8 +5381,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: fr-procurement
   name: France - BOAMP
   url: https://www.boamp.fr/
@@ -4997,8 +5397,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: de-legislation
   name: Germany - Gesetze im Internet
   url: https://www.gesetze-im-internet.de/
@@ -5055,8 +5457,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: de-environment
   name: Germany - Umweltbundesamt
   url: https://www.umweltbundesamt.de/
@@ -5069,8 +5473,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: de-procurement
   name: Germany - Bund.de procurement search
   url: https://www.service.bund.de/Content/DE/Ausschreibungen/Suche/Formular.html
@@ -5083,8 +5489,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: gr-legislation
   name: Greece - National Printing Office
   url: https://www.et.gr/
@@ -5141,8 +5549,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: gr-environment
   name: Greece - Ministry of Environment and Energy
   url: https://ypen.gov.gr/
@@ -5155,8 +5565,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: gr-procurement
   name: Greece - Promitheus e-procurement
   url: https://www.eprocurement.gov.gr/
@@ -5169,8 +5581,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: hu-legislation
   name: Hungary - National Legislation Database (NJT)
   url: https://njt.hu/
@@ -5227,8 +5641,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: hu-environment
   name: Hungary - Ministry of Energy / environment portal
   url: https://kormany.hu/energiaugyi-miniszterium
@@ -5241,8 +5657,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: hu-procurement
   name: Hungary - Public Procurement Authority
   url: https://www.kozbeszerzes.hu/
@@ -5255,8 +5673,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ie-legislation
   name: Ireland - Irish Statute Book
   url: https://www.irishstatutebook.ie/
@@ -5272,8 +5692,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ie-competition
   name: Ireland - CCPC
   url: https://www.ccpc.ie/
@@ -5300,8 +5722,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ie-data-protection
   name: Ireland - Data Protection Commission
   url: https://www.dataprotection.ie/
@@ -5314,8 +5738,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ie-environment
   name: Ireland - Environmental Protection Agency
   url: https://www.epa.ie/
@@ -5328,8 +5754,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ie-procurement
   name: Ireland - eTenders
   url: https://www.etenders.gov.ie/
@@ -5342,8 +5770,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: it-legislation
   name: Italy - Normattiva
   url: https://www.normattiva.it/
@@ -5400,8 +5830,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: it-environment
   name: Italy - Ministry of Environment and Energy Security (MASE)
   url: https://www.mase.gov.it/
@@ -5414,8 +5846,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: it-procurement
   name: Italy - Acquisti in Rete PA
   url: https://www.acquistinretepa.it/
@@ -5428,8 +5862,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lv-legislation
   name: Latvia - Likumi.lv
   url: https://likumi.lv/
@@ -5486,8 +5922,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lv-environment
   name: Latvia - State Environmental Service
   url: https://www.vvd.gov.lv/
@@ -5500,8 +5938,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lv-procurement
   name: Latvia - Electronic Procurement System
   url: https://www.eis.gov.lv/
@@ -5514,8 +5954,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lt-legislation
   name: Lithuania - Seimas legal acts database
   url: https://e-seimas.lrs.lt/
@@ -5572,8 +6014,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lt-environment
   name: Lithuania - Environmental Protection Agency
   url: https://aaa.lrv.lt/
@@ -5586,8 +6030,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lt-procurement
   name: Lithuania - Central Public Procurement Portal
   url: https://cvpp.eviesiejipirkimai.lt/
@@ -5600,8 +6046,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lu-legislation
   name: Luxembourg - Legilux
   url: https://legilux.public.lu/
@@ -5618,8 +6066,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lu-competition
   name: Luxembourg - Competition Authority
   url: https://concurrence.public.lu/
@@ -5646,8 +6096,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lu-data-protection
   name: Luxembourg - CNPD
   url: https://cnpd.public.lu/
@@ -5660,8 +6112,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lu-environment
   name: Luxembourg - Environment portal
   url: https://environnement.public.lu/
@@ -5674,8 +6128,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: lu-procurement
   name: Luxembourg - Public Procurement Portal
   url: https://marches.public.lu/
@@ -5688,8 +6144,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mt-legislation
   name: Malta - Legislation Malta
   url: https://legislation.mt/
@@ -5705,8 +6163,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mt-competition
   name: Malta - MCCAA
   url: https://mccaa.org.mt/
@@ -5733,8 +6193,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mt-data-protection
   name: Malta - IDPC
   url: https://idpc.org.mt/
@@ -5747,8 +6209,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mt-environment
   name: Malta - Environment and Resources Authority
   url: https://era.org.mt/
@@ -5761,8 +6225,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: mt-procurement
   name: Malta - ePPS
   url: https://www.etenders.gov.mt/
@@ -5775,8 +6241,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nl-legislation
   name: Netherlands - Overheid.nl laws
   url: https://wetten.overheid.nl/
@@ -5833,8 +6301,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nl-environment
   name: Netherlands - ILT environment and transport inspectorate
   url: https://www.ilent.nl/
@@ -5847,8 +6317,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nl-procurement
   name: Netherlands - TenderNed
   url: https://www.tenderned.nl/
@@ -5861,8 +6333,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pl-legislation
   name: Poland - ISAP
   url: https://isap.sejm.gov.pl/
@@ -5919,8 +6393,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pl-environment
   name: Poland - Ministry of Climate and Environment
   url: https://www.gov.pl/web/climate
@@ -5933,8 +6409,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pl-procurement
   name: Poland - e-Zamowienia
   url: https://ezamowienia.gov.pl/
@@ -5947,8 +6425,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pt-legislation
   name: Portugal - Diario da Republica Eletronico
   url: https://diariodarepublica.pt/
@@ -5963,8 +6443,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pt-competition
   name: Portugal - Autoridade da Concorrencia
   url: https://www.concorrencia.pt/
@@ -5991,8 +6473,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pt-data-protection
   name: Portugal - CNPD
   url: https://www.cnpd.pt/
@@ -6005,8 +6489,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pt-environment
   name: Portugal - Portuguese Environment Agency (APA)
   url: https://apambiente.pt/
@@ -6019,8 +6505,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pt-procurement
   name: Portugal - BASE public contracts
   url: https://www.base.gov.pt/
@@ -6033,8 +6521,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ro-legislation
   name: Romania - Portal Legislativ
   url: https://legislatie.just.ro/
@@ -6091,8 +6581,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ro-environment
   name: Romania - ANPM
   url: https://www.anpm.ro/
@@ -6105,8 +6597,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ro-procurement
   name: Romania - SEAP / e-licitatie
   url: https://www.e-licitatie.ro/
@@ -6119,8 +6613,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: sk-legislation
   name: Slovakia - Slov-Lex
   url: https://www.slov-lex.sk/
@@ -6177,8 +6673,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: sk-environment
   name: Slovakia - Ministry of Environment
   url: https://www.minzp.sk/
@@ -6191,8 +6689,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: sk-procurement
   name: Slovakia - Public Procurement Office (UVO)
   url: https://www.uvo.gov.sk/
@@ -6205,8 +6705,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: si-legislation
   name: Slovenia - PISRS
   url: https://pisrs.si/
@@ -6263,8 +6765,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: si-environment
   name: Slovenia - Ministry of Environment, Climate and Energy
   url: https://www.gov.si/en/state-authorities/ministries/ministry-of-the-environment-climate-and-energy/
@@ -6277,8 +6781,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: si-procurement
   name: Slovenia - e-JN public procurement
   url: https://ejn.gov.si/
@@ -6291,8 +6797,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: es-legislation
   name: Spain - BOE
   url: https://www.boe.es/
@@ -6349,8 +6857,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: es-environment
   name: Spain - MITECO
   url: https://www.miteco.gob.es/
@@ -6363,8 +6873,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: es-procurement
   name: Spain - Public Sector Procurement Platform
   url: https://contrataciondelestado.es/
@@ -6377,8 +6889,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: se-legislation
   name: Sweden - Riksdagen laws and documents
   url: https://www.riksdagen.se/sv/dokument-och-lagar/
@@ -6393,8 +6907,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: se-competition
   name: Sweden - Swedish Competition Authority
   url: https://www.konkurrensverket.se/
@@ -6421,8 +6937,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: se-data-protection
   name: Sweden - IMY
   url: https://www.imy.se/
@@ -6435,8 +6953,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: se-environment
   name: Sweden - Swedish EPA (Naturvardsverket)
   url: https://www.naturvardsverket.se/
@@ -6449,8 +6969,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: se-procurement
   name: Sweden - Public Procurement Authority
   url: https://www.upphandlingsmyndigheten.se/
@@ -6463,8 +6985,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: is-legislation
   name: Iceland - Althingi laws
   url: https://www.althingi.is/lagas/
@@ -6479,8 +7003,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: is-competition
   name: Iceland - Icelandic Competition Authority
   url: https://www.samkeppni.is/
@@ -6507,8 +7033,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: is-data-protection
   name: Iceland - Data Protection Authority (Personuvernd)
   url: https://www.personuvernd.is/
@@ -6521,8 +7049,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: is-environment
   name: Iceland - Environment Agency of Iceland
   url: https://ust.is/
@@ -6535,8 +7065,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: is-procurement
   name: Iceland - Public procurement portal
   url: https://utbodsvefur.is/
@@ -6549,8 +7081,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: no-legislation
   name: Norway - Lovdata open legislation
   url: https://lovdata.no/
@@ -6565,8 +7099,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: no-competition
   name: Norway - Norwegian Competition Authority
   url: https://konkurransetilsynet.no/
@@ -6593,8 +7129,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: no-data-protection
   name: Norway - Datatilsynet
   url: https://www.datatilsynet.no/
@@ -6607,8 +7145,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: no-environment
   name: Norway - Norwegian Environment Agency
   url: https://www.miljodirektoratet.no/
@@ -6621,8 +7161,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: no-procurement
   name: Norway - Doffin
   url: https://www.doffin.no/
@@ -6635,8 +7177,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: li-legislation
   name: Liechtenstein - Legislation (Gesetze.li)
   url: https://www.gesetze.li/
@@ -6651,8 +7195,10 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: li-competition
   name: Liechtenstein - Office of Economic Affairs
   url: https://www.llv.li/en/national-administration/office-of-economic-affairs
@@ -6679,8 +7225,10 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: li-data-protection
   name: Liechtenstein - Data Protection Authority
   url: https://www.datenschutzstelle.li/
@@ -6693,8 +7241,10 @@ sources:
   monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
   categories: *id010
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: li-environment
   name: Liechtenstein - Office of Environment
   url: https://www.llv.li/en/national-administration/office-of-environment
@@ -6707,8 +7257,10 @@ sources:
   monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
   categories: *id011
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: li-procurement
   name: Liechtenstein - Public Procurement Unit
   url: https://www.llv.li/en/national-administration/public-procurement-unit
@@ -6721,8 +7273,10 @@ sources:
   monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
   categories: *id012
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ejustice-official-announcements
   name: European e-Justice - publication of official announcements
   url: https://e-justice.europa.eu/topics/legislation-and-case-law/publication-official-announcements_en
@@ -6738,8 +7292,10 @@ sources:
   - legislation
   - competitors_direct
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: forum-official-gazettes
   name: European Forum of Official Gazettes
   url: https://op.europa.eu/en/web/forum-official-gazettes
@@ -6754,8 +7310,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: asociacion-espanola-cafe
   name: Asociacion Espanola del Cafe
   url: http://www.asociacioncafe.com
@@ -6771,8 +7329,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: aicc-portugal
   name: Associacao Industrial e Comercial do Cafe (AICC)
   url: http://aicc.pt
@@ -6788,8 +7348,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: kaffeinfo-dk
   name: Brancheforeningen for Kaffe og Te
   url: http://www.kaffeinfo.dk
@@ -6805,8 +7367,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: comitato-italiano-caffe
   name: Comitato Italiano del Caffe
   url: http://www.comitcaf.it
@@ -6822,8 +7386,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: deutscher-kaffeeverband
   name: Deutscher Kaffeeverband
   url: http://www.kaffeeverband.de
@@ -6856,8 +7422,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: koffie-thee-nederland
   name: Koffie & Thee Nederland
   url: http://www.koffiethee.nl
@@ -6873,8 +7441,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: koffiecafe-be
   name: Koninklijk Verbond van Koffiebranders
   url: http://www.koffiecafe.be
@@ -6891,8 +7461,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: norsk-kaffeinformasjon
   name: Norsk Kaffeinformasjon
   url: http://www.kaffe.no
@@ -6908,8 +7480,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: kaffeeverband-at
   name: Osterreichischer Kaffee- und Tee-Verband
   url: http://www.kaffeeverband.at
@@ -6925,8 +7499,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: syndicat-francais-cafe
   name: Syndicat Francais du Cafe
   url: http://www.syndicatfrancaisducafe.com
@@ -6942,8 +7518,10 @@ sources:
   - supply_chain
   - legislation
   trust_tier: advocacy
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: coffein-compagnie
   name: Coffein Compagnie
   url: http://www.coffein-compagnie.de
@@ -6960,8 +7538,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: cr3-kaffeeveredelung
   name: CR3 Kaffeeveredelung
   url: https://www.cr3-kaffeeveredelung.com/de/
@@ -6978,8 +7558,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: deutsche-extrakt-kaffee
   name: Deutsche Extrakt Kaffee
   url: http://www.dek.de
@@ -6996,8 +7578,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: demus
   name: Demus
   url: http://www.demus.it
@@ -7014,8 +7598,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: j-mueller-weser
   name: J. Muller Weser
   url: http://www.kaffee-jmueller.com
@@ -7032,8 +7618,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: jth-douque
   name: J.Th. Douque's Koffie
   url: http://www.jthdouque.com
@@ -7049,8 +7637,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: katoen-natie
   name: Katoen Natie
   url: http://www.katoennatie.com
@@ -7066,8 +7656,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: masiques
   name: Masiques
   url: http://www.masiques.com
@@ -7083,8 +7675,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: molenbergnatie
   name: Molenbergnatie
   url: http://www.molenbergnatie.com
@@ -7100,8 +7694,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: pacorini-group
   name: Pacorini Group
   url: http://www.pacorini.com
@@ -7118,8 +7714,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: romani-spa
   name: Romani Spa
   url: http://www.romanige.it
@@ -7136,8 +7734,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: sealogis
   name: Sealogis
   url: https://www.sealogis.com/home/
@@ -7153,8 +7753,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: verwerkaf
   name: Verwerkaf
   url: http://www.verwerkaf.it
@@ -7170,8 +7772,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: vigolin
   name: Vigolin
   url: https://www.vigolin.com
@@ -7186,8 +7790,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_inventar
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: rechtspraak-nl
   name: Rechtspraak.nl — Dutch case-law portal
   url: https://www.rechtspraak.nl
@@ -7219,8 +7825,10 @@ sources:
   - competitors_direct
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: giustizia-amministrativa-it
   name: Giustizia Amministrativa — Consiglio di Stato (IT)
   url: https://www.giustizia-amministrativa.it
@@ -7286,8 +7894,10 @@ sources:
   categories:
   - legislation
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: nestle-investors
   name: Nestlé — Investor Relations
   url: https://www.nestle.com/investors
@@ -7302,8 +7912,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: starbucks-investors
   name: Starbucks — Investor Relations
   url: https://investor.starbucks.com
@@ -7318,8 +7930,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: tchibo-corporate
   name: Tchibo — Corporate
   url: https://www.tchibo-corporate.com
@@ -7335,8 +7949,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: strauss-group
   name: Strauss Group — Corporate
   url: https://www.strauss-group.com
@@ -7351,8 +7967,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: dallmayr
   name: Alois Dallmayr
   url: https://www.dallmayr.com
@@ -7368,8 +7986,10 @@ sources:
   categories:
   - competitors_direct
   trust_tier: corporate
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: ice-futures
   name: ICE Futures — Coffee quotations
   url: https://www.ice.com
@@ -7467,8 +8087,10 @@ sources:
   categories:
   - supply_chain
   trust_tier: official
-  status: active
+  status: excluded
   origin: pdf_catalog
+  exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
+    scout'
 - id: the-loadstar
   name: The Loadstar — logistics news
   url: https://theloadstar.com
