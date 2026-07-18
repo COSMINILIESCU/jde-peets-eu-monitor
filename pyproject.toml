@@ -12,6 +12,7 @@ dependencies = [
     "pydantic>=2",
     "tenacity",
     "langdetect",
+    "truststore",
 ]
 
 [project.optional-dependencies]

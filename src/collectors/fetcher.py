@@ -3,8 +3,15 @@
 All network access in the pipeline MUST go through Fetcher.
 """
 
+import contextlib
 import time
 import urllib.robotparser
+
+with contextlib.suppress(ImportError):
+    # Use the Windows certificate store (needed on networks with SSL inspection)
+    import truststore
+
+    truststore.inject_into_ssl()
 from urllib.parse import urlparse
 
 import requests
