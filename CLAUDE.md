@@ -6,7 +6,7 @@ Branding public: "Provided by Păcuraru Iliescu Măzăreanu, Societate Civilă d
 
 ## Arhitectură (pe scurt)
 - **Colectare + analiză**: rulează LOCAL pe Windows (Task Scheduler, luni 07:00) → publică automat pe GitHub.
-- **Dashboard**: static (HTML/CSS/JS vanilla, temă coffee), servit de GitHub Pages din `docs/`. Fără Node.js, fără backend.
+- **Dashboard**: static (HTML/CSS/JS vanilla, temă „gazette"/newsprint — ziar răsfoibil cu pupitru de comandă: căutare + filtre + cuprins separate de paginile editoriale), servit de GitHub Pages din `docs/`. Paginare dinamică a ziarului din datele reale. Fără Node.js, fără backend.
 - **AI**: Claude Code headless (`claude -p`), abonament existent, fără chei API. Model configurabil în `config/settings.yaml`.
 - **Date**: SQLite local în `data/monitor.db` (arhiva completă, negit-uită) + export JSON în `docs/data/` (ce vede dashboardul).
 - **Surse**: `sources/registry.yaml` — registru versionat; politica surselor noi: oficiale = auto-add, presă/ONG = aprobare umană.
