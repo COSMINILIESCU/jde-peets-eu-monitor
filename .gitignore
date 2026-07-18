@@ -1,0 +1,20 @@
+# Local data (full archive stays local; only docs/data JSON is published)
+data/
+logs/
+*.db
+*.db-journal
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Secrets & local env
+.env
+.claude/settings.local.json
+
+# OS
+Thumbs.db
+Desktop.ini

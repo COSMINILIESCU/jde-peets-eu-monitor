@@ -1,0 +1,29 @@
+[project]
+name = "jde-peets-eu-monitor"
+version = "0.1.0"
+description = "Weekly EU/EEA business intelligence monitor for JDE Peet's — public dashboard by Pacuraru Iliescu Mazareanu SCA"
+requires-python = ">=3.12"
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "feedparser",
+    "PyMuPDF",
+    "pyyaml",
+    "pydantic>=2",
+    "tenacity",
+    "langdetect",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

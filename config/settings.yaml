@@ -1,0 +1,48 @@
+# Central configuration — the only file to edit for tuning behaviour.
+
+project:
+  name: "JDE Peet's EU/EEA Intelligence Monitor"
+  provider_name: "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați"
+  provider_url: "https://www.pimasociates.ro/"
+  dashboard_language: "en"
+
+schedule:
+  weekly_run: "Monday 07:00"      # informative; actual trigger = Windows Task Scheduler
+  monthly_scout: "first Monday"   # monthly-source-scout subagent
+
+collection:
+  user_agent: "PIM-JDE-Monitor/1.0 (+https://www.pimasociates.ro/; legal-monitoring; contact: cosminiliescu@legal.org.ro)"
+  request_timeout_seconds: 30
+  max_retries: 3
+  backoff_base_seconds: 2
+  per_domain_delay_seconds: 3     # rate limiting: min delay between requests to same domain
+  respect_robots_txt: true        # never disable
+  max_items_per_source_per_run: 40
+  lookback_days_first_run: 14     # first run looks back 2 weeks; later runs = since last run
+
+analysis:
+  engine: "claude-code-headless"  # or "anthropic-api" (requires ANTHROPIC_API_KEY)
+  model: ""                       # empty = Claude Code session default; or e.g. "claude-haiku-4-5"
+  batch_size: 12                  # items per headless call
+  max_summary_paragraphs: 2
+  relevance_threshold: 0.5        # items scored below this are archived, not published
+  max_published_items_per_run: 250
+
+dedup:
+  title_similarity_threshold: 0.85
+  content_hash: true
+
+retention:
+  dashboard_months_visible: 12    # older items move to archive JSON (still searchable via archive)
+  local_archive: "unlimited"
+  backup_keep_last: 8             # weekly SQLite backups kept
+
+publishing:
+  auto_publish: true
+  git_remote: "origin"
+  git_branch: "main"
+
+source_policy:
+  # monthly-source-scout: what gets auto-added vs. requires human approval
+  auto_add_types: ["eu_institution", "national_authority", "court", "official_register", "regulator"]
+  approval_required_types: ["press", "trade_press", "ngo", "association", "law_firm_blog", "academic", "corporate", "union", "consumer_org", "other"]
