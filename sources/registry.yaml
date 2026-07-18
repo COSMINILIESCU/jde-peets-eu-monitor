@@ -1,0 +1,7744 @@
+registry_version: 1
+updated: '2026-07-18'
+policy:
+  auto_add_types:
+  - eu_institution
+  - national_authority
+  - court
+  - official_register
+  - regulator
+  approval_required: all other types (see config/settings.yaml source_policy)
+sources:
+- id: jdepeets-home
+  name: JDE Peet's - main website
+  url: https://www.jdepeets.com/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Primary corporate source: strategy, news, brands and operations of JDE Peet''s.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-news
+  name: JDE Peet's - News & Stories
+  url: https://www.jdepeets.com/media/news
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Press releases, results, M&A, management changes and regulatory statements.
+  categories:
+  - jde_peets
+  - kdp_impact
+  - press
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-annual-reports
+  name: JDE Peet's - Annual Reports
+  url: https://www.jdepeets.com/investors/financial-reports/annual-reports/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Annual reports: financials, risks, sustainability, segments and litigation disclosures.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-results
+  name: JDE Peet's - Results & Publications
+  url: https://www.jdepeets.com/investors/financial-reports/results-publications/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Annual/half-year results, investor presentations and transcripts.
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: jdepeets-sustainability
+  name: JDE Peet's - Sustainability Resources
+  url: https://www.jdepeets.com/sustainability/resources/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'ESG documents: EUDR, nature, climate, sourcing, human rights and GRI reporting.'
+  categories:
+  - jde_peets
+  - sustainability
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-brands
+  name: JDE Peet's - Brands
+  url: https://www.jdepeets.com/brands/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Global and local brand portfolio, positioning and launches.
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-governance
+  name: JDE Peet's - Governance
+  url: https://www.jdepeets.com/about-us/governance/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Corporate governance structure, board, KDP integration and policies.
+  categories:
+  - jde_peets
+  - kdp_impact
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-ethics
+  name: JDE Peet's - Ethics & Compliance
+  url: https://www.jdepeets.com/about-us/ethics-compliance/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Code of conduct, whistleblowing, supplier requirements and sanctions compliance.
+  categories:
+  - jde_peets
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-media-kit
+  name: JDE Peet's - Media Kit
+  url: https://www.jdepeets.com/media/media-kit/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Company presentations, brand assets and reports.
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jdepeets-careers
+  name: JDE Peet's - Careers
+  url: https://careers.jdepeets.com/
+  type: recruitment
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Hiring signals indicating investments, technologies, expansions or restructurings.
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: kdp-news
+  name: Keurig Dr Pepper - News
+  url: https://www.keurigdrpepper.com/news
+  type: corporate
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: KDP group news with actual or potential impact on JDE Peet's EU/EEA operations.
+  categories:
+  - kdp_impact
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: kdp-investors
+  name: Keurig Dr Pepper - Investors
+  url: https://www.keurigdrpepper.com/investors
+  type: corporate
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: KDP reports, presentations, synergies and restructurings relevant to the European business.
+  categories:
+  - kdp_impact
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: lor-espresso
+  name: L'OR - European site
+  url: https://www.lorespresso.com/
+  type: corporate
+  country: EU
+  language:
+  - en
+  - fr
+  - nl
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own brand: capsules, machines, products, campaigns and D2C activity.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jacobs-kaffee
+  name: Jacobs Kaffee
+  url: https://www.jacobskaffee.de/
+  type: corporate
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own brand: products, prices, promotions, campaigns and capsules in Germany.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: douwe-egberts-nl
+  name: Douwe Egberts Nederland
+  url: https://www.douwe-egberts.nl/
+  type: corporate
+  country: NL
+  language:
+  - nl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own brand: products, systems, promotions and sustainability in the Netherlands.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: senseo
+  name: Senseo
+  url: https://www.senseo.com/
+  type: corporate
+  country: EU
+  language:
+  - en
+  - nl
+  - de
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own portioned system: pads, machines, compatibility and campaigns.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: tassimo
+  name: Tassimo
+  url: https://www.tassimo.com/
+  type: corporate
+  country: EU
+  language:
+  - en
+  - de
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own portioned system: capsules, machines, prices, promotions and D2C.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: gevalia-se
+  name: Gevalia Sweden
+  url: https://www.gevalia.se/
+  type: corporate
+  country: SE
+  language:
+  - sv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own brand: products, promotions and sustainability in Sweden.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: friele-no
+  name: Friele
+  url: https://www.friele.no/
+  type: corporate
+  country: 'NO'
+  language:
+  - 'no'
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own brand: products, retail presence and sustainability in Norway.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: marcilla-es
+  name: Marcilla
+  url: https://www.marcilla.com/
+  type: corporate
+  country: ES
+  language:
+  - es
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own brand: products, capsules and campaigns in Spain.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: pickwick-nl
+  name: Pickwick Nederland
+  url: https://www.pickwick.nl/
+  type: corporate
+  country: NL
+  language:
+  - nl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own tea brand: tea innovation, consumer trends and packaging.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: les-2-marmottes
+  name: Les 2 Marmottes
+  url: https://www.les2marmottes.com/
+  type: corporate
+  country: FR
+  language:
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Own infusions brand: tea, herbs, packaging and D2C activity.'
+  categories:
+  - jde_peets
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: nestle-news
+  name: Nestle - global corporate news
+  url: https://www.nestle.com/media/news
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: coffee, FMCG, pricing, supply chain, M&A and ESG news with EU/EEA relevance.'
+  categories: &id001
+  - competitors_direct
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: nestle-coffee-brands
+  name: Nestle - Coffee brands
+  url: https://www.nestle.com/brands/coffee
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Nestle coffee portfolio, product launches and systems.
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: nespresso-sustainability
+  name: Nespresso - corporate sustainability
+  url: https://www.nespresso.com/sustainability/
+  type: corporate
+  country: EU
+  language:
+  - en
+  - fr
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Nespresso capsules, recycling, sourcing, machines and climate initiatives.
+  categories:
+  - competitors_direct
+  - sustainability
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: nespresso-newsroom
+  name: Nespresso - newsroom
+  url: https://nestle-nespresso.com/newsandfeatures
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Nespresso news, products, partnerships and ESG.
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: lavazza-group
+  name: Lavazza Group
+  url: https://www.lavazzagroup.com/en.html
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: strategy, annual reports, sustainability and M&A.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: lavazza-press
+  name: Lavazza - Press Area
+  url: https://www.lavazzagroup.com/en/our-stories/news-and-media.html
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Lavazza news, brand, sponsorships and products.
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: illy-company
+  name: illycaffe - company
+  url: https://www.illy.com/en-ww/company
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: strategy, products, sustainability and hospitality.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: illy-press
+  name: illycaffe - press room
+  url: https://www.illy.com/en-ww/company/press-room
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: illycaffe press releases, appointments and innovation.
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: tchibo
+  name: Tchibo - corporate
+  url: https://www.tchibo.com/
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: coffee, retail, sustainability and supply chain.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: tchibo-press
+  name: Tchibo - press
+  url: https://www.tchibo.com/service/press
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Tchibo news, results, products and restructuring.
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: mzb-group
+  name: Massimo Zanetti Beverage Group
+  url: https://www.mzb-group.com/en/
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: group strategy, brands, acquisitions and financials (incl. Segafredo).'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: segafredo
+  name: Segafredo Zanetti
+  url: https://www.segafredo.it/en/
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Segafredo products, out-of-home, franchising and campaigns.
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: paulig
+  name: Paulig
+  url: https://www.pauliggroup.com/
+  type: corporate
+  country: FI
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: coffee, food, sustainability and investments in the Nordics/EU.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: paulig-newsroom
+  name: Paulig - Newsroom
+  url: https://www.pauliggroup.com/newsroom
+  type: corporate
+  country: FI
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Paulig news, results, innovation and climate work.
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: lofbergs
+  name: Lofbergs
+  url: https://www.lofbergs.se/en/
+  type: corporate
+  country: SE
+  language:
+  - en
+  - sv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: coffee, sourcing, sustainability and products.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: julius-meinl
+  name: Julius Meinl
+  url: https://juliusmeinl.com/
+  type: corporate
+  country: AT
+  language:
+  - en
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: out-of-home coffee, tea, hospitality and products.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: delta-nabeiro
+  name: Delta Cafes / Grupo Nabeiro
+  url: https://gruponabeiro.com/en/
+  type: corporate
+  country: PT
+  language:
+  - en
+  - pt
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: coffee, OOH, retail, sustainability and internationalisation.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: caffe-borbone
+  name: Caffe Borbone
+  url: https://www.caffeborbone.com/
+  type: corporate
+  country: IT
+  language:
+  - it
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: capsules, pods, D2C, products and pricing.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: strauss-coffee
+  name: Strauss Coffee
+  url: https://www.strausscoffee.com/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: brands, private label, markets and innovation.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: melitta-group
+  name: Melitta Group
+  url: https://www.melitta-group.com/
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor and appliance maker: coffee, filters, machines, sustainability and group
+    news.'
+  categories:
+  - competitors_direct
+  - competitors_adjacent
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jj-darboven
+  name: J.J. Darboven
+  url: https://www.darboven.com/
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: brands, OOH, products and sustainability.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: dallmayr-coffee
+  name: Dallmayr Coffee
+  url: https://www.dallmayr.com/coffee/
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: coffee, vending, OOH and products.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: arvid-nordquist
+  name: Arvid Nordquist Coffee
+  url: https://www.arvidnordquist.com/coffee/
+  type: corporate
+  country: SE
+  language:
+  - en
+  - sv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: coffee, retail and sustainability in the Nordics.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: caffe-vergnano
+  name: Caffe Vergnano
+  url: https://www.caffevergnano.com/
+  type: corporate
+  country: IT
+  language:
+  - it
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: products, OOH, franchising and capsules.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: kimbo
+  name: Kimbo
+  url: https://www.kimbo.it/
+  type: corporate
+  country: IT
+  language:
+  - it
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: products, capsules, OOH and campaigns.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: gimoka-group
+  name: Gimoka Group
+  url: https://www.gruppogimoka.com/en/
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor and private label: capsules, manufacturing and sustainability.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: caffitaly
+  name: Caffitaly System
+  url: https://www.caffitaly.com/
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Portioned-system competitor: capsules, machines, licensing and compatibility.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: ucc-europe
+  name: UCC Europe
+  url: https://ucc-europe.com/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Direct competitor: roasting, private label and foodservice in Europe.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: starbucks-emea
+  name: Starbucks EMEA stories
+  url: https://stories.starbucks.com/emea/
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee-shop competitor: stores, products, labour, sustainability and digital.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: costa-coffee
+  name: Costa Coffee - corporate
+  url: https://www.costa.co.uk/behind-the-beans
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee-shop and RTD competitor: stores, products, machines and sourcing.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: espresso-house
+  name: Espresso House
+  url: https://espressohouse.com/
+  type: corporate
+  country: SE
+  language:
+  - en
+  - sv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee-shop competitor: store expansion, menu, pricing and digital in the Nordics.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: coffee-island
+  name: Coffee Island
+  url: https://www.coffeeisland.gr/
+  type: corporate
+  country: GR
+  language:
+  - el
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee-shop competitor: franchising, stores, products and specialty coffee.'
+  categories: *id001
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: mcdonalds-europe
+  name: McDonald's Europe newsroom
+  url: https://www.mcdonalds.com/gb/en-gb/newsroom.html
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent OOH competitor: McCafe, pricing, outlets, sourcing and packaging.'
+  categories: &id002
+  - competitors_adjacent
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: coca-cola-hbc
+  name: Coca-Cola HBC - newsroom
+  url: https://www.coca-colahellenic.com/en/media/news
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent beverages/RTD competitor: Costa RTD, distribution, packaging and retail.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: oatly-news
+  name: Oatly - investor news
+  url: https://investors.oatly.com/news-releases
+  type: corporate
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent plant-based competitor: barista drinks, OOH, packaging and sustainability.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: danone-news
+  name: Danone - newsroom
+  url: https://www.danone.com/newsroom.html
+  type: corporate
+  country: FR
+  language:
+  - en
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent dairy/plant-based competitor: Alpro, beverages, retail, packaging and ESG.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: arla-newsroom
+  name: Arla Foods - newsroom
+  url: https://www.arla.com/company/news-and-press/
+  type: corporate
+  country: DK
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent dairy competitor: barista milk, OOH, pricing and sustainability.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: delonghi-group
+  name: De'Longhi Group
+  url: https://www.delonghigroup.com/en
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent appliance competitor: coffee machines, acquisitions, financials and innovation.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: delonghi-news
+  name: De'Longhi Group - News
+  url: https://www.delonghigroup.com/en/media/news
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: De'Longhi product launches, partnerships and investments.
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: groupe-seb
+  name: Groupe SEB
+  url: https://www.groupeseb.com/en
+  type: corporate
+  country: FR
+  language:
+  - en
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent appliance competitor: Krups, WMF, machines, strategy and sustainability.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: versuni
+  name: Versuni
+  url: https://www.versuni.com/newsroom/
+  type: corporate
+  country: NL
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent appliance competitor: Philips-branded coffee machines and innovation.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: bsh-hausgeraete
+  name: BSH Hausgerate
+  url: https://www.bsh-group.com/
+  type: corporate
+  country: DE
+  language:
+  - en
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent appliance competitor: Bosch, Siemens, Tassimo machines and connected appliances.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: evoca-group
+  name: Evoca Group
+  url: https://www.evocagroup.com/
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent vending/OOH competitor: vending, professional machines, acquisitions and technology.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: cimbali-group
+  name: La Cimbali Group
+  url: https://www.cimbaligroup.com/
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent professional machine competitor: espresso equipment, OOH and digital services.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: rancilio-group
+  name: Rancilio Group
+  url: https://www.ranciliogroup.com/
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent professional machine competitor: espresso machines, OOH and innovation.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: smeg-coffee
+  name: Smeg - coffee appliances
+  url: https://www.smeg.com/coffee-machines
+  type: corporate
+  country: IT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Adjacent appliance competitor: consumer machines, design and product launches.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: ahold-delhaize
+  name: Ahold Delhaize - news
+  url: https://www.aholddelhaize.com/news/
+  type: corporate
+  country: NL
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, pricing, sourcing, promotions and e-commerce.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: carrefour-news
+  name: Carrefour Group - newsroom
+  url: https://www.carrefour.com/en/newsroom
+  type: corporate
+  country: FR
+  language:
+  - en
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, category strategy, pricing and ESG.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: schwarz-group
+  name: Schwarz Group - press
+  url: https://gruppe.schwarz/en/press
+  type: corporate
+  country: DE
+  language:
+  - en
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: Lidl, Kaufland, sourcing, private label and packaging.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: rewe-group
+  name: REWE Group - press
+  url: https://www.rewe-group.com/en/press-and-media/
+  type: corporate
+  country: DE
+  language:
+  - en
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, pricing, sustainability and logistics.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: edeka-press
+  name: EDEKA - press
+  url: https://verbund.edeka/presse/
+  type: corporate
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, category, pricing and retailer negotiations.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: aldi-nord-press
+  name: ALDI Nord - press
+  url: https://www.aldi-nord.de/unternehmen/presse.html
+  type: corporate
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, pricing, promotions and packaging.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: aldi-sued-press
+  name: ALDI Sud - newsroom
+  url: https://www.aldi-sued.de/de/newsroom.html
+  type: corporate
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, pricing, promotions and packaging.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: auchan-news
+  name: Auchan Retail - news
+  url: https://www.auchan-retail.com/en/news/
+  type: corporate
+  country: FR
+  language:
+  - en
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, pricing, store strategy and ESG.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jeronimo-martins
+  name: Jeronimo Martins - news
+  url: https://www.jeronimomartins.com/en/media/news/
+  type: corporate
+  country: PT
+  language:
+  - en
+  - pt
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: Biedronka, Pingo Doce, private label and pricing.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: colruyt-press
+  name: Colruyt Group - press
+  url: https://www.colruytgroup.com/en/press
+  type: corporate
+  country: BE
+  language:
+  - en
+  - nl
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, pricing, retail tech and sustainability.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: ica-gruppen
+  name: ICA Gruppen - press releases
+  url: https://www.icagruppen.se/en/media/press-releases/
+  type: corporate
+  country: SE
+  language:
+  - en
+  - sv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: retail, private label, pricing and e-commerce.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: kesko-media
+  name: Kesko - media
+  url: https://www.kesko.fi/en/media/
+  type: corporate
+  country: FI
+  language:
+  - en
+  - fi
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: K-food, private label, pricing and sustainability.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: s-group-news
+  name: S Group - news
+  url: https://s-ryhma.fi/en/news
+  type: corporate
+  country: FI
+  language:
+  - en
+  - fi
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: retail, private label, logistics and pricing.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: mercadona-press
+  name: Mercadona - newsroom
+  url: https://info.mercadona.es/en/newsroom
+  type: corporate
+  country: ES
+  language:
+  - en
+  - es
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: private label, supplier strategy, pricing and packaging.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: salling-group
+  name: Salling Group - news
+  url: https://sallinggroup.com/en/news
+  type: corporate
+  country: DK
+  language:
+  - en
+  - da
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Retail/private-label competitor: retail, private label, sustainability and pricing.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: northern-wonder
+  name: Northern Wonder
+  url: https://northern-wonder.com/
+  type: corporate
+  country: NL
+  language:
+  - en
+  - nl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Potential disruptor: coffee-free alternatives, ingredients and scale-up progress.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: prefer
+  name: Prefer
+  url: https://www.prefer.bio/
+  type: corporate
+  country: FR
+  language:
+  - en
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Potential disruptor: fermented coffee alternatives, foodtech and funding.'
+  categories: *id002
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: eur-lex
+  name: EUR-Lex
+  url: https://eur-lex.europa.eu/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: https://eur-lex.europa.eu/content/tools/rss.html
+  monitoring_focus: EU legislation, delegated/implementing acts, transposition and case law.
+  categories:
+  - legislation
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: eu-official-journal
+  name: Official Journal of the European Union
+  url: https://eur-lex.europa.eu/oj/direct-access.html
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Official publication of the L and C series, new acts and notices.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eur-lex-rss
+  name: EUR-Lex - RSS feeds
+  url: https://eur-lex.europa.eu/content/tools/rss.html
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: https://eur-lex.europa.eu/content/tools/rss.html
+  monitoring_focus: Directory of RSS feeds for the Official Journal, case law and thematic areas.
+  categories:
+  - legislation
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: n-lex
+  name: N-Lex
+  url: https://n-lex.europa.eu/n-lex/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Gateway to national legislation databases across the EU.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-press-corner
+  name: European Commission - Press Corner
+  url: https://ec.europa.eu/commission/presscorner/home/en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Commission press releases, proposals, infringements and decisions.
+  categories:
+  - eu_communications
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-have-your-say
+  name: European Commission - Have Your Say
+  url: https://ec.europa.eu/info/law/better-regulation/have-your-say_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public consultations, initiatives, evaluations, feedback and delegated acts.
+  categories:
+  - draft_legislation
+  - eu_communications
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-documents-register
+  name: European Commission - Register of Commission Documents
+  url: https://ec.europa.eu/transparency/documents-register/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: COM, C, SWD and SEC documents and Commission decisions.
+  categories:
+  - eu_communications
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ep-oeil
+  name: European Parliament - Legislative Observatory (OEIL)
+  url: https://oeil.secure.europarl.europa.eu/oeil/home/home.do
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Legislative files, calendars, amendments and procedure status.
+  categories:
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ep-press-room
+  name: European Parliament - Press Room
+  url: https://www.europarl.europa.eu/news/en/press-room
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Parliament votes, negotiations, committee work and legislation news.
+  categories:
+  - eu_communications
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: council-press
+  name: Council of the EU - Press releases
+  url: https://www.consilium.europa.eu/en/press/press-releases/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Council agreements, mandates, conclusions and adopted acts.
+  categories:
+  - eu_communications
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: council-register
+  name: Council public register
+  url: https://www.consilium.europa.eu/en/documents-publications/public-register/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Negotiation documents and member state positions.
+  categories:
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: curia
+  name: CURIA - Court of Justice of the EU
+  url: https://curia.europa.eu/
+  type: court
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: CJEU judgments, AG opinions, press releases and pending procedures.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: infocuria
+  name: InfoCuria - case-law search
+  url: https://curia.europa.eu/juris/recherche.jsf?language=en
+  type: court
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Search of CJEU cases and documents.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ejustice-ecli
+  name: European e-Justice - ECLI search
+  url: https://e-justice.europa.eu/ecli/ECLI.jsp
+  type: court
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National judgments identified by ECLI across member states.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ejustice-national-legislation
+  name: European e-Justice - national legislation
+  url: https://e-justice.europa.eu/topics/legislation-and-case-law/national-legislation_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Gateway to official national legislation databases.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ejustice-national-case-law
+  name: European e-Justice - national case law
+  url: https://e-justice.europa.eu/topics/legislation-and-case-law/national-case-law_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Gateway to national case-law databases.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: efta-court
+  name: EFTA Court
+  url: https://eftacourt.int/
+  type: court
+  country: EEA
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EEA-law cases before the EFTA Court.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: efta-surveillance
+  name: EFTA Surveillance Authority
+  url: https://www.eftasurv.int/
+  type: regulator
+  country: EEA
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'EEA surveillance: competition, state aid, internal market and infringements.'
+  categories:
+  - case_law_investigations
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: efta-eea-lex
+  name: EFTA - EEA-Lex
+  url: https://www.efta.int/eea-lex
+  type: official_register
+  country: EEA
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Incorporation of EU acts into the EEA Agreement.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dg-competition
+  name: DG Competition
+  url: https://competition-policy.ec.europa.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU antitrust, mergers, state aid, policy and news.
+  categories: &id003
+  - case_law_investigations
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dg-comp-case-search
+  name: DG COMP case search
+  url: https://competition-cases.ec.europa.eu/search
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Antitrust, cartel, merger and state aid case database.
+  categories: *id003
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-merger-cases
+  name: EU merger cases
+  url: https://competition-policy.ec.europa.eu/mergers/cases_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Merger notifications and clearance decisions.
+  categories: *id003
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-antitrust-cases
+  name: EU antitrust and cartels cases
+  url: https://competition-policy.ec.europa.eu/antitrust-and-cartels/cases_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Antitrust investigations, decisions and inspections.
+  categories: *id003
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-state-aid-register
+  name: State Aid Register
+  url: https://competition-cases.ec.europa.eu/search?caseInstrument=SA
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: State aid schemes for energy, investment, industry and agriculture.
+  categories: *id003
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ecn-ncas
+  name: European Competition Network - national competition authorities
+  url: https://competition-policy.ec.europa.eu/antitrust-and-cartels/european-competition-network/national-competition-authorities_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Official directory of national competition authorities.
+  categories: *id003
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: efta-surv-competition
+  name: EFTA Surveillance Authority - competition
+  url: https://www.eftasurv.int/internal-market/competition
+  type: regulator
+  country: EEA
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EFTA antitrust and merger cases in the EEA.
+  categories: *id003
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dg-just-consumer
+  name: DG JUST - Consumer policy
+  url: https://commission.europa.eu/strategy-and-policy/policies/consumers_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Consumer law, enforcement, green claims and product information.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cpc-network
+  name: Consumer Protection Cooperation Network
+  url: https://commission.europa.eu/live-work-travel-eu/consumer-rights-and-complaints/enforcement-consumer-protection/consumer-protection-cooperation-network_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Coordinated consumer enforcement actions and authorities.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: safety-gate-alerts
+  name: Safety Gate - weekly alerts
+  url: https://ec.europa.eu/safety-gate-alerts/screen/webReport
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Non-food product alerts and recalls, including coffee machines and appliances.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: safety-gate-portal
+  name: Safety Gate portal
+  url: https://ec.europa.eu/safety-gate/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Product safety news, reports, alerts and GPSR implementation.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ecc-net
+  name: European Consumer Centres Network
+  url: https://www.eccnet.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Cross-border consumer complaints, e-commerce issues and trends.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-food-safety
+  name: Food Safety - European Commission
+  url: https://food.ec.europa.eu/food-safety_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: RASFF, food fraud, hygiene, contaminants and labelling policy.
+  categories:
+  - consumers_marketing_competition
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: rasff-window
+  name: RASFF Window
+  url: https://webgate.ec.europa.eu/rasff-window/screen/search
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food and feed alerts on coffee, tea, contaminants and food-contact packaging.
+  categories:
+  - consumers_marketing_competition
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: acn-incidents
+  name: Alert and Cooperation Network incidents
+  url: https://food.ec.europa.eu/food-safety/acn/acn-incidents_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Official food incident reports and cooperation actions.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: acn-members
+  name: ACN members - national food authorities
+  url: https://food.ec.europa.eu/food-safety/acn/acn-members_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Directory of EU/EEA national food safety authorities.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: agri-food-fraud-network
+  name: EU Agri-Food Fraud Network
+  url: https://food.ec.europa.eu/safety/agri-food-fraud_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food fraud suspicions, coordinated actions and reports.
+  categories:
+  - consumers_marketing_competition
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: food-feed-portal
+  name: Food and Feed Information Portal
+  url: https://food.ec.europa.eu/food-safety/chemical-safety/food-and-feed-information-portal-database_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Combined databases for food and feed regulation.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: efsa
+  name: EFSA
+  url: https://www.efsa.europa.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Scientific opinions on contaminants, pesticides, novel foods and food-contact materials.
+  categories:
+  - consumers_marketing_competition
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: efsa-journal
+  name: EFSA Journal
+  url: https://efsa.onlinelibrary.wiley.com/journal/18314732
+  type: academic
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Open-access scientific opinions and risk assessments.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: efsa-open-data
+  name: EFSA Open Data
+  url: https://www.efsa.europa.eu/en/data-report
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety datasets, reports and monitoring data.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-pesticides-db
+  name: EU Pesticides Database
+  url: https://food.ec.europa.eu/plants/pesticides/eu-pesticides-database_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Maximum residue levels and active substances relevant to coffee and tea.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-food-additives-db
+  name: EU Food Additives Database
+  url: https://food.ec.europa.eu/safety/food-improvement-agents/additives/database_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Authorised food additives and conditions of use.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-novel-food-catalogue
+  name: EU Novel Food Catalogue
+  url: https://food.ec.europa.eu/safety/novel-food/novel-food-status-catalogue_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Status of new ingredients and products, including coffee alternatives.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-food-contact-materials
+  name: Food contact materials - European Commission
+  url: https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'FCM rules: plastics, migration, BPA and ceramics affecting packaging and capsules.'
+  categories:
+  - supply_chain
+  - sustainability
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: jrc-food-fraud
+  name: JRC Knowledge Centre for Food Fraud and Quality
+  url: https://knowledge4policy.ec.europa.eu/food-fraud-quality_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food fraud detection methods, reports and authenticity research.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-health-claims-register
+  name: EU Register of nutrition and health claims
+  url: https://ec.europa.eu/food/food-feed-portal/screen/health-claims/eu-register
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Authorised and rejected nutrition and health claims for marketing compliance.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dg-environment
+  name: DG Environment
+  url: https://environment.ec.europa.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Circular economy, waste, pollution, nature and industrial emissions policy.
+  categories:
+  - sustainability
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-packaging-waste
+  name: EU packaging waste / PPWR topic page
+  url: https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: PPWR implementation, guidance and competent authorities.
+  categories:
+  - sustainability
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ppwr-implementation
+  name: PPWR implementation page
+  url: https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste/packaging-and-packaging-waste-regulation_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: PPWR secondary acts, FAQs and implementation guidance.
+  categories:
+  - sustainability
+  - legislation
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: echa-ppwr
+  name: ECHA - PPWR
+  url: https://echa.europa.eu/ppwr
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: PFAS, substances of concern and recyclability tasks under the PPWR.
+  categories: &id004
+  - sustainability
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: echa
+  name: ECHA
+  url: https://echa.europa.eu/
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: REACH, CLP, SVHC, restrictions and consultations affecting packaging and equipment.
+  categories:
+  - sustainability
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: echa-news
+  name: ECHA - News
+  url: https://echa.europa.eu/news-and-events/news-alerts
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Chemical regulatory updates and consultations.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: echa-candidate-list
+  name: ECHA Candidate List
+  url: https://echa.europa.eu/candidate-list-table
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: SVHC list relevant to packaging and equipment materials.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: echa-restriction-intentions
+  name: ECHA Registry of restriction intentions
+  url: https://echa.europa.eu/registry-of-restriction-intentions
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: PFAS and other restriction dossiers in progress.
+  categories:
+  - sustainability
+  - draft_legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: echa-helpdesks
+  name: ECHA national helpdesks
+  url: https://echa.europa.eu/support/helpdesks
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National REACH/CLP/BPR contact points.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eea
+  name: European Environment Agency
+  url: https://www.eea.europa.eu/en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Climate, waste, water, air and circularity data and reports.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eea-datahub
+  name: EEA data and maps
+  url: https://www.eea.europa.eu/en/datahub
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Environmental datasets and indicators.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: industrial-emissions-portal
+  name: Industrial Emissions Portal
+  url: https://industry.eea.europa.eu/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Facility-level emissions and transfers, including factories in the value chain.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: jrc-bat-bref
+  name: JRC BAT reference documents
+  url: https://eippcb.jrc.ec.europa.eu/reference
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: BREF documents (food, drink, milk) on best available techniques and emissions.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-ecolabel
+  name: EU Ecolabel
+  url: https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Ecolabel criteria, decisions and green marketing rules.
+  categories:
+  - sustainability
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: emas
+  name: EMAS
+  url: https://green-business.ec.europa.eu/eco-management-and-audit-scheme-emas_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EMAS registrations, guidance and environmental performance.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: circular-economy-platform
+  name: European Circular Economy Stakeholder Platform
+  url: https://circulareconomy.europa.eu/platform/en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Circular economy news, practices, policy and funding.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eudr
+  name: EU Deforestation Regulation
+  url: https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EUDR coffee traceability, due diligence and implementation.
+  categories:
+  - supply_chain
+  - sustainability
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eudr-information-system
+  name: EUDR Information System - public information
+  url: https://green-business.ec.europa.eu/deforestation-regulation-implementation/eudr-information-system_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EUDR system notices, guidance and training material.
+  categories:
+  - supply_chain
+  - sustainability
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: csrd
+  name: EU corporate sustainability reporting (CSRD)
+  url: https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: CSRD reporting law, delegated acts and simplification proposals.
+  categories:
+  - sustainability
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: efrag-sustainability
+  name: EFRAG - Sustainability Reporting
+  url: https://www.efrag.org/en/sustainability-reporting
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: ESRS standards, implementation guidance and consultations.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: esma-sustainable-finance
+  name: ESMA - Sustainable finance
+  url: https://www.esma.europa.eu/esmas-activities/sustainable-finance
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Sustainability disclosures, greenwashing and reporting enforcement.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-taxonomy-navigator
+  name: EU Taxonomy Navigator
+  url: https://ec.europa.eu/sustainable-finance-taxonomy/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Taxonomy criteria, disclosure obligations and compass tools.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: csddd
+  name: Corporate sustainability due diligence (CSDDD)
+  url: https://commission.europa.eu/business-economy-euro/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Due diligence duties on human rights and environment and their implementation.
+  categories:
+  - sustainability
+  - supply_chain
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: forced-labour-regulation
+  name: Forced Labour Regulation
+  url: https://single-market-economy.ec.europa.eu/single-market/goods/free-movement-sectors/forced-labour-products_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Forced labour product bans, guidance and database.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dg-climate-action
+  name: DG Climate Action
+  url: https://climate.ec.europa.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Climate targets, ETS, carbon pricing and adaptation policy.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-climate-law
+  name: EU Climate Law and policy
+  url: https://climate.ec.europa.eu/eu-action/european-climate-law_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Climate targets and their implementation.
+  categories:
+  - sustainability
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-climate-advisory-board
+  name: European Scientific Advisory Board on Climate Change
+  url: https://climate-advisory-board.europa.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Scientific climate advice, reports and identified policy gaps.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eurostat-environment
+  name: Eurostat - environment and energy
+  url: https://ec.europa.eu/eurostat/web/environment
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Waste, emissions, circularity and packaging statistics.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eurostat-circular-economy
+  name: Eurostat - circular economy
+  url: https://ec.europa.eu/eurostat/web/circular-economy
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Circular economy indicators and monitoring framework.
+  categories: *id004
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: access2markets
+  name: Access2Markets
+  url: https://trade.ec.europa.eu/access-to-markets/en/home
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Tariffs, import requirements, trade agreements and rules of origin for coffee trade.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: taric
+  name: TARIC Consultation
+  url: https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Tariff measures, CN codes and import controls.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-customs-taxation-news
+  name: EU Customs and Taxation news
+  url: https://taxation-customs.ec.europa.eu/news_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Customs reforms, VAT, classification and enforcement.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-trade-policy-news
+  name: EU trade policy news
+  url: https://policy.trade.ec.europa.eu/news_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Trade agreements, barriers, enforcement and sanctions.
+  categories:
+  - supply_chain
+  - eu_communications
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: tron-trade-defence
+  name: Trade Defence Instruments (TRON)
+  url: https://tron.trade.ec.europa.eu/investigations/search
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Anti-dumping, anti-subsidy and safeguard investigations.
+  categories:
+  - supply_chain
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dg-agri
+  name: DG AGRI
+  url: https://agriculture.ec.europa.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: CAP, agri-food markets and sustainability policy.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: agridata-portal
+  name: Agri-food data portal
+  url: https://agridata.ec.europa.eu/extensions/DataPortal/home.html
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Agri-food trade, prices, production data and dashboards.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-agrifood-trade
+  name: EU Agri-food trade analysis
+  url: https://agriculture.ec.europa.eu/international/agricultural-trade/trade-and-international-policy-analysis_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Agri-food trade reports and statistics.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eurostat
+  name: Eurostat
+  url: https://ec.europa.eu/eurostat/
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Inflation, retail, labour, trade, production and waste statistics.
+  categories:
+  - supply_chain
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eurostat-databrowser
+  name: Eurostat Data Browser
+  url: https://ec.europa.eu/eurostat/databrowser/
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Statistical datasets and time series.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ecb-data-portal
+  name: ECB Data Portal
+  url: https://data.ecb.europa.eu/
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: FX, inflation, interest rates and credit conditions.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-economic-forecasts
+  name: European Commission Economic Forecasts
+  url: https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/economic-forecasts_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Growth, inflation and country outlooks.
+  categories:
+  - eu_communications
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ela
+  name: European Labour Authority
+  url: https://www.ela.europa.eu/en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Cross-border labour issues, enforcement and guidance.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-osha
+  name: EU-OSHA
+  url: https://osha.europa.eu/en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Workplace risks: machinery, heat and chemicals relevant to production sites.'
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eurofound
+  name: Eurofound
+  url: https://www.eurofound.europa.eu/en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Wages, labour markets, restructuring and working conditions research.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: european-restructuring-monitor
+  name: European Restructuring Monitor
+  url: https://apps.eurofound.europa.eu/restructuring-events
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Announced job gains/losses and restructurings, including competitors and suppliers.
+  categories:
+  - competitors_direct
+  - competitors_adjacent
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ted
+  name: TED - Tenders Electronic Daily
+  url: https://ted.europa.eu/
+  type: procurement
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU-wide tenders for coffee, vending, catering, machines and services.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-funding-tenders
+  name: EU Funding & Tenders Portal
+  url: https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home
+  type: procurement
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU calls, grants, procurements and projects.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-procurement-country-info
+  name: Public procurement country information
+  url: https://single-market-economy.ec.europa.eu/single-market/public-procurement/country-reports-and-information-eu-countries_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Links to national procurement portals and country reports.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: euipo
+  name: EUIPO
+  url: https://www.euipo.europa.eu/
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU trademarks, designs, decisions and news.
+  categories:
+  - competitors_direct
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: euipo-esearch
+  name: EUIPO eSearch plus
+  url: https://euipo.europa.eu/eSearch/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU trademark and design register search.
+  categories:
+  - competitors_direct
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: tmview
+  name: TMview
+  url: https://www.tmdn.org/tmview/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National and EU trademark search.
+  categories:
+  - competitors_direct
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: designview
+  name: DesignView
+  url: https://www.tmdn.org/tmdsview-web/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Design registration search.
+  categories:
+  - competitors_direct
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: euipo-boa-decisions
+  name: EUIPO Boards of Appeal decisions
+  url: https://euipo.europa.eu/eSearchCLW/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Case law on trademarks and designs.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: epo-espacenet
+  name: EPO Espacenet
+  url: https://worldwide.espacenet.com/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Patents on coffee machines, capsules, packaging and processes.
+  categories:
+  - competitors_direct
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: epo-news
+  name: European Patent Office news
+  url: https://www.epo.org/en/news-events
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Patent trends and decisions.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-harmonised-standards
+  name: European Commission - harmonised standards
+  url: https://single-market-economy.ec.europa.eu/single-market/european-standards/harmonised-standards_en
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Harmonised standards for product safety, machinery and electrical appliances.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: nando
+  name: NANDO notified bodies
+  url: https://webgate.ec.europa.eu/single-market-compliance-space/notified-bodies
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Notified bodies, applicable legislation and scope for product conformity.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: edpb
+  name: EDPB
+  url: https://www.edpb.europa.eu/
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: GDPR guidelines, opinions, binding decisions and enforcement.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: edpb-national-dpas
+  name: EDPB - national DPAs directory
+  url: https://www.edpb.europa.eu/contact/contact-dpas_en
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Directory of EEA data protection authorities.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: edps
+  name: EDPS
+  url: https://www.edps.europa.eu/
+  type: regulator
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection opinions, technology monitoring and enforcement.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ec-ai-office
+  name: European Commission AI Office
+  url: https://digital-strategy.ec.europa.eu/en/policies/ai-office
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: AI Act implementation, codes of practice and guidance.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ai-act-framework
+  name: AI Act regulatory framework
+  url: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: AI Act timeline, delegated acts and guidance.
+  categories:
+  - tech_data_ai
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: enisa
+  name: ENISA
+  url: https://www.enisa.europa.eu/
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Cybersecurity threats, guidance, incidents and supply chain security.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: nis2-policy
+  name: NIS2 Directive policy page
+  url: https://digital-strategy.ec.europa.eu/en/policies/nis2-directive
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: NIS2 implementation, national authorities and guidance.
+  categories:
+  - tech_data_ai
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cyber-resilience-act
+  name: Cyber Resilience Act
+  url: https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Obligations for connected machines and software.
+  categories:
+  - tech_data_ai
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dga-authorities
+  name: Data Governance Act - national competent authorities
+  url: https://digital-strategy.ec.europa.eu/en/library/national-competent-bodies-and-authorities-under-data-governance-act
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National competent authorities under the Data Governance Act.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: data-europa
+  name: European data portal
+  url: https://data.europa.eu/
+  type: market_data
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU and national open datasets, APIs and catalogues.
+  categories:
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: bris
+  name: BRIS - Business Registers Interconnection
+  url: https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Company information across EU business registers.
+  categories:
+  - competitors_direct
+  - competitors_adjacent
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: eu-insolvency-registers
+  name: EU Insolvency Registers search
+  url: https://e-justice.europa.eu/eir_search_registers-web/
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Search of national insolvency registers.
+  categories:
+  - competitors_direct
+  - competitors_adjacent
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ecf
+  name: European Coffee Federation
+  url: https://www.ecf-coffee.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Coffee trade, food safety, EUDR, trade and sustainability positions.
+  categories:
+  - supply_chain
+  - legislation
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: ecf-news
+  name: ECF - News
+  url: https://www.ecf-coffee.org/news-events/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Coffee sector policy positions, events and news.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: ecf-members
+  name: ECF - Members
+  url: https://www.ecf-coffee.org/category/members/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Directory of coffee companies, traders, roasters and national associations.
+  categories:
+  - competitors_direct
+  - supply_chain
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: eva-vending
+  name: European Vending & Coffee Service Association
+  url: https://www.vending-europe.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Vending/OOH positions on PPWR, ecodesign, payments and food law.
+  categories:
+  - legislation
+  - competitors_adjacent
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: eva-newsroom
+  name: EVA - Newsroom
+  url: https://www.vending-europe.eu/newsroom/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Vending association position papers, regulatory updates and events.
+  categories:
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: fooddrinkeurope
+  name: FoodDrinkEurope
+  url: https://www.fooddrinkeurope.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food industry positions on food law, sustainability, trade and packaging.
+  categories:
+  - legislation
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: fooddrinkeurope-news
+  name: FoodDrinkEurope - News
+  url: https://www.fooddrinkeurope.eu/news/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food industry policy positions and regulatory news.
+  categories:
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: aim-brands
+  name: AIM - European Brands Association
+  url: https://www.aim.be/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Brand industry positions on consumer, digital, packaging, competition and IP topics.
+  categories:
+  - consumers_marketing_competition
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: eurocommerce
+  name: EuroCommerce
+  url: https://www.eurocommerce.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Retail positions on private label, food, consumer, digital and packaging rules.
+  categories:
+  - legislation
+  - competitors_adjacent
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: independent-retail-europe
+  name: Independent Retail Europe
+  url: https://www.independentretaileurope.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Retailer alliances, competition, sourcing and regulation.
+  categories:
+  - competitors_adjacent
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: hotrec
+  name: HOTREC
+  url: https://www.hotrec.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Hospitality positions on HoReCa, labour, packaging, digital and sustainability.
+  categories:
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: ecommerce-europe
+  name: Ecommerce Europe
+  url: https://ecommerce-europe.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: E-commerce positions on D2C, consumer law, payments and packaging.
+  categories:
+  - consumers_marketing_competition
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: applia
+  name: APPLiA Europe
+  url: https://www.applia-europe.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Home appliance industry positions on ecodesign, energy, product safety, repair and cyber.
+  categories:
+  - legislation
+  - competitors_adjacent
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: orgalim
+  name: Orgalim
+  url: https://orgalim.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Technology industries positions on machinery, product law, digital and sustainability.
+  categories:
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: cen-cenelec-news
+  name: CEN-CENELEC News
+  url: https://www.cencenelec.eu/news/
+  type: other
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Standardisation news on machinery, packaging and sustainability.
+  categories:
+  - legislation
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: europen
+  name: EUROPEN
+  url: https://www.europen-packaging.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Packaging value chain positions on PPWR, EPR and packaging policy.
+  categories:
+  - sustainability
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: packaging-europe
+  name: Packaging Europe
+  url: https://packagingeurope.com/
+  type: trade_press
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Packaging innovation, PPWR, materials and recycling coverage.
+  categories:
+  - sustainability
+  - press
+  trust_tier: established_press
+  status: active
+  origin: pdf_inventar
+- id: cepi
+  name: CEPI
+  url: https://www.cepi.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Paper industry positions on paper packaging, recycling and energy.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: feve
+  name: FEVE
+  url: https://feve.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Glass packaging positions on reuse, recycling and policy.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: metal-packaging-europe
+  name: Metal Packaging Europe
+  url: https://metalpackagingeurope.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Metal packaging positions on recycling and PPWR.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: flexible-packaging-europe
+  name: Flexible Packaging Europe
+  url: https://www.flexpack-europe.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Flexible packaging positions on materials, recycling, PPWR and food packaging.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: plasticseurope
+  name: PlasticsEurope
+  url: https://plasticseurope.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Plastics policy, circularity, chemicals and industry data.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: recyclass
+  name: RecyClass
+  url: https://recyclass.eu/
+  type: other
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Design-for-recycling protocols and certification affecting packaging.
+  categories:
+  - sustainability
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: eupc
+  name: EuPC - European Plastics Converters
+  url: https://eupc.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Plastics converters positions on packaging, recyclability and PPWR.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: european-bioplastics
+  name: European Bioplastics
+  url: https://www.european-bioplastics.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Compostability and bio-based packaging materials positions.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: expra
+  name: EXPRA
+  url: https://expra.eu/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Packaging EPR systems and policy across member states.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: pro-europe
+  name: PRO Europe
+  url: https://www.pro-e.org/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Green Dot producer responsibility systems and packaging.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: reloop
+  name: Reloop Platform
+  url: https://www.reloopplatform.org/
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Deposit return, reuse and packaging waste advocacy.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: zero-waste-europe
+  name: Zero Waste Europe
+  url: https://zerowasteeurope.eu/
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Packaging, reuse and waste policy analysis from an environmental NGO.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: ecos
+  name: ECOS
+  url: https://ecostandard.org/
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: NGO positions on standards, ecodesign, product policy and green claims.
+  categories:
+  - sustainability
+  - consumers_marketing_competition
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: beuc
+  name: BEUC
+  url: https://www.beuc.eu/
+  type: consumer_org
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Consumer positions on consumer law, green claims, food, digital and product safety.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: anec
+  name: ANEC
+  url: https://www.anec.eu/
+  type: consumer_org
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Consumer voice in standardisation: product safety, standards and sustainability.'
+  categories:
+  - consumers_marketing_competition
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: clientearth
+  name: ClientEarth Europe
+  url: https://www.clientearth.org/europe/
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Climate litigation, green claims, deforestation and corporate duties.
+  categories:
+  - case_law_investigations
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: transport-environment
+  name: Transport & Environment
+  url: https://www.transportenvironment.org/
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Freight, logistics, fuels and emissions advocacy.
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: etuc
+  name: European Trade Union Confederation
+  url: https://www.etuc.org/
+  type: union
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Labour policy, wages and restructuring positions.
+  categories:
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: effat
+  name: EFFAT
+  url: https://effat.org/
+  type: union
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Food sector union: workers, restructuring and labour rights.'
+  categories:
+  - legislation
+  - supply_chain
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: eufic
+  name: European Food Information Council
+  url: https://www.eufic.org/en
+  type: academic
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Consumer behaviour, food science and labelling communication.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: foodnavigator-europe
+  name: FoodNavigator Europe
+  url: https://www.foodnavigator.com/Regions/Europe/
+  type: trade_press
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: FMCG, coffee, food law, supply chain and packaging trade coverage.
+  categories:
+  - press
+  - supply_chain
+  trust_tier: established_press
+  status: review
+  origin: pdf_inventar
+- id: foodnavigator-supply-chain
+  name: FoodNavigator - supply chain
+  url: https://www.foodnavigator.com/News/Supply-chain/Europe/
+  type: trade_press
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Raw materials, EUDR, logistics and climate supply-chain coverage.
+  categories:
+  - press
+  - supply_chain
+  trust_tier: established_press
+  status: review
+  origin: pdf_inventar
+- id: esm-magazine
+  name: European Supermarket Magazine
+  url: https://www.esmmagazine.com/
+  type: trade_press
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Retailers, private label, pricing and FMCG coverage.
+  categories:
+  - press
+  - competitors_adjacent
+  trust_tier: established_press
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: retaildetail-eu
+  name: RetailDetail EU
+  url: https://www.retaildetail.eu/
+  type: trade_press
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Retail strategy, pricing, stores and e-commerce coverage.
+  categories:
+  - press
+  - competitors_adjacent
+  trust_tier: established_press
+  status: review
+  origin: pdf_inventar+pdf_catalog
+- id: euractiv
+  name: Euractiv
+  url: https://www.euractiv.com/
+  type: press
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU legislation, agriculture, environment, competition and digital policy coverage.
+  categories:
+  - press
+  - eu_communications
+  trust_tier: established_press
+  status: active
+  origin: pdf_inventar
+- id: eu-law-analysis
+  name: EU Law Analysis blog
+  url: https://eulawanalysis.blogspot.com/
+  type: academic
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Academic analysis of EU case law and legislation.
+  categories:
+  - case_law_investigations
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: european-law-blog
+  name: European Law Blog
+  url: https://europeanlawblog.eu/
+  type: academic
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Academic commentary on EU law and CJEU case law.
+  categories:
+  - case_law_investigations
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: kluwer-competition-blog
+  name: Kluwer Competition Law Blog
+  url: https://competitionlawblog.kluwercompetitionlaw.com/
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Commentary on competition cases, mergers and national enforcement.
+  categories:
+  - case_law_investigations
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: freshfields-knowledge
+  name: Freshfields - Knowledge
+  url: https://www.freshfields.com/en-gb/our-thinking/knowledge/
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Law firm insights on competition, consumer, ESG, M&A and litigation.
+  categories:
+  - case_law_investigations
+  - legislation
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: linklaters-insights
+  name: Linklaters - Insights
+  url: https://www.linklaters.com/en/insights
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Law firm insights on ESG, competition, digital, consumer and transactions.
+  categories:
+  - case_law_investigations
+  - legislation
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: aoshearman-insights
+  name: A&O Shearman - Insights
+  url: https://www.aoshearman.com/en/insights
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Law firm insights on EU regulatory, competition, ESG and digital topics.
+  categories:
+  - case_law_investigations
+  - legislation
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: whitecase-insights
+  name: White & Case - Insights
+  url: https://www.whitecase.com/insight-our-thinking
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Law firm insights on competition, trade, ESG, M&A and disputes.
+  categories:
+  - case_law_investigations
+  - legislation
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: cms-law-now
+  name: CMS - Law-Now
+  url: https://cms-lawnow.com/
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU and national regulatory updates from CMS.
+  categories:
+  - legislation
+  - case_law_investigations
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: twobirds-insights
+  name: Bird & Bird - Insights
+  url: https://www.twobirds.com/en/insights
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Law firm insights on food, consumer, IP, data, AI and digital law.
+  categories:
+  - legislation
+  - tech_data_ai
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: hoganlovells-insights
+  name: Hogan Lovells - Insights
+  url: https://www.hoganlovells.com/en/publications
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Law firm insights on food, consumer, ESG, competition and product law.
+  categories:
+  - legislation
+  - case_law_investigations
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: dlapiper-insights
+  name: DLA Piper - Insights
+  url: https://www.dlapiper.com/en/insights
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Law firm insights on EU regulatory, data, AI, ESG and competition topics.
+  categories:
+  - legislation
+  - tech_data_ai
+  trust_tier: professional
+  status: active
+  origin: pdf_inventar
+- id: bakermckenzie-insightplus
+  name: Baker McKenzie - InsightPlus
+  url: https://insightplus.bakermckenzie.com/
+  type: law_firm_blog
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Cross-border regulatory and legal updates.
+  categories:
+  - legislation
+  trust_tier: professional
+  status: review
+  origin: pdf_inventar
+- id: at-legislation
+  name: Austria - RIS Rechtsinformationssystem
+  url: https://www.ris.bka.gv.at/
+  type: official_register
+  country: AT
+  language: &id005
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: &id006
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: at-competition
+  name: Austria - Bundeswettbewerbsbehorde (BWB)
+  url: https://www.bwb.gv.at/
+  type: national_authority
+  country: AT
+  language: *id005
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: &id008
+  - case_law_investigations
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: at-food-safety
+  name: Austria - AGES
+  url: https://www.ages.at/
+  type: national_authority
+  country: AT
+  language: *id005
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: &id009
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: at-data-protection
+  name: Austria - Datenschutzbehorde
+  url: https://www.dsb.gv.at/
+  type: regulator
+  country: AT
+  language: *id005
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: &id010
+  - tech_data_ai
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: at-environment
+  name: Austria - Umweltbundesamt
+  url: https://www.umweltbundesamt.at/
+  type: national_authority
+  country: AT
+  language: *id005
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: &id011
+  - sustainability
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: at-procurement
+  name: Austria - USP public procurement information
+  url: https://www.usp.gv.at/
+  type: procurement
+  country: AT
+  language: *id005
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: &id012
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: be-legislation
+  name: Belgium - Belgian Official Gazette / Justel
+  url: https://www.ejustice.just.fgov.be/
+  type: official_register
+  country: BE
+  language: &id007
+  - nl
+  - fr
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: be-competition
+  name: Belgium - Belgian Competition Authority
+  url: https://www.belgiancompetition.be/
+  type: national_authority
+  country: BE
+  language: *id007
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: be-food-safety
+  name: Belgium - FAVV / AFSCA
+  url: https://www.favv-afsca.be/
+  type: national_authority
+  country: BE
+  language: *id007
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: be-data-protection
+  name: Belgium - Data Protection Authority (APD/GBA)
+  url: https://www.dataprotectionauthority.be/
+  type: regulator
+  country: BE
+  language: *id007
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: be-environment
+  name: Belgium - FPS Health - Environment
+  url: https://www.health.belgium.be/
+  type: national_authority
+  country: BE
+  language: *id007
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: be-procurement
+  name: Belgium - Belgian e-Procurement
+  url: https://www.publicprocurement.be/
+  type: procurement
+  country: BE
+  language: *id007
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: bg-legislation
+  name: Bulgaria - State Gazette
+  url: https://dv.parliament.bg/
+  type: official_register
+  country: BG
+  language: &id013
+  - bg
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: bg-competition
+  name: Bulgaria - Commission for Protection of Competition
+  url: https://www.cpc.bg/
+  type: national_authority
+  country: BG
+  language: *id013
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: bg-food-safety
+  name: Bulgaria - Bulgarian Food Safety Agency
+  url: https://bfsa.egov.bg/
+  type: national_authority
+  country: BG
+  language: *id013
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: bg-data-protection
+  name: Bulgaria - Commission for Personal Data Protection
+  url: https://www.cpdp.bg/
+  type: regulator
+  country: BG
+  language: *id013
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: bg-environment
+  name: Bulgaria - Ministry of Environment and Water
+  url: https://www.moew.government.bg/
+  type: national_authority
+  country: BG
+  language: *id013
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: bg-procurement
+  name: Bulgaria - Public Procurement Agency / CAIS EOP
+  url: https://app.eop.bg/
+  type: procurement
+  country: BG
+  language: *id013
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hr-legislation
+  name: Croatia - Narodne novine
+  url: https://narodne-novine.nn.hr/
+  type: official_register
+  country: HR
+  language: &id014
+  - hr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hr-competition
+  name: Croatia - Croatian Competition Agency (AZTN)
+  url: https://www.aztn.hr/
+  type: national_authority
+  country: HR
+  language: *id014
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hr-food-safety
+  name: Croatia - State Inspectorate
+  url: https://dirh.gov.hr/
+  type: national_authority
+  country: HR
+  language: *id014
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hr-data-protection
+  name: Croatia - AZOP
+  url: https://azop.hr/
+  type: regulator
+  country: HR
+  language: *id014
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hr-environment
+  name: Croatia - Ministry of Environmental Protection
+  url: https://mingo.gov.hr/
+  type: national_authority
+  country: HR
+  language: *id014
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hr-procurement
+  name: Croatia - EOJN
+  url: https://eojn.hr/
+  type: procurement
+  country: HR
+  language: *id014
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cy-legislation
+  name: Cyprus - CyLaw legislation
+  url: https://www.cylaw.org/
+  type: official_register
+  country: CY
+  language: &id015
+  - el
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cy-competition
+  name: Cyprus - Commission for Protection of Competition
+  url: https://www.competition.gov.cy/
+  type: national_authority
+  country: CY
+  language: *id015
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cy-food-safety
+  name: Cyprus - Ministry of Health - Food Safety
+  url: https://www.moh.gov.cy/
+  type: national_authority
+  country: CY
+  language: *id015
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cy-data-protection
+  name: Cyprus - Commissioner for Personal Data Protection
+  url: https://www.dataprotection.gov.cy/
+  type: regulator
+  country: CY
+  language: *id015
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cy-environment
+  name: Cyprus - Department of Environment
+  url: https://environment.gov.cy/
+  type: national_authority
+  country: CY
+  language: *id015
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cy-procurement
+  name: Cyprus - eProcurement
+  url: https://www.eprocurement.gov.cy/
+  type: procurement
+  country: CY
+  language: *id015
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cz-legislation
+  name: Czechia - e-Sbirka
+  url: https://e-sbirka.cz/
+  type: official_register
+  country: CZ
+  language: &id016
+  - cs
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cz-competition
+  name: Czechia - Office for the Protection of Competition (UOHS)
+  url: https://uohs.gov.cz/
+  type: national_authority
+  country: CZ
+  language: *id016
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cz-food-safety
+  name: Czechia - Agriculture and Food Inspection Authority (SZPI)
+  url: https://www.szpi.gov.cz/
+  type: national_authority
+  country: CZ
+  language: *id016
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cz-data-protection
+  name: Czechia - Office for Personal Data Protection (UOOU)
+  url: https://uoou.gov.cz/
+  type: regulator
+  country: CZ
+  language: *id016
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cz-environment
+  name: Czechia - CENIA
+  url: https://www.cenia.cz/
+  type: national_authority
+  country: CZ
+  language: *id016
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: cz-procurement
+  name: Czechia - National Electronic Tool (NEN)
+  url: https://nen.nipez.cz/
+  type: procurement
+  country: CZ
+  language: *id016
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dk-legislation
+  name: Denmark - Retsinformation
+  url: https://www.retsinformation.dk/
+  type: official_register
+  country: DK
+  language: &id017
+  - da
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dk-competition
+  name: Denmark - Competition and Consumer Authority (KFST)
+  url: https://www.kfst.dk/
+  type: national_authority
+  country: DK
+  language: *id017
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dk-food-safety
+  name: Denmark - Veterinary and Food Administration
+  url: https://foedevarestyrelsen.dk/
+  type: national_authority
+  country: DK
+  language: *id017
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dk-data-protection
+  name: Denmark - Datatilsynet
+  url: https://www.datatilsynet.dk/
+  type: regulator
+  country: DK
+  language: *id017
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dk-environment
+  name: Denmark - Environmental Protection Agency
+  url: https://mst.dk/
+  type: national_authority
+  country: DK
+  language: *id017
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: dk-procurement
+  name: Denmark - Udbud.dk
+  url: https://udbud.dk/
+  type: procurement
+  country: DK
+  language: *id017
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ee-legislation
+  name: Estonia - Riigi Teataja
+  url: https://www.riigiteataja.ee/
+  type: official_register
+  country: EE
+  language: &id018
+  - et
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ee-competition
+  name: Estonia - Competition Authority
+  url: https://www.konkurentsiamet.ee/
+  type: national_authority
+  country: EE
+  language: *id018
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ee-food-safety
+  name: Estonia - Agriculture and Food Board
+  url: https://pta.agri.ee/
+  type: national_authority
+  country: EE
+  language: *id018
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ee-data-protection
+  name: Estonia - Data Protection Inspectorate
+  url: https://www.aki.ee/
+  type: regulator
+  country: EE
+  language: *id018
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ee-environment
+  name: Estonia - Environmental Board
+  url: https://keskkonnaamet.ee/
+  type: national_authority
+  country: EE
+  language: *id018
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ee-procurement
+  name: Estonia - Public Procurement Register
+  url: https://riigihanked.riik.ee/
+  type: procurement
+  country: EE
+  language: *id018
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fi-legislation
+  name: Finland - Finlex
+  url: https://www.finlex.fi/
+  type: official_register
+  country: FI
+  language: &id019
+  - fi
+  - sv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fi-competition
+  name: Finland - Competition and Consumer Authority (KKV)
+  url: https://www.kkv.fi/
+  type: national_authority
+  country: FI
+  language: *id019
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fi-food-safety
+  name: Finland - Finnish Food Authority
+  url: https://www.ruokavirasto.fi/
+  type: national_authority
+  country: FI
+  language: *id019
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fi-data-protection
+  name: Finland - Data Protection Ombudsman
+  url: https://tietosuoja.fi/
+  type: regulator
+  country: FI
+  language: *id019
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fi-environment
+  name: Finland - Finnish Environment Institute (SYKE)
+  url: https://www.syke.fi/
+  type: national_authority
+  country: FI
+  language: *id019
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fi-procurement
+  name: Finland - HILMA procurement notices
+  url: https://www.hankintailmoitukset.fi/
+  type: procurement
+  country: FI
+  language: *id019
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fr-legislation
+  name: France - Legifrance
+  url: https://www.legifrance.gouv.fr/
+  type: official_register
+  country: FR
+  language: &id020
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: fr-competition
+  name: France - Autorite de la concurrence
+  url: https://www.autoritedelaconcurrence.fr/
+  type: national_authority
+  country: FR
+  language: *id020
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: fr-food-safety
+  name: France - DGCCRF
+  url: https://www.economie.gouv.fr/dgccrf
+  type: national_authority
+  country: FR
+  language: *id020
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fr-data-protection
+  name: France - CNIL
+  url: https://www.cnil.fr/
+  type: regulator
+  country: FR
+  language: *id020
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fr-environment
+  name: France - Ministry for Ecological Transition
+  url: https://www.ecologie.gouv.fr/
+  type: national_authority
+  country: FR
+  language: *id020
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: fr-procurement
+  name: France - BOAMP
+  url: https://www.boamp.fr/
+  type: procurement
+  country: FR
+  language: *id020
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: de-legislation
+  name: Germany - Gesetze im Internet
+  url: https://www.gesetze-im-internet.de/
+  type: official_register
+  country: DE
+  language: &id021
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: de-competition
+  name: Germany - Bundeskartellamt
+  url: https://www.bundeskartellamt.de/
+  type: national_authority
+  country: DE
+  language: *id021
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: de-food-safety
+  name: Germany - BVL
+  url: https://www.bvl.bund.de/
+  type: national_authority
+  country: DE
+  language: *id021
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: de-data-protection
+  name: Germany - BfDI and state authority directory
+  url: https://www.bfdi.bund.de/
+  type: regulator
+  country: DE
+  language: *id021
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: de-environment
+  name: Germany - Umweltbundesamt
+  url: https://www.umweltbundesamt.de/
+  type: national_authority
+  country: DE
+  language: *id021
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: de-procurement
+  name: Germany - Bund.de procurement search
+  url: https://www.service.bund.de/Content/DE/Ausschreibungen/Suche/Formular.html
+  type: procurement
+  country: DE
+  language: *id021
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: gr-legislation
+  name: Greece - National Printing Office
+  url: https://www.et.gr/
+  type: official_register
+  country: GR
+  language: &id022
+  - el
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: gr-competition
+  name: Greece - Hellenic Competition Commission
+  url: https://www.epant.gr/
+  type: national_authority
+  country: GR
+  language: *id022
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: gr-food-safety
+  name: Greece - Hellenic Food Authority (EFET)
+  url: https://www.efet.gr/
+  type: national_authority
+  country: GR
+  language: *id022
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: gr-data-protection
+  name: Greece - Hellenic Data Protection Authority
+  url: https://www.dpa.gr/
+  type: regulator
+  country: GR
+  language: *id022
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: gr-environment
+  name: Greece - Ministry of Environment and Energy
+  url: https://ypen.gov.gr/
+  type: national_authority
+  country: GR
+  language: *id022
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: gr-procurement
+  name: Greece - Promitheus e-procurement
+  url: https://www.eprocurement.gov.gr/
+  type: procurement
+  country: GR
+  language: *id022
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hu-legislation
+  name: Hungary - National Legislation Database (NJT)
+  url: https://njt.hu/
+  type: official_register
+  country: HU
+  language: &id023
+  - hu
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hu-competition
+  name: Hungary - Hungarian Competition Authority (GVH)
+  url: https://www.gvh.hu/
+  type: national_authority
+  country: HU
+  language: *id023
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hu-food-safety
+  name: Hungary - National Food Chain Safety Office (NEBIH)
+  url: https://portal.nebih.gov.hu/
+  type: national_authority
+  country: HU
+  language: *id023
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hu-data-protection
+  name: Hungary - NAIH
+  url: https://www.naih.hu/
+  type: regulator
+  country: HU
+  language: *id023
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hu-environment
+  name: Hungary - Ministry of Energy / environment portal
+  url: https://kormany.hu/energiaugyi-miniszterium
+  type: national_authority
+  country: HU
+  language: *id023
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: hu-procurement
+  name: Hungary - Public Procurement Authority
+  url: https://www.kozbeszerzes.hu/
+  type: procurement
+  country: HU
+  language: *id023
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ie-legislation
+  name: Ireland - Irish Statute Book
+  url: https://www.irishstatutebook.ie/
+  type: official_register
+  country: IE
+  language: &id024
+  - en
+  - ga
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ie-competition
+  name: Ireland - CCPC
+  url: https://www.ccpc.ie/
+  type: national_authority
+  country: IE
+  language: *id024
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ie-food-safety
+  name: Ireland - Food Safety Authority of Ireland
+  url: https://www.fsai.ie/
+  type: national_authority
+  country: IE
+  language: *id024
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ie-data-protection
+  name: Ireland - Data Protection Commission
+  url: https://www.dataprotection.ie/
+  type: regulator
+  country: IE
+  language: *id024
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ie-environment
+  name: Ireland - Environmental Protection Agency
+  url: https://www.epa.ie/
+  type: national_authority
+  country: IE
+  language: *id024
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ie-procurement
+  name: Ireland - eTenders
+  url: https://www.etenders.gov.ie/
+  type: procurement
+  country: IE
+  language: *id024
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: it-legislation
+  name: Italy - Normattiva
+  url: https://www.normattiva.it/
+  type: official_register
+  country: IT
+  language: &id025
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: it-competition
+  name: Italy - AGCM
+  url: https://www.agcm.it/
+  type: national_authority
+  country: IT
+  language: *id025
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: it-food-safety
+  name: Italy - Ministry of Health - Food Safety
+  url: https://www.salute.gov.it/
+  type: national_authority
+  country: IT
+  language: *id025
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: it-data-protection
+  name: Italy - Garante Privacy
+  url: https://www.garanteprivacy.it/
+  type: regulator
+  country: IT
+  language: *id025
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: it-environment
+  name: Italy - Ministry of Environment and Energy Security (MASE)
+  url: https://www.mase.gov.it/
+  type: national_authority
+  country: IT
+  language: *id025
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: it-procurement
+  name: Italy - Acquisti in Rete PA
+  url: https://www.acquistinretepa.it/
+  type: procurement
+  country: IT
+  language: *id025
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lv-legislation
+  name: Latvia - Likumi.lv
+  url: https://likumi.lv/
+  type: official_register
+  country: LV
+  language: &id026
+  - lv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lv-competition
+  name: Latvia - Competition Council
+  url: https://www.kp.gov.lv/
+  type: national_authority
+  country: LV
+  language: *id026
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lv-food-safety
+  name: Latvia - Food and Veterinary Service
+  url: https://www.pvd.gov.lv/
+  type: national_authority
+  country: LV
+  language: *id026
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lv-data-protection
+  name: Latvia - Data State Inspectorate
+  url: https://www.dvi.gov.lv/
+  type: regulator
+  country: LV
+  language: *id026
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lv-environment
+  name: Latvia - State Environmental Service
+  url: https://www.vvd.gov.lv/
+  type: national_authority
+  country: LV
+  language: *id026
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lv-procurement
+  name: Latvia - Electronic Procurement System
+  url: https://www.eis.gov.lv/
+  type: procurement
+  country: LV
+  language: *id026
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lt-legislation
+  name: Lithuania - Seimas legal acts database
+  url: https://e-seimas.lrs.lt/
+  type: official_register
+  country: LT
+  language: &id027
+  - lt
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lt-competition
+  name: Lithuania - Competition Council
+  url: https://kt.gov.lt/
+  type: national_authority
+  country: LT
+  language: *id027
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lt-food-safety
+  name: Lithuania - State Food and Veterinary Service
+  url: https://vmvt.lrv.lt/
+  type: national_authority
+  country: LT
+  language: *id027
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lt-data-protection
+  name: Lithuania - State Data Protection Inspectorate
+  url: https://vdai.lrv.lt/
+  type: regulator
+  country: LT
+  language: *id027
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lt-environment
+  name: Lithuania - Environmental Protection Agency
+  url: https://aaa.lrv.lt/
+  type: national_authority
+  country: LT
+  language: *id027
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lt-procurement
+  name: Lithuania - Central Public Procurement Portal
+  url: https://cvpp.eviesiejipirkimai.lt/
+  type: procurement
+  country: LT
+  language: *id027
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lu-legislation
+  name: Luxembourg - Legilux
+  url: https://legilux.public.lu/
+  type: official_register
+  country: LU
+  language: &id028
+  - fr
+  - de
+  - lb
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lu-competition
+  name: Luxembourg - Competition Authority
+  url: https://concurrence.public.lu/
+  type: national_authority
+  country: LU
+  language: *id028
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lu-food-safety
+  name: Luxembourg - Food Safety Authority
+  url: https://securite-alimentaire.public.lu/
+  type: national_authority
+  country: LU
+  language: *id028
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lu-data-protection
+  name: Luxembourg - CNPD
+  url: https://cnpd.public.lu/
+  type: regulator
+  country: LU
+  language: *id028
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lu-environment
+  name: Luxembourg - Environment portal
+  url: https://environnement.public.lu/
+  type: national_authority
+  country: LU
+  language: *id028
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: lu-procurement
+  name: Luxembourg - Public Procurement Portal
+  url: https://marches.public.lu/
+  type: procurement
+  country: LU
+  language: *id028
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: mt-legislation
+  name: Malta - Legislation Malta
+  url: https://legislation.mt/
+  type: official_register
+  country: MT
+  language: &id029
+  - en
+  - mt
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: mt-competition
+  name: Malta - MCCAA
+  url: https://mccaa.org.mt/
+  type: national_authority
+  country: MT
+  language: *id029
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: mt-food-safety
+  name: Malta - Environmental Health Directorate
+  url: https://healthservices.gov.mt/en/environmental/Pages/Home-Page.aspx
+  type: national_authority
+  country: MT
+  language: *id029
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: mt-data-protection
+  name: Malta - IDPC
+  url: https://idpc.org.mt/
+  type: regulator
+  country: MT
+  language: *id029
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: mt-environment
+  name: Malta - Environment and Resources Authority
+  url: https://era.org.mt/
+  type: national_authority
+  country: MT
+  language: *id029
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: mt-procurement
+  name: Malta - ePPS
+  url: https://www.etenders.gov.mt/
+  type: procurement
+  country: MT
+  language: *id029
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: nl-legislation
+  name: Netherlands - Overheid.nl laws
+  url: https://wetten.overheid.nl/
+  type: official_register
+  country: NL
+  language: &id030
+  - nl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: nl-competition
+  name: Netherlands - Authority for Consumers and Markets (ACM)
+  url: https://www.acm.nl/
+  type: national_authority
+  country: NL
+  language: *id030
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: nl-food-safety
+  name: Netherlands - NVWA
+  url: https://www.nvwa.nl/
+  type: national_authority
+  country: NL
+  language: *id030
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: nl-data-protection
+  name: Netherlands - Autoriteit Persoonsgegevens
+  url: https://autoriteitpersoonsgegevens.nl/
+  type: regulator
+  country: NL
+  language: *id030
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: nl-environment
+  name: Netherlands - ILT environment and transport inspectorate
+  url: https://www.ilent.nl/
+  type: national_authority
+  country: NL
+  language: *id030
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: nl-procurement
+  name: Netherlands - TenderNed
+  url: https://www.tenderned.nl/
+  type: procurement
+  country: NL
+  language: *id030
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pl-legislation
+  name: Poland - ISAP
+  url: https://isap.sejm.gov.pl/
+  type: official_register
+  country: PL
+  language: &id031
+  - pl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pl-competition
+  name: Poland - UOKiK
+  url: https://uokik.gov.pl/
+  type: national_authority
+  country: PL
+  language: *id031
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pl-food-safety
+  name: Poland - Chief Sanitary Inspectorate (GIS)
+  url: https://www.gov.pl/web/gis
+  type: national_authority
+  country: PL
+  language: *id031
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pl-data-protection
+  name: Poland - UODO
+  url: https://uodo.gov.pl/
+  type: regulator
+  country: PL
+  language: *id031
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pl-environment
+  name: Poland - Ministry of Climate and Environment
+  url: https://www.gov.pl/web/climate
+  type: national_authority
+  country: PL
+  language: *id031
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pl-procurement
+  name: Poland - e-Zamowienia
+  url: https://ezamowienia.gov.pl/
+  type: procurement
+  country: PL
+  language: *id031
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pt-legislation
+  name: Portugal - Diario da Republica Eletronico
+  url: https://diariodarepublica.pt/
+  type: official_register
+  country: PT
+  language: &id032
+  - pt
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pt-competition
+  name: Portugal - Autoridade da Concorrencia
+  url: https://www.concorrencia.pt/
+  type: national_authority
+  country: PT
+  language: *id032
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pt-food-safety
+  name: Portugal - ASAE
+  url: https://www.asae.gov.pt/
+  type: national_authority
+  country: PT
+  language: *id032
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pt-data-protection
+  name: Portugal - CNPD
+  url: https://www.cnpd.pt/
+  type: regulator
+  country: PT
+  language: *id032
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pt-environment
+  name: Portugal - Portuguese Environment Agency (APA)
+  url: https://apambiente.pt/
+  type: national_authority
+  country: PT
+  language: *id032
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: pt-procurement
+  name: Portugal - BASE public contracts
+  url: https://www.base.gov.pt/
+  type: procurement
+  country: PT
+  language: *id032
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ro-legislation
+  name: Romania - Portal Legislativ
+  url: https://legislatie.just.ro/
+  type: official_register
+  country: RO
+  language: &id033
+  - ro
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ro-competition
+  name: Romania - Consiliul Concurentei
+  url: https://www.consiliulconcurentei.ro/
+  type: national_authority
+  country: RO
+  language: *id033
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: ro-food-safety
+  name: Romania - ANSVSA
+  url: https://www.ansvsa.ro/
+  type: national_authority
+  country: RO
+  language: *id033
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ro-data-protection
+  name: Romania - ANSPDCP
+  url: https://www.dataprotection.ro/
+  type: regulator
+  country: RO
+  language: *id033
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ro-environment
+  name: Romania - ANPM
+  url: https://www.anpm.ro/
+  type: national_authority
+  country: RO
+  language: *id033
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ro-procurement
+  name: Romania - SEAP / e-licitatie
+  url: https://www.e-licitatie.ro/
+  type: procurement
+  country: RO
+  language: *id033
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: sk-legislation
+  name: Slovakia - Slov-Lex
+  url: https://www.slov-lex.sk/
+  type: official_register
+  country: SK
+  language: &id034
+  - sk
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: sk-competition
+  name: Slovakia - Antimonopoly Office
+  url: https://www.antimon.gov.sk/
+  type: national_authority
+  country: SK
+  language: *id034
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: sk-food-safety
+  name: Slovakia - State Veterinary and Food Administration
+  url: https://svps.sk/
+  type: national_authority
+  country: SK
+  language: *id034
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: sk-data-protection
+  name: Slovakia - Office for Personal Data Protection
+  url: https://dataprotection.gov.sk/
+  type: regulator
+  country: SK
+  language: *id034
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: sk-environment
+  name: Slovakia - Ministry of Environment
+  url: https://www.minzp.sk/
+  type: national_authority
+  country: SK
+  language: *id034
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: sk-procurement
+  name: Slovakia - Public Procurement Office (UVO)
+  url: https://www.uvo.gov.sk/
+  type: procurement
+  country: SK
+  language: *id034
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: si-legislation
+  name: Slovenia - PISRS
+  url: https://pisrs.si/
+  type: official_register
+  country: SI
+  language: &id035
+  - sl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: si-competition
+  name: Slovenia - Competition Protection Agency
+  url: https://www.varstvo-konkurence.si/
+  type: national_authority
+  country: SI
+  language: *id035
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: si-food-safety
+  name: Slovenia - Food Safety Administration
+  url: https://www.gov.si/en/state-authorities/bodies-within-ministries/administration-for-food-safety-veterinary-sector-and-plant-protection/
+  type: national_authority
+  country: SI
+  language: *id035
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: si-data-protection
+  name: Slovenia - Information Commissioner
+  url: https://www.ip-rs.si/
+  type: regulator
+  country: SI
+  language: *id035
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: si-environment
+  name: Slovenia - Ministry of Environment, Climate and Energy
+  url: https://www.gov.si/en/state-authorities/ministries/ministry-of-the-environment-climate-and-energy/
+  type: national_authority
+  country: SI
+  language: *id035
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: si-procurement
+  name: Slovenia - e-JN public procurement
+  url: https://ejn.gov.si/
+  type: procurement
+  country: SI
+  language: *id035
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: es-legislation
+  name: Spain - BOE
+  url: https://www.boe.es/
+  type: official_register
+  country: ES
+  language: &id036
+  - es
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: es-competition
+  name: Spain - CNMC
+  url: https://www.cnmc.es/
+  type: national_authority
+  country: ES
+  language: *id036
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar+pdf_catalog
+- id: es-food-safety
+  name: Spain - AESAN
+  url: https://www.aesan.gob.es/
+  type: national_authority
+  country: ES
+  language: *id036
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: es-data-protection
+  name: Spain - AEPD
+  url: https://www.aepd.es/
+  type: regulator
+  country: ES
+  language: *id036
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: es-environment
+  name: Spain - MITECO
+  url: https://www.miteco.gob.es/
+  type: national_authority
+  country: ES
+  language: *id036
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: es-procurement
+  name: Spain - Public Sector Procurement Platform
+  url: https://contrataciondelestado.es/
+  type: procurement
+  country: ES
+  language: *id036
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: se-legislation
+  name: Sweden - Riksdagen laws and documents
+  url: https://www.riksdagen.se/sv/dokument-och-lagar/
+  type: official_register
+  country: SE
+  language: &id037
+  - sv
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: se-competition
+  name: Sweden - Swedish Competition Authority
+  url: https://www.konkurrensverket.se/
+  type: national_authority
+  country: SE
+  language: *id037
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: se-food-safety
+  name: Sweden - Swedish Food Agency
+  url: https://www.livsmedelsverket.se/
+  type: national_authority
+  country: SE
+  language: *id037
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: se-data-protection
+  name: Sweden - IMY
+  url: https://www.imy.se/
+  type: regulator
+  country: SE
+  language: *id037
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: se-environment
+  name: Sweden - Swedish EPA (Naturvardsverket)
+  url: https://www.naturvardsverket.se/
+  type: national_authority
+  country: SE
+  language: *id037
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: se-procurement
+  name: Sweden - Public Procurement Authority
+  url: https://www.upphandlingsmyndigheten.se/
+  type: procurement
+  country: SE
+  language: *id037
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: is-legislation
+  name: Iceland - Althingi laws
+  url: https://www.althingi.is/lagas/
+  type: official_register
+  country: IS
+  language: &id038
+  - is
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: is-competition
+  name: Iceland - Icelandic Competition Authority
+  url: https://www.samkeppni.is/
+  type: national_authority
+  country: IS
+  language: *id038
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: is-food-safety
+  name: Iceland - MAST
+  url: https://www.mast.is/
+  type: national_authority
+  country: IS
+  language: *id038
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: is-data-protection
+  name: Iceland - Data Protection Authority (Personuvernd)
+  url: https://www.personuvernd.is/
+  type: regulator
+  country: IS
+  language: *id038
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: is-environment
+  name: Iceland - Environment Agency of Iceland
+  url: https://ust.is/
+  type: national_authority
+  country: IS
+  language: *id038
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: is-procurement
+  name: Iceland - Public procurement portal
+  url: https://utbodsvefur.is/
+  type: procurement
+  country: IS
+  language: *id038
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: no-legislation
+  name: Norway - Lovdata open legislation
+  url: https://lovdata.no/
+  type: official_register
+  country: 'NO'
+  language: &id039
+  - 'no'
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: no-competition
+  name: Norway - Norwegian Competition Authority
+  url: https://konkurransetilsynet.no/
+  type: national_authority
+  country: 'NO'
+  language: *id039
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: no-food-safety
+  name: Norway - Norwegian Food Safety Authority (Mattilsynet)
+  url: https://www.mattilsynet.no/
+  type: national_authority
+  country: 'NO'
+  language: *id039
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: no-data-protection
+  name: Norway - Datatilsynet
+  url: https://www.datatilsynet.no/
+  type: regulator
+  country: 'NO'
+  language: *id039
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: no-environment
+  name: Norway - Norwegian Environment Agency
+  url: https://www.miljodirektoratet.no/
+  type: national_authority
+  country: 'NO'
+  language: *id039
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: no-procurement
+  name: Norway - Doffin
+  url: https://www.doffin.no/
+  type: procurement
+  country: 'NO'
+  language: *id039
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: li-legislation
+  name: Liechtenstein - Legislation (Gesetze.li)
+  url: https://www.gesetze.li/
+  type: official_register
+  country: LI
+  language: &id040
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
+    database.
+  categories: *id006
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: li-competition
+  name: Liechtenstein - Office of Economic Affairs
+  url: https://www.llv.li/en/national-administration/office-of-economic-affairs
+  type: national_authority
+  country: LI
+  language: *id040
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
+  categories: *id008
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: li-food-safety
+  name: Liechtenstein - Office of Food Control and Veterinary Affairs
+  url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
+  type: national_authority
+  country: LI
+  language: *id040
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
+  categories: *id009
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: li-data-protection
+  name: Liechtenstein - Data Protection Authority
+  url: https://www.datenschutzstelle.li/
+  type: regulator
+  country: LI
+  language: *id040
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Data protection decisions and guidance on marketing, cookies, AI and e-commerce.
+  categories: *id010
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: li-environment
+  name: Liechtenstein - Office of Environment
+  url: https://www.llv.li/en/national-administration/office-of-environment
+  type: national_authority
+  country: LI
+  language: *id040
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EPR, waste, packaging, climate, permits and environmental enforcement.
+  categories: *id011
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: li-procurement
+  name: Liechtenstein - Public Procurement Unit
+  url: https://www.llv.li/en/national-administration/public-procurement-unit
+  type: procurement
+  country: LI
+  language: *id040
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Public tenders for coffee, vending, catering, machines and services.
+  categories: *id012
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: ejustice-official-announcements
+  name: European e-Justice - publication of official announcements
+  url: https://e-justice.europa.eu/topics/legislation-and-case-law/publication-official-announcements_en
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Gateway to national official notices: insolvency, corporate and judicial announcements.'
+  categories:
+  - legislation
+  - competitors_direct
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: forum-official-gazettes
+  name: European Forum of Official Gazettes
+  url: https://op.europa.eu/en/web/forum-official-gazettes
+  type: official_register
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Directory of national official gazette publishers.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_inventar
+- id: asociacion-espanola-cafe
+  name: Asociacion Espanola del Cafe
+  url: http://www.asociacioncafe.com
+  type: association
+  country: ES
+  language:
+  - es
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: aicc-portugal
+  name: Associacao Industrial e Comercial do Cafe (AICC)
+  url: http://aicc.pt
+  type: association
+  country: PT
+  language:
+  - pt
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: kaffeinfo-dk
+  name: Brancheforeningen for Kaffe og Te
+  url: http://www.kaffeinfo.dk
+  type: association
+  country: DK
+  language:
+  - da
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: comitato-italiano-caffe
+  name: Comitato Italiano del Caffe
+  url: http://www.comitcaf.it
+  type: association
+  country: IT
+  language:
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: deutscher-kaffeeverband
+  name: Deutscher Kaffeeverband
+  url: http://www.kaffeeverband.de
+  type: association
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: kahvi-fi
+  name: Kahvi- ja paahtimoyhdistys
+  url: http://www.kahvi.fi
+  type: association
+  country: FI
+  language:
+  - fi
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: koffie-thee-nederland
+  name: Koffie & Thee Nederland
+  url: http://www.koffiethee.nl
+  type: association
+  country: NL
+  language:
+  - nl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: koffiecafe-be
+  name: Koninklijk Verbond van Koffiebranders
+  url: http://www.koffiecafe.be
+  type: association
+  country: BE
+  language:
+  - nl
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: norsk-kaffeinformasjon
+  name: Norsk Kaffeinformasjon
+  url: http://www.kaffe.no
+  type: association
+  country: 'NO'
+  language:
+  - 'no'
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: kaffeeverband-at
+  name: Osterreichischer Kaffee- und Tee-Verband
+  url: http://www.kaffeeverband.at
+  type: association
+  country: AT
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: syndicat-francais-cafe
+  name: Syndicat Francais du Cafe
+  url: http://www.syndicatfrancaisducafe.com
+  type: association
+  country: FR
+  language:
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: National coffee sector news, capacity, prices, logistics and policy positions.
+  categories:
+  - supply_chain
+  - legislation
+  trust_tier: advocacy
+  status: active
+  origin: pdf_inventar
+- id: coffein-compagnie
+  name: Coffein Compagnie
+  url: http://www.coffein-compagnie.de
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Decaffeination supplier: Coffee value-chain signals: capacity, prices, logistics and sector
+    developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: cr3-kaffeeveredelung
+  name: CR3 Kaffeeveredelung
+  url: https://www.cr3-kaffeeveredelung.com/de/
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Decaffeination supplier: Coffee value-chain signals: capacity, prices, logistics and sector
+    developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: deutsche-extrakt-kaffee
+  name: Deutsche Extrakt Kaffee
+  url: http://www.dek.de
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Soluble coffee supplier: Coffee value-chain signals: capacity, prices, logistics and sector
+    developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: demus
+  name: Demus
+  url: http://www.demus.it
+  type: corporate
+  country: IT
+  language:
+  - it
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Decaffeination supplier: Coffee value-chain signals: capacity, prices, logistics and sector
+    developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: j-mueller-weser
+  name: J. Muller Weser
+  url: http://www.kaffee-jmueller.com
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Port logistics and warehousing: Coffee value-chain signals: capacity, prices, logistics and
+    sector developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: jth-douque
+  name: J.Th. Douque's Koffie
+  url: http://www.jthdouque.com
+  type: corporate
+  country: NL
+  language:
+  - nl
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee trader: Coffee value-chain signals: capacity, prices, logistics and sector developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: katoen-natie
+  name: Katoen Natie
+  url: http://www.katoennatie.com
+  type: corporate
+  country: BE
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Logistics and warehousing: Coffee value-chain signals: capacity, prices, logistics and sector
+    developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: masiques
+  name: Masiques
+  url: http://www.masiques.com
+  type: corporate
+  country: ES
+  language:
+  - es
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Logistics and customs: Coffee value-chain signals: capacity, prices, logistics and sector developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: molenbergnatie
+  name: Molenbergnatie
+  url: http://www.molenbergnatie.com
+  type: corporate
+  country: BE
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee logistics and warehousing: Coffee value-chain signals: capacity, prices, logistics and
+    sector developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: pacorini-group
+  name: Pacorini Group
+  url: http://www.pacorini.com
+  type: corporate
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Logistics and warehousing: Coffee value-chain signals: capacity, prices, logistics and sector
+    developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: romani-spa
+  name: Romani Spa
+  url: http://www.romanige.it
+  type: corporate
+  country: IT
+  language:
+  - it
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee trader and processor: Coffee value-chain signals: capacity, prices, logistics and sector
+    developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: sealogis
+  name: Sealogis
+  url: https://www.sealogis.com/home/
+  type: corporate
+  country: FR
+  language:
+  - fr
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Logistics: Coffee value-chain signals: capacity, prices, logistics and sector developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: verwerkaf
+  name: Verwerkaf
+  url: http://www.verwerkaf.it
+  type: corporate
+  country: IT
+  language:
+  - it
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee processing: Coffee value-chain signals: capacity, prices, logistics and sector developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: vigolin
+  name: Vigolin
+  url: https://www.vigolin.com
+  type: corporate
+  country: EE
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee sector company: Coffee value-chain signals: capacity, prices, logistics and sector developments.'
+  categories:
+  - supply_chain
+  trust_tier: corporate
+  status: active
+  origin: pdf_inventar
+- id: rechtspraak-nl
+  name: Rechtspraak.nl — Dutch case-law portal
+  url: https://www.rechtspraak.nl
+  type: court
+  country: NL
+  language:
+  - nl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Commercial litigation and local court decisions.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: bundesanzeiger
+  name: Bundesanzeiger — German Federal Gazette
+  url: https://www.bundesanzeiger.de
+  type: official_register
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Official corporate publications and financial disclosures.
+  categories:
+  - competitors_direct
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: giustizia-amministrativa-it
+  name: Giustizia Amministrativa — Consiglio di Stato (IT)
+  url: https://www.giustizia-amministrativa.it
+  type: court
+  country: IT
+  language:
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Appeals against administrative authority decisions.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: bma-be
+  name: BMA — Belgian Competition Authority
+  url: https://www.abc-bma.be
+  type: national_authority
+  country: BE
+  language:
+  - nl
+  - fr
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Competition cases in the Belgian retail market.
+  categories:
+  - case_law_investigations
+  - consumers_marketing_competition
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: portal-just-ro
+  name: Portalul Instanțelor de Judecată (RO)
+  url: http://portal.just.ro
+  type: court
+  country: RO
+  language:
+  - ro
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Commercial litigation and court files in Romania.
+  categories:
+  - case_law_investigations
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: monitorul-oficial-ro
+  name: Monitorul Oficial al României
+  url: https://www.monitoruloficial.ro
+  type: official_register
+  country: RO
+  language:
+  - ro
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Romanian national legislation, ordinances, decrees.
+  categories:
+  - legislation
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: nestle-investors
+  name: Nestlé — Investor Relations
+  url: https://www.nestle.com/investors
+  type: corporate
+  country: CH
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Strategic and financial reports for Nespresso and Nescafé; EU market-share moves.
+  categories:
+  - competitors_direct
+  trust_tier: corporate
+  status: active
+  origin: pdf_catalog
+- id: starbucks-investors
+  name: Starbucks — Investor Relations
+  url: https://investor.starbucks.com
+  type: corporate
+  country: US
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: RTD channel expansion and European retail partnerships.
+  categories:
+  - competitors_direct
+  trust_tier: corporate
+  status: active
+  origin: pdf_catalog
+- id: tchibo-corporate
+  name: Tchibo — Corporate
+  url: https://www.tchibo-corporate.com
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: German/Central European market reports, sustainability strategy, roasted coffee positioning.
+  categories:
+  - competitors_direct
+  trust_tier: corporate
+  status: active
+  origin: pdf_catalog
+- id: strauss-group
+  name: Strauss Group — Corporate
+  url: https://www.strauss-group.com
+  type: corporate
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Central and Eastern Europe competitive dynamics.
+  categories:
+  - competitors_direct
+  trust_tier: corporate
+  status: active
+  origin: pdf_catalog
+- id: dallmayr
+  name: Alois Dallmayr
+  url: https://www.dallmayr.com
+  type: corporate
+  country: DE
+  language:
+  - de
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: German premium segment leader.
+  categories:
+  - competitors_direct
+  trust_tier: corporate
+  status: active
+  origin: pdf_catalog
+- id: ice-futures
+  name: ICE Futures — Coffee quotations
+  url: https://www.ice.com
+  type: market_data
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Arabica (NY) and Robusta (London) futures reference prices.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: review
+  exclusion_reason: Live quote pages have strict terms/anti-bot; only delayed public data may be used — verify in
+    access probe.
+  origin: pdf_catalog
+- id: ico-coffee
+  name: ICO — International Coffee Organization
+  url: https://www.ico.org
+  type: association
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Monthly market reports, green coffee export/import statistics, producer price trends.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: conab-brazil
+  name: CONAB (Brazil) — crop forecasts
+  url: https://www.conab.gov.br
+  type: national_authority
+  country: INT
+  language:
+  - pt
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Official Brazilian harvest forecasts for coffee.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: usda-fas
+  name: USDA FAS — global coffee reports
+  url: https://fas.usda.gov
+  type: national_authority
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Semi-annual global coffee market reports.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: copernicus-climate
+  name: Copernicus Climate Change Service (EU)
+  url: https://climate.copernicus.eu
+  type: eu_institution
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Satellite data on weather anomalies, drought, frost in key origins (Brazil, Vietnam, Colombia).
+  categories:
+  - supply_chain
+  - sustainability
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: noaa-climate
+  name: NOAA — climate monitoring (US)
+  url: https://www.noaa.gov
+  type: national_authority
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Weather anomaly data relevant to coffee-origin regions.
+  categories:
+  - supply_chain
+  trust_tier: official
+  status: active
+  origin: pdf_catalog
+- id: the-loadstar
+  name: The Loadstar — logistics news
+  url: https://theloadstar.com
+  type: trade_press
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Container availability, ocean freight rates, port strikes, logistics disruptions.
+  categories:
+  - supply_chain
+  - press
+  trust_tier: established_press
+  status: active
+  origin: pdf_catalog
+- id: joc
+  name: Journal of Commerce (JOC)
+  url: https://www.joc.com
+  type: trade_press
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Supply-chain and maritime transport news.
+  categories:
+  - supply_chain
+  - press
+  trust_tier: established_press
+  status: excluded
+  exclusion_reason: JOC content is subscription-only (S&P Global paywall).
+  origin: pdf_catalog
+- id: global-coffee-report
+  name: Global Coffee Report
+  url: https://www.gcrmag.com
+  type: trade_press
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Industry analysis, consumption trends, roasting technology, niche brand launches.
+  categories:
+  - press
+  - competitors_adjacent
+  trust_tier: established_press
+  status: active
+  origin: pdf_catalog
+- id: coffee-intelligence
+  name: Coffee Intelligence
+  url: https://intelligence.coffee
+  type: trade_press
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Industry analysis and market trends.
+  categories:
+  - press
+  - competitors_adjacent
+  trust_tier: established_press
+  status: active
+  origin: pdf_catalog
+- id: tea-coffee-trade-journal
+  name: Tea & Coffee Trade Journal
+  url: https://www.teaandcoffee.net
+  type: trade_press
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Industry technical analysis and product launches.
+  categories:
+  - press
+  - competitors_adjacent
+  trust_tier: established_press
+  status: active
+  origin: pdf_catalog
+- id: comunicaffe
+  name: Comunicaffe International
+  url: https://www.comunicaffe.com
+  type: trade_press
+  country: IT
+  language:
+  - en
+  - it
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Daily coffee industry news.
+  categories:
+  - press
+  - competitors_direct
+  - competitors_adjacent
+  trust_tier: established_press
+  status: active
+  origin: pdf_catalog
+- id: stir-magazine
+  name: STiR Coffee and Tea Magazine
+  url: https://stir-tea-coffee.com
+  type: trade_press
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Coffee and tea industry trends and technology.
+  categories:
+  - press
+  - competitors_adjacent
+  trust_tier: established_press
+  status: active
+  origin: pdf_catalog
+- id: lebensmittel-zeitung
+  name: Lebensmittel Zeitung (DE)
+  url: https://www.lebensmittelzeitung.net
+  type: trade_press
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: German food retail; private label and trade negotiations.
+  categories:
+  - press
+  - consumers_marketing_competition
+  trust_tier: established_press
+  status: excluded
+  exclusion_reason: Hard paywall on most content.
+  origin: pdf_catalog
+- id: lsa-conso
+  name: LSA Conso (FR)
+  url: https://www.lsa-conso.fr
+  type: trade_press
+  country: FR
+  language:
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: French retail and FMCG dynamics.
+  categories:
+  - press
+  - consumers_marketing_competition
+  trust_tier: established_press
+  status: review
+  exclusion_reason: Significant share of articles behind paywall; probe free sections.
+  origin: pdf_catalog
+- id: revista-progresiv
+  name: Revista Progresiv (RO)
+  url: https://www.revistaprogresiv.ro
+  type: trade_press
+  country: RO
+  language:
+  - ro
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Romanian retail and FMCG dynamics.
+  categories:
+  - press
+  - consumers_marketing_competition
+  trust_tier: established_press
+  status: active
+  origin: pdf_catalog
+- id: mighty-earth
+  name: Mighty Earth
+  url: https://www.mightyearth.org
+  type: ngo
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Satellite-based deforestation investigations of coffee supply chains (early-warning).
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_catalog
+- id: aidenvironment
+  name: AidEnvironment
+  url: https://aidenvironment.org
+  type: ngo
+  country: NL
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Supply-chain deforestation research.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_catalog
+- id: greenpeace-eu
+  name: Greenpeace EU Unit
+  url: https://www.greenpeace.org/eu-unit/
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU environmental campaigns affecting food/beverage supply chains.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_catalog
+- id: wwf-europe
+  name: WWF European Policy Office
+  url: https://www.wwf.eu
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: EU deforestation and supply-chain policy advocacy.
+  categories:
+  - sustainability
+  trust_tier: advocacy
+  status: active
+  origin: pdf_catalog
+- id: stiftung-warentest
+  name: Stiftung Warentest (DE)
+  url: https://www.test.de
+  type: consumer_org
+  country: DE
+  language:
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Comparative product tests (coffee) and food quality alerts.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: advocacy
+  status: review
+  exclusion_reason: Full test results are paid; press releases and summaries are free — restrict to those.
+  origin: pdf_catalog
+- id: 60-millions-consommateurs
+  name: 60 Millions de Consommateurs (FR)
+  url: https://www.60millions-mag.com
+  type: consumer_org
+  country: FR
+  language:
+  - fr
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: Comparative tests and consumer alerts.
+  categories:
+  - consumers_marketing_competition
+  trust_tier: advocacy
+  status: review
+  exclusion_reason: Magazine content largely paid; only free news section usable — verify.
+  origin: pdf_catalog
