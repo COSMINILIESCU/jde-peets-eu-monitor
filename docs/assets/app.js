@@ -31,9 +31,9 @@ const GROUPS = [
   { key: "other", kicker: "Other EU/EEA Developments", short: "Other Developments", cats: [] },
 ];
 
-const state = { q: "", period: DEFAULT_PERIOD, from: "", to: "", country: "", lang: "", entity: "", brand: "", impact: "", confidence: "" };
+const state = { q: "", period: DEFAULT_PERIOD, from: "", to: "", country: "", lang: "", entity: "", brand: "", impact: "", confidence: "", viewMode: "spread" };
 let ITEMS = [], SOURCES = [], META = {}, BRIEF = null, INDEX = new Map();
-let faces = [], itemFace = new Map(), flipped = 0, TOTAL = 0;
+let faces = [], itemFace = new Map(), flipped = 0, TOTAL = 0, singleIdx = 0, tocFaces = [];
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -164,7 +164,7 @@ function teaserPages(items, per) {
 function teaserHTML(it) {
   const f = itemFace.get(it.id);
   const link = f != null
-    ? `<a data-goto="${gotoFor(f)}">${esc(it.title_en || it.title)}</a>`
+    ? `<a data-goto="${gotoFor(f)}" data-face="${f}">${esc(it.title_en || it.title)}</a>`
     : `<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title_en || it.title)}</a>`;
   return `<div class="teaser">${link}<div class="tl">${esc(it.source_name)} · ${fmtDate(it.published_at)} · ${esc(CONF_LABELS[it.confidence] || it.confidence)}${f != null ? " · p." + pageNo(f) : ""}</div></div>`;
 }
@@ -224,8 +224,8 @@ function buildEdition() {
 
   renderBook();
   renderSideTOC(tocEntries);
-  flipped = 0;
-  render();
+  flipped = 0; singleIdx = 0;
+  if (state.viewMode === "single") renderSingle(0); else render();
   return items;
 }
 
@@ -234,7 +234,7 @@ function gotoFor(faceIndex) { return Math.ceil(faceIndex / 2); }
 
 function coverHTML(items, tocEntries) {
   const toc = tocEntries.map((t) =>
-    `<li data-goto="${gotoFor(t.faceIndex)}"><span class="toc-name">${esc(t.short)}</span><span class="dots"></span><span class="pg">p. ${pageNo(t.faceIndex)}</span></li>`).join("");
+    `<li data-goto="${gotoFor(t.faceIndex)}" data-face="${t.faceIndex}"><span class="toc-name">${esc(t.short)}</span><span class="dots"></span><span class="pg">p. ${pageNo(t.faceIndex)}</span></li>`).join("");
 
   const cnt = countsFor(items);
   const wk = (BRIEF && BRIEF.week) || META.week || "";
@@ -320,27 +320,32 @@ function renderBook() {
   }
   book.innerHTML = html;
   TOTAL = book.querySelectorAll(".sheet").length;
-  // corners + internal goto links
   book.querySelectorAll(".corner").forEach((c) => c.addEventListener("click", (e) => {
     e.stopPropagation(); if (flipped < TOTAL) { flipped++; render(); }
   }));
-  book.querySelectorAll("[data-goto]").forEach((el) =>
-    el.addEventListener("click", () => goTo(+el.dataset.goto)));
+  book.querySelectorAll("[data-goto]").forEach((el) => el.addEventListener("click", () => jump(el)));
+}
+/* unified navigation: spread mode jumps by sheet, single mode by face */
+function jump(el) {
+  if (state.viewMode === "single" && el.dataset.face != null) goToFace(+el.dataset.face);
+  else goTo(+el.dataset.goto);
 }
 function folioOnly(f) { return f && f.folio ? `<div class="folio"><span>${esc(f.folio)}</span><span></span></div>` : ""; }
 
 function renderSideTOC(tocEntries) {
-  const cover = `<li data-goto="0"><span class="pg">p. 1</span><span class="toc-nm">Cover · Executive Brief</span></li>`;
+  const cover = `<li data-goto="0" data-face="0"><span class="pg">p. 1</span><span class="toc-nm">Cover · Executive Brief</span></li>`;
   const items = tocEntries.map((t) =>
-    `<li data-goto="${gotoFor(t.faceIndex)}"><span class="pg">p. ${pageNo(t.faceIndex)}</span><span class="toc-nm">${esc(t.short)}</span><span class="cnt">${t.count}</span></li>`).join("");
+    `<li data-goto="${gotoFor(t.faceIndex)}" data-face="${t.faceIndex}"><span class="pg">p. ${pageNo(t.faceIndex)}</span><span class="toc-nm">${esc(t.short)}</span><span class="cnt">${t.count}</span></li>`).join("");
   const srcFace = faces.findIndex((f) => f.kind === "sources");
-  const src = srcFace >= 0 ? `<li data-goto="${gotoFor(srcFace)}"><span class="pg">p. ${pageNo(srcFace)}</span><span class="toc-nm">Sources &amp; Status</span></li>` : "";
+  const src = srcFace >= 0 ? `<li data-goto="${gotoFor(srcFace)}" data-face="${srcFace}"><span class="pg">p. ${pageNo(srcFace)}</span><span class="toc-nm">Sources &amp; Status</span></li>` : "";
   $("tocSide").innerHTML = cover + items + src;
-  $("tocSide").querySelectorAll("li").forEach((li) => li.addEventListener("click", () => goTo(+li.dataset.goto)));
+  tocFaces = [0, ...tocEntries.map((t) => t.faceIndex), ...(srcFace >= 0 ? [srcFace] : [])].sort((a, b) => a - b);
+  $("tocSide").querySelectorAll("li").forEach((li) => li.addEventListener("click", () => jump(li)));
 }
 
-/* ---- flip mechanics ---- */
+/* ---- flip mechanics (two-page spread, mode B) ---- */
 function render() {
+  if (state.viewMode === "single") { renderSingleState(); return; }
   const sheets = [...$("book").querySelectorAll(".sheet")];
   sheets.forEach((s, i) => {
     s.classList.toggle("flipped", i < flipped);
@@ -361,6 +366,69 @@ function goTo(target) {
     else if (flipped > target) { flipped--; render(); setTimeout(step, 240); }
   };
   step();
+}
+
+/* ---- single-page mode (mode A) with a visible page-turn animation ---- */
+function lastNavFace() {
+  let i = faces.length - 1;
+  while (i > 0 && faces[i] && faces[i].kind === "blank") i--;
+  return i;
+}
+function faceInner(i) {
+  const f = faces[i] || { html: "" };
+  return `<div class="face-inner">${f.html || folioOnly(f)}</div>`;
+}
+function bindFace(container) {
+  container.querySelectorAll(".corner").forEach((c) =>
+    c.addEventListener("click", (e) => { e.stopPropagation(); nextSingle(); }));
+  container.querySelectorAll("[data-face]").forEach((el) => el.addEventListener("click", () => jump(el)));
+}
+function activeTocFace(idx) {
+  let best = 0;
+  for (const f of tocFaces) if (f <= idx) best = f;
+  return best;
+}
+function renderSingleState() {
+  const last = lastNavFace();
+  $("prev").disabled = singleIdx <= 0;
+  $("next").disabled = singleIdx >= last;
+  $("pos").textContent = `Page ${singleIdx + 1} of ${last + 1}`;
+  document.querySelectorAll("#tocSide li").forEach((li) =>
+    li.classList.toggle("on", +li.dataset.face === activeTocFace(singleIdx)));
+}
+function renderSingle(dir) {
+  const cur = $("s-cur"), turn = $("s-turn");
+  if (!dir) {                                  // instant (jump / initial)
+    turn.hidden = true; turn.className = "s-face s-turn";
+    cur.innerHTML = faceInner(singleIdx); bindFace(cur);
+    renderSingleState(); return;
+  }
+  const from = dir > 0 ? singleIdx - 1 : singleIdx + 1;  // the page we are leaving
+  if (dir > 0) { cur.innerHTML = faceInner(singleIdx); bindFace(cur); turn.innerHTML = faceInner(from); }
+  else { turn.innerHTML = faceInner(singleIdx); }        // incoming page folds in over the old one
+  turn.hidden = false; turn.className = "s-face s-turn";
+  void turn.offsetWidth;                                 // restart animation
+  turn.classList.add(dir > 0 ? "turn-next" : "turn-prev");
+  const done = () => {
+    turn.removeEventListener("animationend", done);
+    turn.hidden = true; turn.className = "s-face s-turn";
+    cur.innerHTML = faceInner(singleIdx); bindFace(cur);
+  };
+  turn.addEventListener("animationend", done);
+  renderSingleState();
+}
+function nextSingle() { const last = lastNavFace(); if (singleIdx < last) { singleIdx++; renderSingle(1); } }
+function prevSingle() { if (singleIdx > 0) { singleIdx--; renderSingle(-1); } }
+function goToFace(f) { singleIdx = Math.min(Math.max(f, 0), lastNavFace()); renderSingle(0); }
+
+function setViewMode(mode) {
+  state.viewMode = mode;
+  const spread = mode === "spread";
+  $("scaler").hidden = !spread;
+  $("scaler-single").hidden = spread;
+  $("toggle-view").innerHTML = spread ? "▭ One-page view" : "▭▭ Two-page view";
+  if (spread) render(); else renderSingle(0);
+  fit();
 }
 
 /* ---- filters UI ---- */
@@ -428,16 +496,16 @@ function runSearch() {
   } else {
     $("sr-list").innerHTML = hits.slice(0, 40).map((it) => {
       const f = itemFace.get(it.id);
-      const jump = inWindow.has(it.id) && f != null
-        ? `<a data-goto="${gotoFor(f)}">${esc(it.title_en || it.title)}</a>`
+      const link = inWindow.has(it.id) && f != null
+        ? `<a data-goto="${gotoFor(f)}" data-face="${f}">${esc(it.title_en || it.title)}</a>`
         : `<a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title_en || it.title)}</a>`;
       const loc = inWindow.has(it.id) && f != null ? `jump to p.${pageNo(f)}` : "outside current filters — opens source";
-      return `<li>${jump}<div class="sr-meta">${esc(it.source_name)} · ${fmtDate(it.published_at)} · ${loc}</div></li>`;
+      return `<li>${link}<div class="sr-meta">${esc(it.source_name)} · ${fmtDate(it.published_at)} · ${loc}</div></li>`;
     }).join("");
   }
   sr.classList.add("open");
   $("sr-list").querySelectorAll("[data-goto]").forEach((a) =>
-    a.addEventListener("click", () => { goTo(+a.dataset.goto); sr.classList.remove("open"); }));
+    a.addEventListener("click", () => { jump(a); sr.classList.remove("open"); }));
 }
 
 /* ---- PDF export: build a clean, paginated print view of the current filtered edition,
@@ -520,12 +588,22 @@ function printPDF() {
 
 /* ---- init ---- */
 function bind() {
-  $("next").addEventListener("click", () => { if (flipped < TOTAL) { flipped++; render(); } });
-  $("prev").addEventListener("click", () => { if (flipped > 0) { flipped--; render(); } });
+  $("next").addEventListener("click", () => {
+    if (state.viewMode === "single") nextSingle();
+    else if (flipped < TOTAL) { flipped++; render(); }
+  });
+  $("prev").addEventListener("click", () => {
+    if (state.viewMode === "single") prevSingle();
+    else if (flipped > 0) { flipped--; render(); }
+  });
   document.addEventListener("keydown", (e) => {
     if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
     if (e.key === "ArrowRight") $("next").click();
     if (e.key === "ArrowLeft") $("prev").click();
+  });
+  $("toggle-view").addEventListener("click", () => {
+    if (state.viewMode === "spread") { singleIdx = Math.min(flipped * 2, lastNavFace()); setViewMode("single"); }
+    else { flipped = Math.min(Math.ceil(singleIdx / 2), TOTAL); setViewMode("spread"); }
   });
   $("btn-search").addEventListener("click", runSearch);
   $("q").addEventListener("keydown", (e) => { if (e.key === "Enter") runSearch(); });
@@ -548,15 +626,21 @@ function bind() {
 function fit() {
   const wrap = document.querySelector(".stage-wrap");
   const stage = document.querySelector(".stage");
-  const sc = $("scaler");
-  // width from the actual column; height from where the book area starts (below the topbar)
   const availW = wrap.clientWidth - 12;
   const availH = window.innerHeight - stage.getBoundingClientRect().top - 72;  // room for the pager
-  // fill the available space by width AND height; allow the spread to grow up to 1.85x for readability
-  const s = Math.max(0.2, Math.min(availW / 1000, availH / 680, 1.85));
-  sc.style.transform = `scale(${s})`;
-  sc.style.width = (1000 * s) + "px";
-  sc.style.height = (680 * s + 6) + "px";
+  if (state.viewMode === "single") {
+    const sc = $("scaler-single");
+    const s = Math.max(0.3, Math.min(availW / 500, availH / 680, 2.4));  // one page can grow larger
+    sc.style.transform = `scale(${s})`;
+    sc.style.width = (500 * s) + "px";
+    sc.style.height = (680 * s + 6) + "px";
+  } else {
+    const sc = $("scaler");
+    const s = Math.max(0.2, Math.min(availW / 1000, availH / 680, 1.85));
+    sc.style.transform = `scale(${s})`;
+    sc.style.width = (1000 * s) + "px";
+    sc.style.height = (680 * s + 6) + "px";
+  }
 }
 
 async function main() {

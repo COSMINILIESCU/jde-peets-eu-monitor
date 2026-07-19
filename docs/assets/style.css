@@ -122,7 +122,17 @@ a{color:inherit}
 .toggle-side:hover{border-color:var(--print);color:var(--print)}
 .layout.side-collapsed{grid-template-columns:1fr}
 .layout.side-collapsed .side{display:none}
-.hintline{font-family:var(--kick);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--desk-mut)}
+.hintline{flex:1;text-align:center;font-family:var(--kick);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--desk-mut)}
+
+/* single-page view (mode A) */
+.single{position:relative;width:500px;height:680px;perspective:2200px}
+.single .s-face{position:absolute;inset:0;background:var(--print);overflow:hidden;box-shadow:inset 0 0 60px rgba(60,45,20,.14),0 8px 30px rgba(0,0,0,.4)}
+.single .s-turn{transform-origin:left center;backface-visibility:hidden;z-index:5}
+.single .s-turn.turn-next{animation:sTurnNext .6s cubic-bezier(.4,.06,.32,1) forwards}
+.single .s-turn.turn-prev{animation:sTurnPrev .6s cubic-bezier(.4,.06,.32,1) forwards}
+@keyframes sTurnNext{from{transform:rotateY(0deg)}to{transform:rotateY(-179deg)}}
+@keyframes sTurnPrev{from{transform:rotateY(-179deg)}to{transform:rotateY(0deg)}}
+@media (prefers-reduced-motion: reduce){.single .s-turn.turn-next,.single .s-turn.turn-prev{animation-duration:.01s}}
 .stage{display:flex;justify-content:center}
 .scaler{transform-origin:top center}
 .book{position:relative;width:1000px;height:680px;perspective:2800px}
