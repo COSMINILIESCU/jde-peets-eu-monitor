@@ -440,17 +440,82 @@ function runSearch() {
     a.addEventListener("click", () => { goTo(+a.dataset.goto); sr.classList.remove("open"); }));
 }
 
-/* ---- export (filtered view) ---- */
-function download(name, text, type) {
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([text], { type }));
-  a.download = name; a.click(); URL.revokeObjectURL(a.href);
+/* ---- PDF export: build a clean, paginated print view of the current filtered edition,
+   then open the browser print dialog (the reader chooses "Save as PDF"). Vector text,
+   clickable source links, zero dependencies. ---- */
+function rangeLabel() {
+  if (state.from || state.to) return `${state.from || "start"} to ${state.to || "today"}`;
+  const p = PERIODS.find((x) => x[0] === state.period);
+  return p ? p[1] : "current selection";
 }
-function exportCSV() {
-  const cols = ["title_en", "summary_en", "url", "source_name", "category", "countries", "impact", "confidence", "published_at", "lang"];
-  const rows = [cols.join(",")].concat(pool().map((it) =>
-    cols.map((c) => `"${String(Array.isArray(it[c]) ? it[c].join("; ") : it[c] ?? "").replace(/"/g, '""').replace(/\n/g, " ")}"`).join(",")));
-  download("jde-gazette-export.csv", "﻿" + rows.join("\r\n"), "text/csv;charset=utf-8");
+function activeFilterLabel() {
+  const bits = [];
+  for (const [k, lab] of [["country", "Country"], ["lang", "Language"], ["entity", "Entity"],
+    ["brand", "Brand"], ["impact", "Impact"], ["confidence", "Confidence"]]) {
+    if (state[k]) bits.push(`${lab}: ${state[k]}`);
+  }
+  return bits.join(" · ");
+}
+function printItemHTML(it, section) {
+  const tags = [...(it.countries || []).slice(0, 5), ...(it.brands || []).slice(0, 3),
+    it.lang && it.lang !== "en" ? "orig: " + it.lang.toUpperCase() : ""].filter(Boolean)
+    .map((x) => `<span class="p-chip">${esc(x)}</span>`).join("");
+  return `<article class="p-item">
+    <h3><a href="${esc(it.url)}">${esc(it.title_en || it.title)}</a></h3>
+    <div class="p-by"><b>${esc(section)}</b> · ${fmtDate(it.published_at)} · ${esc(it.source_name)}
+      · ${esc(IMPACT_LABEL[it.impact] || it.impact)} · ${esc(CONF_LABELS[it.confidence] || it.confidence)}</div>
+    ${it.summary_en ? `<p class="p-sum">${esc(it.summary_en)}</p>` : ""}
+    <div class="p-tags">${tags}</div>
+    <div class="p-src">Source: ${esc(it.url)}</div>
+  </article>`;
+}
+function printSection(title, items, section) {
+  if (!items.length) return "";
+  return `<section class="p-section"><h2 class="p-h2">${esc(title)}</h2>${
+    items.map((it) => printItemHTML(it, section || title)).join("")}</section>`;
+}
+function printTeaserHTML(it) {
+  return `<div class="p-teaser"><a href="${esc(it.url)}"><b>${esc(it.title_en || it.title)}</b></a>
+    <span class="p-teaser-m"> — ${esc(it.source_name)} · ${fmtDate(it.published_at)} · ${esc(CONF_LABELS[it.confidence] || it.confidence)}</span></div>`;
+}
+function printCompactSection(title, items) {
+  if (!items.length) return "";
+  return `<section class="p-section"><h2 class="p-h2">${esc(title)}</h2>${
+    items.map(printTeaserHTML).join("")}</section>`;
+}
+function buildPrintView(items) {
+  const wk = (BRIEF && BRIEF.week) || META.week || "";
+  let html = `<div class="p-masthead">
+      <div class="p-ears"><span>EU/EEA Edition · Week ${esc(wk)}</span>
+        <span>Provided by <span class="p-firm">Păcuraru Iliescu Măzăreanu</span>, Attorneys at Law</span></div>
+      <h1>THE <span class="p-red">JDE PEET'S</span> GAZETTE</h1>
+      <div class="p-tag">Weekly business, legal &amp; regulatory monitor — European Union &amp; European Economic Area</div>
+      <div class="p-dateline">Generated ${esc(fmtDate(META.generated_at))} · Edition period: ${esc(rangeLabel())}
+        · ${items.length} item(s)${activeFilterLabel() ? " · " + esc(activeFilterLabel()) : ""}</div>
+    </div>`;
+  if (BRIEF && BRIEF.text) {
+    html += `<section class="p-section p-brief"><h2 class="p-h2">Executive Brief</h2>
+      <p>${esc(BRIEF.text).replace(/\n\n+/g, "</p><p>")}</p></section>`;
+  }
+  // High-Impact Alerts + Press Review are compact reference lists (items appear in full once,
+  // under their thematic section) — mirrors the on-screen edition and avoids duplication.
+  html += printCompactSection("High-Impact Alerts", items.filter((it) => it.impact === "high").sort(byRel));
+  for (const g of GROUPS) {
+    const gi = items.filter((it) => groupOf(it) === g.key).sort(byRel);
+    html += printSection(g.short, gi, g.short);
+  }
+  html += printCompactSection("Press Review",
+    items.filter((it) => ["press", "trade_press"].includes(it.source_type)).sort(byRel));
+  html += `<div class="p-foot"><b>Provided by <span class="p-firm">Păcuraru Iliescu Măzăreanu</span>,
+      Societate Civilă de Avocați</b> · www.pimasociates.ro<br>
+    This publication aggregates publicly available information and machine-generated summaries for
+    monitoring purposes only. It is not legal advice. Each item is labelled by confidence level;
+    always verify against the original source. Content of external sources belongs to their publishers.</div>`;
+  $("print-view").innerHTML = html;
+}
+function printPDF() {
+  buildPrintView(pool());
+  window.print();
 }
 
 /* ---- init ---- */
@@ -471,8 +536,7 @@ function bind() {
     $("q").value = ""; $("f-from").value = ""; $("f-to").value = "";
     initFilters(); syncFcount(); const items = buildEdition(); renderChrome(items);
   });
-  $("btn-csv").addEventListener("click", exportCSV);
-  $("btn-json").addEventListener("click", () => download("jde-gazette-export.json", JSON.stringify(pool(), null, 1), "application/json"));
+  $("btn-pdf").addEventListener("click", printPDF);
 }
 function fit() {
   const stage = document.querySelector(".stage-wrap");
