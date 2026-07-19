@@ -547,13 +547,13 @@ function bind() {
 }
 function fit() {
   const wrap = document.querySelector(".stage-wrap");
+  const stage = document.querySelector(".stage");
   const sc = $("scaler");
-  // available width from the actual column, and available height from the viewport
+  // width from the actual column; height from where the book area starts (below the topbar)
   const availW = wrap.clientWidth - 12;
-  const top = wrap.getBoundingClientRect().top;
-  const availH = window.innerHeight - top - 84;   // leave room for the pager below
-  // scale so the WHOLE 1000x680 spread fits by width AND height; never upscale past 1:1
-  const s = Math.max(0.2, Math.min(availW / 1000, availH / 680, 1));
+  const availH = window.innerHeight - stage.getBoundingClientRect().top - 72;  // room for the pager
+  // fill the available space by width AND height; allow the spread to grow up to 1.85x for readability
+  const s = Math.max(0.2, Math.min(availW / 1000, availH / 680, 1.85));
   sc.style.transform = `scale(${s})`;
   sc.style.width = (1000 * s) + "px";
   sc.style.height = (680 * s + 6) + "px";

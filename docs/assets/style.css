@@ -72,7 +72,7 @@ a{color:inherit}
 .search-results .sr-meta{color:var(--desk-mut);font-size:11px;font-family:var(--kick);letter-spacing:.06em}
 
 /* ===== Layout: side panel + newspaper stage ===== */
-.layout{display:grid;grid-template-columns:300px 1fr;gap:0;align-items:start;max-width:1500px;margin:0 auto}
+.layout{display:grid;grid-template-columns:300px 1fr;gap:0;align-items:start;max-width:1760px;margin:0 auto}
 @media(max-width:1040px){.layout{grid-template-columns:1fr}.side{position:static;max-height:none;border-right:none;border-bottom:1px solid var(--desk-line)}}
 
 .side{position:sticky;top:64px;max-height:calc(100vh - 64px);overflow-y:auto;padding:20px 18px 30px;border-right:1px solid var(--desk-line)}
@@ -116,13 +116,13 @@ a{color:inherit}
 .side-provider a:hover{color:var(--print)}
 
 /* ===== Newspaper stage ===== */
-.stage-wrap{padding:12px 10px 10px;display:flex;flex-direction:column;align-items:center}
-.stage-toolbar{width:100%;max-width:1000px;display:flex;justify-content:flex-start;margin-bottom:8px}
-.toggle-side{font-family:var(--kick);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:var(--desk-2);border:1px solid var(--desk-line);color:var(--desk-txt);border-radius:4px;padding:7px 14px;cursor:pointer;transition:.15s}
+.stage-wrap{padding:10px 10px 8px;display:flex;flex-direction:column;align-items:center}
+.stage-topbar{width:100%;max-width:1760px;display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.toggle-side{flex:none;font-family:var(--kick);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:var(--desk-2);border:1px solid var(--desk-line);color:var(--desk-txt);border-radius:4px;padding:7px 14px;cursor:pointer;transition:.15s}
 .toggle-side:hover{border-color:var(--print);color:var(--print)}
 .layout.side-collapsed{grid-template-columns:1fr}
 .layout.side-collapsed .side{display:none}
-.hintline{font-family:var(--kick);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--desk-mut);padding-bottom:12px;text-align:center}
+.hintline{font-family:var(--kick);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--desk-mut)}
 .stage{display:flex;justify-content:center}
 .scaler{transform-origin:top center}
 .book{position:relative;width:1000px;height:680px;perspective:2800px}
