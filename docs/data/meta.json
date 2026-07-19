@@ -1,25 +1,223 @@
 {
- "generated_at": "2026-07-18T17:06:21+00:00",
+ "generated_at": "2026-07-19T04:26:09+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
  "week": "2026-W29",
  "db_counts": {
-  "new": 36
+  "analyzed": 212,
+  "triaged_out": 905
  },
  "last_run": {
   "run_id": 1,
-  "started_at": "2026-07-18T17:01:03+00:00",
+  "started_at": "2026-07-18T20:18:57+00:00",
   "collection": {
-   "sources_total": 6,
-   "sources_failed": 0,
-   "new_items": 36,
-   "duplicates": 16,
-   "failed_sources": []
+   "sources_total": 173,
+   "sources_failed": 38,
+   "new_items": 1117,
+   "duplicates": 157,
+   "skipped_old": 281,
+   "since": "2026-06-01",
+   "failed_sources": [
+    {
+     "id": "jdepeets-ethics",
+     "status": "fetch_error",
+     "error": "https://www.jdepeets.com/about-us/ethics-compliance/: HTTP 404"
+    },
+    {
+     "id": "kdp-news",
+     "status": "fetch_error",
+     "error": "https://www.keurigdrpepper.com/news: HTTP 404"
+    },
+    {
+     "id": "kdp-investors",
+     "status": "fetch_error",
+     "error": "https://www.keurigdrpepper.com/investors: HTTP 404"
+    },
+    {
+     "id": "nestle-news",
+     "status": "fetch_error",
+     "error": "https://www.nestle.com/media/news: HTTP 403"
+    },
+    {
+     "id": "illy-company",
+     "status": "fetch_error",
+     "error": "https://www.illy.com/en-ww/company: HTTP 502"
+    },
+    {
+     "id": "lofbergs",
+     "status": "fetch_error",
+     "error": "https://www.lofbergs.se/en/: HTTP 404"
+    },
+    {
+     "id": "dallmayr-coffee",
+     "status": "robots_disallowed",
+     "error": "robots.txt disallows access"
+    },
+    {
+     "id": "starbucks-emea",
+     "status": "fetch_error",
+     "error": "https://stories.starbucks.com/emea/: HTTP 403"
+    },
+    {
+     "id": "costa-coffee",
+     "status": "fetch_error",
+     "error": "https://www.costa.co.uk/behind-the-beans: HTTPSConnectionPool(host='www.costa.co.uk', port=443): Read timed out. (read timeout=30)"
+    },
+    {
+     "id": "eur-lex",
+     "status": "fetch_error",
+     "error": "https://eur-lex.europa.eu/content/tools/rss.html: HTTP 404"
+    },
+    {
+     "id": "council-press",
+     "status": "fetch_error",
+     "error": "https://www.consilium.europa.eu/en/press/press-releases/: HTTP 403"
+    },
+    {
+     "id": "ejustice-ecli",
+     "status": "fetch_error",
+     "error": "https://e-justice.europa.eu/ecli/ECLI.jsp: HTTP 403"
+    },
+    {
+     "id": "eu-merger-cases",
+     "status": "fetch_error",
+     "error": "https://competition-policy.ec.europa.eu/mergers/cases_en: HTTP 404"
+    },
+    {
+     "id": "eu-antitrust-cases",
+     "status": "fetch_error",
+     "error": "https://competition-policy.ec.europa.eu/antitrust-and-cartels/cases_en: HTTP 404"
+    },
+    {
+     "id": "efta-surv-competition",
+     "status": "fetch_error",
+     "error": "https://www.eftasurv.int/internal-market/competition: HTTP 404"
+    },
+    {
+     "id": "echa",
+     "status": "fetch_error",
+     "error": "https://echa.europa.eu/: HTTP 403"
+    },
+    {
+     "id": "eudr-information-system",
+     "status": "fetch_error",
+     "error": "https://green-business.ec.europa.eu/deforestation-regulation-implementation/eudr-information-system_en: HTTP 404"
+    },
+    {
+     "id": "euipo",
+     "status": "fetch_error",
+     "error": "https://www.euipo.europa.eu/: HTTP 403"
+    },
+    {
+     "id": "clientearth",
+     "status": "fetch_error",
+     "error": "https://www.clientearth.org/europe/: HTTP 404"
+    },
+    {
+     "id": "euractiv",
+     "status": "fetch_error",
+     "error": "https://www.euractiv.com/: HTTP 403"
+    },
+    {
+     "id": "whitecase-insights",
+     "status": "fetch_error",
+     "error": "https://www.whitecase.com/insight-our-thinking: HTTP 403"
+    },
+    {
+     "id": "dlapiper-insights",
+     "status": "fetch_error",
+     "error": "https://www.dlapiper.com/en/insights: HTTP 429"
+    },
+    {
+     "id": "bg-competition",
+     "status": "fetch_error",
+     "error": "https://www.cpc.bg/: HTTP 522"
+    },
+    {
+     "id": "bg-food-safety",
+     "status": "robots_disallowed",
+     "error": "robots.txt disallows access"
+    },
+    {
+     "id": "cy-competition",
+     "status": "robots_disallowed",
+     "error": "robots.txt disallows access"
+    },
+    {
+     "id": "fr-legislation",
+     "status": "fetch_error",
+     "error": "https://www.legifrance.gouv.fr/: HTTP 403"
+    },
+    {
+     "id": "fr-food-safety",
+     "status": "fetch_error",
+     "error": "https://www.economie.gouv.fr/dgccrf: HTTP 403"
+    },
+    {
+     "id": "de-competition",
+     "status": "robots_disallowed",
+     "error": "robots.txt disallows access"
+    },
+    {
+     "id": "hu-legislation",
+     "status": "fetch_error",
+     "error": "https://njt.hu/: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+    },
+    {
+     "id": "hu-competition",
+     "status": "fetch_error",
+     "error": "https://www.gvh.hu/: HTTPSConnectionPool(host='www.gvh.hu', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError('A certificate chain processed, but terminated in a root certificate which is not trusted by the trust provider.')))"
+    },
+    {
+     "id": "lt-food-safety",
+     "status": "fetch_error",
+     "error": "https://vmvt.lrv.lt/: HTTP 403"
+    },
+    {
+     "id": "pl-legislation",
+     "status": "robots_disallowed",
+     "error": "robots.txt disallows access"
+    },
+    {
+     "id": "se-competition",
+     "status": "fetch_error",
+     "error": "https://www.konkurrensverket.se/: HTTP 403"
+    },
+    {
+     "id": "li-competition",
+     "status": "fetch_error",
+     "error": "https://www.llv.li/en/national-administration/office-of-economic-affairs: HTTP 403"
+    },
+    {
+     "id": "rechtspraak-nl",
+     "status": "fetch_error",
+     "error": "https://www.rechtspraak.nl: HTTP 403"
+    },
+    {
+     "id": "usda-fas",
+     "status": "fetch_error",
+     "error": "https://fas.usda.gov: HTTP 403"
+    },
+    {
+     "id": "global-coffee-report",
+     "status": "fetch_error",
+     "error": "https://www.gcrmag.com: HTTP 403"
+    },
+    {
+     "id": "wwf-europe",
+     "status": "fetch_error",
+     "error": "https://www.wwf.eu: HTTP 403"
+    }
+   ]
   },
   "analysis": {
-   "skipped": true
-  }
+   "analyzed": 1117,
+   "relevant": 212,
+   "triaged_out": 905,
+   "errors": 0
+  },
+  "brief_generated": false
  }
 }
