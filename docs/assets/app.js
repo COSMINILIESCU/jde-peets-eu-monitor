@@ -626,8 +626,13 @@ function bind() {
 function fit() {
   const wrap = document.querySelector(".stage-wrap");
   const stage = document.querySelector(".stage");
-  const availW = wrap.clientWidth - 12;
-  const availH = window.innerHeight - stage.getBoundingClientRect().top - 72;  // room for the pager
+  const availW = wrap.clientWidth - 18;
+  // stacked layout (narrow screens): the stage may start below the fold, so size
+  // against the viewport itself — the reader scrolls the gazette into view
+  const stacked = window.innerWidth <= 1040;
+  const availH = stacked
+    ? window.innerHeight - 96
+    : window.innerHeight - stage.getBoundingClientRect().top - 58;  // room for the pager
   if (state.viewMode === "single") {
     const sc = $("scaler-single");
     const s = Math.max(0.3, Math.min(availW / 500, availH / 680, 2.4));  // one page can grow larger

@@ -134,7 +134,8 @@ a{color:inherit}
 @keyframes sTurnPrev{from{transform:rotateY(-179deg)}to{transform:rotateY(0deg)}}
 @media (prefers-reduced-motion: reduce){.single .s-turn.turn-next,.single .s-turn.turn-prev{animation-duration:.01s}}
 .stage{display:flex;justify-content:center}
-.scaler{transform-origin:top center}
+/* top LEFT origin: the visual box then matches the element box exactly, so flex centering is true */
+.scaler{transform-origin:top left}
 .book{position:relative;width:1000px;height:680px;perspective:2800px}
 .book::after{content:'';position:absolute;left:50%;top:6px;bottom:6px;width:2px;background:linear-gradient(#0000,#00000030,#0000);transform:translateX(-1px);z-index:60;pointer-events:none}
 .sheet{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.35,.1,.25,1)}
@@ -215,7 +216,7 @@ a{color:inherit}
 .dot.ok{background:var(--green)}.dot.fail{background:var(--red)}.dot.idle{background:#9a8f78}
 
 /* Pager */
-.pager{display:flex;justify-content:center;align-items:center;gap:18px;padding:18px 0 34px}
+.pager{display:flex;justify-content:center;align-items:center;gap:18px;padding:12px 0 18px}
 .pager button{font-family:var(--kick);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--print);color:var(--ink);border:none;border-radius:3px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.35);transition:.15s}
 .pager button:hover{background:#fff}
 .pager button:disabled{opacity:.35;cursor:default}
