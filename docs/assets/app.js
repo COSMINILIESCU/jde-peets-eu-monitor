@@ -13,7 +13,7 @@ const PERIODS = [
   ["7", "Last 7 days"], ["31", "Last month"], ["92", "Last 3 months"],
   ["365", "Last 12 months"], ["all", "All time"],
 ];
-const DEFAULT_PERIOD = "92";
+const DEFAULT_PERIOD = "7";
 
 /* Editorial groups: each item lands in exactly ONE thematic group (by category).
    'alerts' (cover teasers) and 'press' are cross-cutting selections referencing thematic items. */
@@ -31,7 +31,7 @@ const GROUPS = [
   { key: "other", kicker: "Other EU/EEA Developments", short: "Other Developments", cats: [] },
 ];
 
-const state = { q: "", period: DEFAULT_PERIOD, country: "", lang: "", entity: "", brand: "", impact: "", confidence: "" };
+const state = { q: "", period: DEFAULT_PERIOD, from: "", to: "", country: "", lang: "", entity: "", brand: "", impact: "", confidence: "" };
 let ITEMS = [], SOURCES = [], META = {}, BRIEF = null, INDEX = new Map();
 let faces = [], itemFace = new Map(), flipped = 0, TOTAL = 0;
 
@@ -40,7 +40,16 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const fmtDate = (iso) => { if (!iso) return "n/a"; const d = new Date(iso); return isNaN(d) ? "n/a" : d.toISOString().slice(0, 10); };
 
 async function loadJSON(path, fb) {
-  try { const r = await fetch(path, { cache: "no-store" }); if (!r.ok) throw 0; return await r.json(); } catch { return fb; }
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const r = await fetch(path, { cache: "no-store" });
+      if (!r.ok) throw new Error(r.status);
+      return await r.json();
+    } catch {
+      await new Promise((res) => setTimeout(res, 250 * (attempt + 1)));
+    }
+  }
+  return fb;
 }
 
 /* ---- full-text index ---- */
@@ -68,9 +77,16 @@ function searchIds(q) {
 
 /* ---- filtering ---- */
 function passesFilters(it) {
-  const now = Date.now(), days = state.period === "all" ? Infinity : +state.period;
   const d = Date.parse(it.published_at || it.fetched_at);
-  if (isFinite(days) && (isNaN(d) || now - d > days * 864e5)) return false;
+  if (state.from || state.to) {
+    // custom calendar range overrides the period dropdown; "to" is inclusive of the whole day
+    if (isNaN(d)) return false;
+    if (state.from && d < Date.parse(state.from)) return false;
+    if (state.to && d > Date.parse(state.to) + 864e5) return false;
+  } else {
+    const days = state.period === "all" ? Infinity : +state.period;
+    if (isFinite(days) && (isNaN(d) || Date.now() - d > days * 864e5)) return false;
+  }
   if (state.country && !(it.countries || []).includes(state.country)) return false;
   if (state.lang && it.lang !== state.lang) return false;
   if (state.entity && !(it.entities || []).includes(state.entity)) return false;
@@ -368,11 +384,14 @@ function initFilters() {
 }
 function syncFcount() {
   const n = ["country", "lang", "entity", "brand", "impact", "confidence"].filter((k) => state[k]).length
-    + (state.period !== DEFAULT_PERIOD ? 1 : 0);
+    + (state.period !== DEFAULT_PERIOD ? 1 : 0)
+    + ((state.from || state.to) ? 1 : 0);
   $("fcount").textContent = `${n} active`;
 }
 function readFilters() {
   state.period = $("f-period").value || DEFAULT_PERIOD;
+  state.from = $("f-from").value;
+  state.to = $("f-to").value;
   state.country = $("f-country").value;
   state.lang = $("f-lang").value;
   state.entity = $("f-entity").value;
@@ -448,8 +467,9 @@ function bind() {
   $("sr-close").addEventListener("click", () => $("sr").classList.remove("open"));
   $("f-apply").addEventListener("click", () => { readFilters(); syncFcount(); const items = buildEdition(); renderChrome(items); });
   $("f-reset").addEventListener("click", () => {
-    Object.assign(state, { q: "", period: DEFAULT_PERIOD, country: "", lang: "", entity: "", brand: "", impact: "", confidence: "" });
-    $("q").value = ""; initFilters(); syncFcount(); const items = buildEdition(); renderChrome(items);
+    Object.assign(state, { q: "", period: DEFAULT_PERIOD, from: "", to: "", country: "", lang: "", entity: "", brand: "", impact: "", confidence: "" });
+    $("q").value = ""; $("f-from").value = ""; $("f-to").value = "";
+    initFilters(); syncFcount(); const items = buildEdition(); renderChrome(items);
   });
   $("btn-csv").addEventListener("click", exportCSV);
   $("btn-json").addEventListener("click", () => download("jde-gazette-export.json", JSON.stringify(pool(), null, 1), "application/json"));

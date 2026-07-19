@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=7">
+<link rel="stylesheet" href="assets/style.css?v=8">
 </head>
 <body>
 
@@ -58,6 +58,13 @@
       <div class="side-t">Filters <span class="mini" id="fcount">0 active</span></div>
       <div class="f-field"><label for="f-period">Period</label>
         <select id="f-period"></select></div>
+      <div class="f-field">
+        <label>Custom date range <span class="f-hint">(overrides period)</span></label>
+        <div class="f-range-row">
+          <input type="date" id="f-from" aria-label="From date" title="From date">
+          <input type="date" id="f-to" aria-label="To date" title="To date">
+        </div>
+      </div>
       <div class="f-field"><label for="f-country">Country</label>
         <select id="f-country"></select></div>
       <div class="f-field"><label for="f-lang">Source language</label>
@@ -97,6 +104,6 @@
   Provided by <a href="https://www.pimasociates.ro/" target="_blank" rel="noopener">Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați</a>
 </div>
 
-<script src="assets/app.js?v=6"></script>
+<script src="assets/app.js?v=9"></script>
 </body>
 </html>

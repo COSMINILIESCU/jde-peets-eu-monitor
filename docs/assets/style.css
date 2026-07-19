@@ -94,6 +94,10 @@ a{color:inherit}
 .f-field label{display:block;font-family:var(--kick);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--desk-mut);margin-bottom:4px}
 .f-field select{width:100%;font-family:var(--serif);font-size:12.5px;padding:7px 9px;background:#26221B;border:1px solid var(--desk-line);border-radius:4px;color:var(--print);cursor:pointer}
 .f-field select:focus{outline:none;border-color:var(--red-lt)}
+.f-hint{font-size:7.5px;color:var(--red-lt);letter-spacing:.06em}
+.f-range-row{display:flex;gap:6px}
+.f-field input[type="date"]{width:100%;font-family:var(--serif);font-size:11.5px;padding:6px 7px;background:#26221B;border:1px solid var(--desk-line);border-radius:4px;color:var(--print);cursor:pointer;color-scheme:dark}
+.f-field input[type="date"]:focus{outline:none;border-color:var(--red-lt)}
 .f-note{font-size:10.5px;color:var(--desk-mut);font-style:italic;line-height:1.5;margin-top:10px}
 .f-btns{display:flex;gap:8px;margin-top:12px}
 .f-btns button{flex:1;font-family:var(--kick);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:8px 0;border-radius:4px;cursor:pointer;transition:.15s}
