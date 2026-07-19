@@ -128,14 +128,19 @@ sources:
   origin: pdf_inventar
 - id: jdepeets-ethics
   name: JDE Peet's - Ethics & Compliance
-  url: https://www.jdepeets.com/about-us/ethics-compliance/
+  url: https://www.jdepeets.com/about-us/policies/
   type: corporate
   country: EU
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-07-19: original /about-us/ethics-compliance/ returns HTTP 404
+      and is absent from sitemap.xml. Content moved to /about-us/policies/ (HTTP 200,
+      listed in the sitemap), which hosts the JDE/Peet''s/KDP Codes of Conduct, the Speak
+      Up (whistleblowing) policy, Anti-Bribery/Sanctions/AML policy, Supplier Code of
+      Conduct and Human Rights policy - matching the ethics & compliance focus.'
   monitoring_focus: Code of conduct, whistleblowing, supplier requirements and sanctions compliance.
   categories:
   - jde_peets
@@ -179,14 +184,18 @@ sources:
     scout'
 - id: kdp-news
   name: Keurig Dr Pepper - News
-  url: https://www.keurigdrpepper.com/news
+  url: https://www.keurigdrpepper.com/featured-news/
   type: corporate
   country: INT
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-07-19: original /news returns HTTP 404. The live newsroom is
+      /featured-news/ (HTTP 200, server-rendered) listing KDP press releases and stories
+      with same-site article links. No public RSS (the /wp-json featured-news endpoint
+      only returns a JS redirect).'
   monitoring_focus: KDP group news with actual or potential impact on JDE Peet's EU/EEA operations.
   categories:
   - kdp_impact
@@ -196,14 +205,18 @@ sources:
   origin: pdf_inventar
 - id: kdp-investors
   name: Keurig Dr Pepper - Investors
-  url: https://www.keurigdrpepper.com/investors
+  url: https://investors.keurigdrpepper.com/
   type: corporate
   country: INT
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-07-19: original /investors returns HTTP 404. The IR site lives
+      on the investors.keurigdrpepper.com subdomain (HTTP 200, server-rendered), whose
+      landing page carries press-release and earnings links. The /financial-news sub-page
+      is a JS-only shell (~0.5KB, no server links) so the subdomain root is used instead.'
   monitoring_focus: KDP reports, presentations, synergies and restructurings relevant to the European business.
   categories:
   - kdp_impact
@@ -409,11 +422,23 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: 'Specialist 2026-07-19: nestle.com sits behind an Akamai/WAF bot filter that
+      returns HTTP 403 to the monitor''s non-browser User-Agent on ALL HTML and RSS
+      endpoints - /media/news, /media/pressreleases, /info/rsslinkpage and every /rss
+      or /feed variant tried, including individual article pages. Only robots.txt and
+      sitemap.xml (static XML) are served (200); the sitemap lists /media/news/* URLs
+      but the article bodies themselves 403. Retrieving content would require
+      impersonating a browser (prohibited anti-bot bypass); a headless browser would
+      also face the same bot detection. No public feed/API exists.'
   monitoring_focus: 'Direct competitor: coffee, FMCG, pricing, supply chain, M&A and ESG news with EU/EEA relevance.'
   categories: &id001
   - competitors_direct
   trust_tier: corporate
-  status: active
+  status: unresolved
+  exclusion_reason: 'Anti-bot WAF (Akamai): HTTP 403 to the monitoring User-Agent on all
+    HTML/RSS/API endpoints; only robots.txt and sitemap.xml are reachable but article
+    bodies are blocked. No public feed. Not bypassable without prohibited browser
+    impersonation. Revisit if Nestle exposes a public feed or a non-WAF newsroom mirror.'
   origin: pdf_inventar
 - id: nestle-coffee-brands
   name: Nestle - Coffee brands
@@ -504,15 +529,21 @@ sources:
     scout'
 - id: illy-company
   name: illycaffe - company
-  url: https://www.illy.com/en-ww/company
+  url: https://pressroom.illy.com/
   type: corporate
   country: IT
   language:
   - en
   - it
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-07-19: original /en-ww/company returns HTTP 502 (upstream
+      error) across all locales and is absent from the illy.com sitemaps - the whole
+      /company section is dead. Official illycaffe press room pressroom.illy.com (HTTP
+      200, server-rendered) carries corporate press releases on strategy, products,
+      sustainability and hospitality. Its /feed/ RSS is auth-gated (requires a Feed Key),
+      so the public HTML listing is used instead.'
   monitoring_focus: 'Direct competitor: strategy, products, sustainability and hospitality.'
   categories: *id001
   trust_tier: corporate

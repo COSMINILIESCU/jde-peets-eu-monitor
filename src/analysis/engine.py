@@ -50,7 +50,8 @@ def _extract_json(text: str) -> dict:
     start = text.find("{")
     if start == -1:
         raise EngineError("no JSON object in model output")
-    return json.loads(text[start:text.rfind("}") + 1])
+    # strict=False: tolerate literal newlines/control chars inside strings (models emit them)
+    return json.loads(text[start:text.rfind("}") + 1], strict=False)
 
 
 def _validate(raw: dict, expected_ids: set[int]) -> list[AnalyzedItem]:
