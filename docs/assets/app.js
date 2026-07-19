@@ -626,10 +626,12 @@ function bind() {
 function fit() {
   const wrap = document.querySelector(".stage-wrap");
   const stage = document.querySelector(".stage");
-  const availW = wrap.clientWidth - 18;
+  // clamp to the real visual viewport (phones can report inconsistent layout widths)
+  const vpW = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+  const availW = Math.min(wrap.clientWidth, vpW) - 18;
   // stacked layout (narrow screens): the stage may start below the fold, so size
   // against the viewport itself — the reader scrolls the gazette into view
-  const stacked = window.innerWidth <= 1040;
+  const stacked = window.matchMedia("(max-width: 1040px)").matches;
   const availH = stacked
     ? window.innerHeight - 96
     : window.innerHeight - stage.getBoundingClientRect().top - 58;  // room for the pager
@@ -655,6 +657,19 @@ async function main() {
   ]);
   buildIndex();
   initFilters(); syncFcount(); bind();
+  // Narrow screens: gazette first (sidebar collapsed) and single-page reading mode by default.
+  // matchMedia matches the same viewport the CSS media queries use.
+  if (window.matchMedia("(max-width: 1040px)").matches) {
+    document.querySelector(".layout").classList.add("side-collapsed");
+    $("toggle-side").innerHTML = "▨ Show filters";
+    $("toggle-side").setAttribute("aria-expanded", "false");
+  }
+  if (window.matchMedia("(max-width: 700px)").matches) {
+    state.viewMode = "single";
+    $("scaler").hidden = true;
+    $("scaler-single").hidden = false;
+    $("toggle-view").innerHTML = "▭▭ Two-page view";
+  }
   const items = buildEdition();
   renderChrome(items);
   fit();
