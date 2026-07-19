@@ -121,7 +121,8 @@ def main():
         for t in ("regulator", "corporate", "association", "national_authority", "official_register"):
             print(f"\n===== {t} ({len(by_type.get(t, []))}) =====")
             for s in by_type.get(t, []):
-                print(f"  {s.get('country','?'):3} | {s['name'][:50]:50} | {','.join(s.get('categories',[])[:2])}")
+                cats = ",".join(s.get("categories", [])[:2])
+                print(f"  {s.get('country','?'):3} | {s['name'][:50]:50} | {cats}")
         return
 
     kept, dropped = [], []
