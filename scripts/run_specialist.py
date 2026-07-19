@@ -34,7 +34,9 @@ def run_for(sources: list[dict]) -> tuple[bool, str]:
         "JDE Peet's EU/EEA monitor, following its instructions exactly, and report its per-source "
         f"verdicts.\n\nFailing sources:\n{lines}"
     )
-    return run_agent(prompt, 'WebSearch,WebFetch,Read,Edit,Grep,Glob,Bash(python*)', timeout=3600)
+    cfg = settings().get("specialist", {})
+    return run_agent(prompt, 'WebSearch,WebFetch,Read,Edit,Grep,Glob,Bash(python*)', timeout=3600,
+                     model=cfg.get("model", ""), effort=cfg.get("effort", ""))
 
 
 def main() -> int:

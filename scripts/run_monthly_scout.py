@@ -33,9 +33,12 @@ def main() -> int:
     if not force and not is_first_monday(now):
         log.info("not the first Monday of the month - exiting (use --force to override)")
         return 0
+    from src.common.config import settings
+    scout_cfg = settings().get("scout", {})
     conn = db.connect()
     db.audit(conn, "scout", "scout_start")
-    ok, output = run_agent(PROMPT, "WebSearch,WebFetch,Read,Edit,Grep,Glob", timeout=5400)
+    ok, output = run_agent(PROMPT, "WebSearch,WebFetch,Read,Edit,Grep,Glob", timeout=5400,
+                           model=scout_cfg.get("model", ""), effort=scout_cfg.get("effort", ""))
     stamp = now.strftime("%Y%m%d_%H%M")
     logfile = ROOT / "logs" / f"scout_{stamp}.log"
     logfile.parent.mkdir(exist_ok=True)

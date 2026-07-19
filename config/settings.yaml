@@ -49,6 +49,12 @@ publishing:
 specialist:
   enabled: true                   # auto-invoke difficult-source-specialist after the weekly run
   max_sources_per_run: 5
+  model: "claude-sonnet-5"        # technical probing: strong but economical
+  effort: "medium"
+
+scout:
+  model: "claude-opus-4-8"        # monthly, judgment-heavy research -> strongest model
+  effort: "high"
 
 source_policy:
   # monthly-source-scout: what gets auto-added vs. requires human approval

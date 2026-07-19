@@ -8,7 +8,8 @@ from src.common.config import ROOT, settings
 log = logging.getLogger("headless")
 
 
-def run_agent(prompt: str, allowed_tools: str, timeout: int = 3600) -> tuple[bool, str]:
+def run_agent(prompt: str, allowed_tools: str, timeout: int = 3600,
+              model: str = "", effort: str = "") -> tuple[bool, str]:
     """Run `claude -p` in the project root so .claude/agents/ are available.
 
     Returns (ok, output_text)."""
@@ -17,6 +18,10 @@ def run_agent(prompt: str, allowed_tools: str, timeout: int = 3600) -> tuple[boo
         "--permission-mode", "acceptEdits",
         "--allowedTools", allowed_tools,
     ]
+    if model:
+        cmd += ["--model", model]
+    if effort:
+        cmd += ["--effort", effort]
     try:
         proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
                               encoding="utf-8", timeout=timeout, cwd=ROOT, shell=False)
