@@ -537,14 +537,26 @@ function bind() {
     initFilters(); syncFcount(); const items = buildEdition(); renderChrome(items);
   });
   $("btn-pdf").addEventListener("click", printPDF);
+  $("toggle-side").addEventListener("click", () => {
+    const collapsed = document.querySelector(".layout").classList.toggle("side-collapsed");
+    $("toggle-side").innerHTML = collapsed ? "▨ Show filters" : "◀ Hide filters";
+    $("toggle-side").setAttribute("aria-expanded", String(!collapsed));
+    fit();
+    setTimeout(fit, 60);
+  });
 }
 function fit() {
-  const stage = document.querySelector(".stage-wrap");
-  const avail = Math.min(stage.clientWidth - 16, 1000);
-  const s = avail / 1000, sc = $("scaler");
+  const wrap = document.querySelector(".stage-wrap");
+  const sc = $("scaler");
+  // available width from the actual column, and available height from the viewport
+  const availW = wrap.clientWidth - 12;
+  const top = wrap.getBoundingClientRect().top;
+  const availH = window.innerHeight - top - 84;   // leave room for the pager below
+  // scale so the WHOLE 1000x680 spread fits by width AND height; never upscale past 1:1
+  const s = Math.max(0.2, Math.min(availW / 1000, availH / 680, 1));
   sc.style.transform = `scale(${s})`;
-  sc.style.height = (680 * s + 6) + "px";
   sc.style.width = (1000 * s) + "px";
+  sc.style.height = (680 * s + 6) + "px";
 }
 
 async function main() {
@@ -557,6 +569,7 @@ async function main() {
   const items = buildEdition();
   renderChrome(items);
   fit();
+  setTimeout(fit, 250);   // re-fit once fonts/layout settle
   window.addEventListener("resize", fit);
 }
 main();

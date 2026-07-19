@@ -116,7 +116,12 @@ a{color:inherit}
 .side-provider a:hover{color:var(--print)}
 
 /* ===== Newspaper stage ===== */
-.stage-wrap{padding:18px 10px 10px;display:flex;flex-direction:column;align-items:center}
+.stage-wrap{padding:12px 10px 10px;display:flex;flex-direction:column;align-items:center}
+.stage-toolbar{width:100%;max-width:1000px;display:flex;justify-content:flex-start;margin-bottom:8px}
+.toggle-side{font-family:var(--kick);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:var(--desk-2);border:1px solid var(--desk-line);color:var(--desk-txt);border-radius:4px;padding:7px 14px;cursor:pointer;transition:.15s}
+.toggle-side:hover{border-color:var(--print);color:var(--print)}
+.layout.side-collapsed{grid-template-columns:1fr}
+.layout.side-collapsed .side{display:none}
 .hintline{font-family:var(--kick);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--desk-mut);padding-bottom:12px;text-align:center}
 .stage{display:flex;justify-content:center}
 .scaler{transform-origin:top center}
