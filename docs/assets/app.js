@@ -632,9 +632,10 @@ function fit() {
   // stacked layout (narrow screens): the stage may start below the fold, so size
   // against the viewport itself — the reader scrolls the gazette into view
   const stacked = window.matchMedia("(max-width: 1040px)").matches;
-  const availH = stacked
+  // floor of 380px: at extreme zoom the gazette stays readable and the page scrolls instead
+  const availH = Math.max(380, stacked
     ? window.innerHeight - 96
-    : window.innerHeight - stage.getBoundingClientRect().top - 58;  // room for the pager
+    : window.innerHeight - stage.getBoundingClientRect().top - 58);
   if (state.viewMode === "single") {
     const sc = $("scaler-single");
     const s = Math.max(0.3, Math.min(availW / 500, availH / 680, 2.4));  // one page can grow larger
@@ -657,14 +658,35 @@ async function main() {
   ]);
   buildIndex();
   initFilters(); syncFcount(); bind();
-  // Narrow screens: gazette first (sidebar collapsed) and single-page reading mode by default.
-  // matchMedia matches the same viewport the CSS media queries use.
-  if (window.matchMedia("(max-width: 1040px)").matches) {
+  // Narrow viewports (small screens OR high browser zoom): keep the gazette first.
+  // React to breakpoint crossings live, not only at load — zooming re-evaluates these.
+  const mqNarrow = window.matchMedia("(max-width: 1040px)");
+  const applyNarrow = (m) => {
+    const collapsed = m.matches;
+    document.querySelector(".layout").classList.toggle("side-collapsed", collapsed);
+    $("toggle-side").innerHTML = collapsed ? "▨ Show filters" : "◀ Hide filters";
+    $("toggle-side").setAttribute("aria-expanded", String(!collapsed));
+    fit();
+  };
+  mqNarrow.addEventListener("change", applyNarrow);
+  const mqPhone = window.matchMedia("(max-width: 700px)");
+  const applyPhone = (m) => {
+    if (m.matches && state.viewMode === "spread") setViewMode("single");
+    else if (!m.matches && state.viewMode === "single") setViewMode("spread");
+  };
+  mqPhone.addEventListener("change", applyPhone);
+  // belt-and-braces: some environments resize without firing matchMedia change events
+  let wasNarrow = mqNarrow.matches, wasPhone = mqPhone.matches;
+  window.addEventListener("resize", () => {
+    if (mqNarrow.matches !== wasNarrow) { wasNarrow = mqNarrow.matches; applyNarrow(mqNarrow); }
+    if (mqPhone.matches !== wasPhone) { wasPhone = mqPhone.matches; applyPhone(mqPhone); }
+  });
+  if (mqNarrow.matches) {
     document.querySelector(".layout").classList.add("side-collapsed");
     $("toggle-side").innerHTML = "▨ Show filters";
     $("toggle-side").setAttribute("aria-expanded", "false");
   }
-  if (window.matchMedia("(max-width: 700px)").matches) {
+  if (mqPhone.matches) {
     state.viewMode = "single";
     $("scaler").hidden = true;
     $("scaler-single").hidden = false;
