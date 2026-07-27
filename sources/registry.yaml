@@ -1,5 +1,5 @@
 registry_version: 1
-updated: '2026-07-18'
+updated: '2026-07-20'
 policy:
   auto_add_types:
   - eu_institution
@@ -669,15 +669,21 @@ sources:
     scout'
 - id: lofbergs
   name: Lofbergs
-  url: https://www.lofbergs.se/en/
+  url: https://www.lofbergs.se/
   type: corporate
   country: SE
   language:
   - en
   - sv
   access:
-    method: auto
-    rss: ''
+    method: rss
+    rss: https://www.lofbergs.se/feed/
+    notes: 'Specialist 2026-07-20: /en/ path returns HTTP 404 (English section removed/restructured);
+      the live site is the Swedish-language root www.lofbergs.se (HTTP 200, WordPress).
+      Its standard WordPress RSS feed https://www.lofbergs.se/feed/ (HTTP 200,
+      application/rss+xml) works and is confirmed by robots.txt/sitemap_index.xml
+      (Yoast SEO, no crawl restrictions). Feed is in Swedish; downstream summarisation
+      should handle non-English source text as usual.'
   monitoring_focus: 'Direct competitor: coffee, sourcing, sustainability and products.'
   categories: *id001
   trust_tier: corporate
@@ -785,16 +791,27 @@ sources:
     scout'
 - id: dallmayr-coffee
   name: Dallmayr Coffee
-  url: https://www.dallmayr.com/coffee/
+  url: https://www.presseportal.de/nr/122269
   type: corporate
   country: DE
   language:
   - de
-  - en
   access:
-    method: auto
-    rss: ''
-  monitoring_focus: 'Direct competitor: coffee, vending, OOH and products.'
+    method: rss
+    rss: https://www.presseportal.de/rss/pm_122269.rss2
+    notes: 'Specialist 2026-07-20: dallmayr.com/robots.txt has an explicit
+      "User-agent: * / Disallow: /" block for generic crawlers (only a short allow-list
+      of named search bots - Googlebot, Bingbot etc. - may access specific locale
+      paths), so the monitor cannot legally fetch dallmayr.com at all, confirming the
+      original error. Alois Dallmayr Kaffee oHG maintains an official verified
+      newsroom on Presseportal.de (a dpa/news aktuell press-release distribution
+      service, newsroom ID 122269) which republishes the same company press releases.
+      presseportal.de/robots.txt allows general crawling (only /images/ and /text/
+      disallowed) and its RSS feed https://www.presseportal.de/rss/pm_122269.rss2
+      (HTTP 200, application/xml) returns current Dallmayr press releases with
+      dates and links back to the newsroom. Used as compliant replacement.'
+  monitoring_focus: 'Direct competitor: coffee, vending, OOH and products (via official press-release
+    newsroom, since the corporate site disallows generic crawlers).'
   categories: *id001
   trust_tier: corporate
   status: active
@@ -915,8 +932,47 @@ sources:
   monitoring_focus: 'Coffee-shop competitor: stores, products, labour, sustainability and digital.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: unresolved
+  exclusion_reason: 'Specialist 2026-07-20: stories.starbucks.com sits behind a Cloudflare
+    JS challenge ("Just a moment..." interstitial, managed challenge with
+    challenges.cloudflare.com) that returns HTTP 403 to the monitor''s non-browser
+    User-Agent on the root robots.txt, sitemap.xml, /emea/feed/, /emea/rss/ and
+    (intermittently) the /emea/ page itself. No public RSS/API exists and no
+    sitemap is reachable without passing the challenge. Bypassing a CAPTCHA/JS
+    challenge is prohibited; a headless browser would face the same detection.
+    Partial alternative found and added as a new pending entry: id
+    starbucks-investor-news (investor.starbucks.com), which is server-rendered,
+    allows crawling per robots.txt, and covers Starbucks results/strategy with
+    EU/EMEA relevance, though it does not cover EMEA-specific store/product/labour
+    stories the way stories.starbucks.com/emea did. Revisit if Starbucks exposes a
+    non-Cloudflare-gated EMEA feed.'
   origin: pdf_inventar
+- id: starbucks-investor-news
+  name: Starbucks Coffee Company - Investor Relations / Financial Releases
+  url: https://investor.starbucks.com/news/financial-releases/default.aspx
+  type: corporate
+  country: INT
+  language:
+  - en
+  access:
+    method: html
+    rss: ''
+    notes: 'Specialist 2026-07-20: proposed as a compliant replacement for
+      starbucks-emea, which is blocked by a Cloudflare JS challenge on all
+      endpoints. investor.starbucks.com/robots.txt allows all crawlers
+      (Crawl-delay: 10, Allow: /) and /news/financial-releases/default.aspx
+      (HTTP 200, ~120KB server-rendered HTML) lists financial-release links
+      including quarterly results discussing EMEA segment performance. Narrower
+      focus than the original EMEA stories page (financial/strategy only, not
+      day-to-day store/product/labour stories) - kept as a supplement, not a
+      full substitute.'
+  monitoring_focus: 'Coffee-shop competitor: quarterly results, strategy updates and segment
+    performance with EU/EEA relevance (partial substitute for the Cloudflare-blocked
+    EMEA stories page).'
+  categories: *id001
+  trust_tier: corporate
+  status: pending_approval
+  origin: specialist
 - id: costa-coffee
   name: Costa Coffee - corporate
   url: https://www.costa.co.uk/behind-the-beans
@@ -930,8 +986,44 @@ sources:
   monitoring_focus: 'Coffee-shop and RTD competitor: stores, products, machines and sourcing.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: unresolved
+  exclusion_reason: 'Specialist 2026-07-20: www.costa.co.uk consistently times out
+    (read timeout, tried up to 60s) on the homepage, /behind-the-beans and
+    /sitemap-index.xml, even though robots.txt itself (a tiny static file) loads
+    fast and is fully permissive (Allow: /). This points to slow/blocked responses
+    to non-browser traffic on the actual content pages rather than a robots
+    restriction - not something to force past. No RSS/API found (sitemap
+    unreachable). Costa is owned by The Coca-Cola Company; its parent newsroom
+    covers Costa announcements and is added as a new pending entry
+    (costa-cocacola-newsroom) as a partial alternative. Revisit costa.co.uk
+    directly if response times improve.'
   origin: pdf_inventar
+- id: costa-cocacola-newsroom
+  name: Costa Coffee - via The Coca-Cola Company newsroom
+  url: https://www.coca-colacompany.com/media-center
+  type: corporate
+  country: INT
+  language:
+  - en
+  access:
+    method: html
+    rss: ''
+    notes: 'Specialist 2026-07-20: proposed as a partial replacement for costa-coffee,
+      which times out on all costa.co.uk pages. Costa Coffee is a wholly owned
+      Coca-Cola Company brand (reports into the Coca-Cola Europe operating unit
+      since Jan 2025); coca-colacompany.com/robots.txt has no Disallow directives
+      and /media-center (HTTP 200, ~120KB server-rendered HTML) contains Costa
+      Coffee-related announcements alongside other Coca-Cola Company corporate
+      news. No dedicated RSS/feed found for this section. Broader scope than the
+      original Costa-only source - kept as a supplement, filter for Costa
+      mentions during triage.'
+  monitoring_focus: 'Coffee-shop and RTD competitor: Costa Coffee corporate announcements as
+    published via its parent, The Coca-Cola Company (partial substitute for the
+    unreachable costa.co.uk).'
+  categories: *id001
+  trust_tier: corporate
+  status: pending_approval
+  origin: specialist
 - id: espresso-house
   name: Espresso House
   url: https://espressohouse.com/
@@ -1526,8 +1618,17 @@ sources:
   language:
   - en
   access:
-    method: auto
-    rss: https://eur-lex.europa.eu/content/tools/rss.html
+    method: rss
+    rss: https://eur-lex.europa.eu/EN/display-feed.rss?rssId=222
+    notes: 'Specialist 2026-07-20: https://eur-lex.europa.eu/content/tools/rss.html
+      now returns HTTP 404 (page moved/renamed in a EUR-Lex site redesign). The
+      current RSS directory is https://eur-lex.europa.eu/content/help/search/predefined-rss.html
+      (HTTP 200), which lists predefined feeds by rssId. Verified working feed:
+      https://eur-lex.europa.eu/EN/display-feed.rss?rssId=222 ("Acts of the
+      Official Journal L" - legislation, HTTP 200, application/xml, current
+      items dated 2026). Neither URL is disallowed in robots.txt. Other useful
+      rssId values seen on the directory page: 161, 162, 163, 164, 221 (various
+      OJ/legislation feeds) for future refinement.'
   monitoring_focus: EU legislation, delegated/implementing acts, transposition and case law.
   categories:
   - legislation
