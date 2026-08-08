@@ -8,7 +8,15 @@ Totul de mai jos se rulează din PowerShell, din folderul proiectului:
 - **Luni, 07:00** — rularea săptămânală completă (colectare → analiză AI → publicare pe dashboard).
   Dacă PC-ul e oprit, rularea pornește automat la prima pornire a PC-ului.
 - **Prima zi de luni din lună, 08:00** — scout-ul de surse noi.
+- **Zilnic, 12:30 — recuperare automată.** Verifică dacă a existat o rulare reușită în
+  ultimele 6 zile; dacă nu (rulare întreruptă, PC oprit toată săptămâna etc.), pornește singură
+  una. Nu face nimic dacă totul e la zi.
 - Nu trebuie să faceți nimic. Dashboardul se actualizează singur în ~2 minute după rulare.
+
+> **Lecție din 03.08.2026:** o rulare a fost omorâtă după 18 minute pentru că Windows, implicit,
+> oprește sarcinile programate când laptopul trece pe baterie. Setările sunt acum dezactivate pe
+> toate cele trei sarcini (`scripts\setup_scheduler.ps1`). Dacă vreodată reînregistrați sarcinile,
+> folosiți acel script — conține deja corecțiile.
 
 ## Verificări rapide
 | Vreau să… | Fac așa |
@@ -19,6 +27,8 @@ Totul de mai jos se rulează din PowerShell, din folderul proiectului:
 | Retrag ultima publicare (a apărut ceva greșit) | `python scripts\rollback.py` |
 | Aprob sursele propuse de scout | Deschid `sources\registry.yaml`, caut `pending_approval` și schimb în `active` (sau `rejected`), apoi la următoarea rulare intră în funcțiune |
 | Repar surse care tot eșuează | `python scripts\run_specialist.py` |
+| Verific dacă dashboardul e la zi | `python scripts\catchup.py --status` (spune când a fost ultima rulare reușită) |
+| Forțez recuperarea acum | `python scripts\catchup.py` |
 
 ## Probleme frecvente
 - **Dashboardul nu s-a actualizat luni.** PC-ul era oprit? Rularea pornește la următoarea pornire —
