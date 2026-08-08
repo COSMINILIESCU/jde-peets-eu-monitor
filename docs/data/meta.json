@@ -1,54 +1,29 @@
 {
- "generated_at": "2026-07-27T07:39:22+00:00",
+ "generated_at": "2026-08-08T07:58:25+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W31",
+ "week": "2026-W32",
  "db_counts": {
-  "analyzed": 273,
-  "triaged_out": 1252
+  "analyzed": 335,
+  "triaged_out": 1588
  },
  "last_run": {
-  "run_id": 3,
-  "started_at": "2026-07-27T07:02:44+00:00",
+  "run_id": 5,
+  "started_at": "2026-08-08T06:58:22+00:00",
   "collection": {
-   "sources_total": 170,
-   "sources_failed": 28,
-   "new_items": 245,
-   "duplicates": 460,
+   "sources_total": 169,
+   "sources_failed": 23,
+   "new_items": 199,
+   "duplicates": 514,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
     {
-     "id": "council-press",
+     "id": "eur-lex",
      "status": "fetch_error",
-     "error": "https://www.consilium.europa.eu/en/press/press-releases/: HTTP 403"
-    },
-    {
-     "id": "infocuria",
-     "status": "fetch_error",
-     "error": "https://curia.europa.eu/juris/recherche.jsf?language=en: HTTP 403"
-    },
-    {
-     "id": "ejustice-ecli",
-     "status": "fetch_error",
-     "error": "https://e-justice.europa.eu/ecli/ECLI.jsp: HTTP 403"
-    },
-    {
-     "id": "eu-merger-cases",
-     "status": "fetch_error",
-     "error": "https://competition-policy.ec.europa.eu/mergers/cases_en: HTTP 404"
-    },
-    {
-     "id": "eu-antitrust-cases",
-     "status": "fetch_error",
-     "error": "https://competition-policy.ec.europa.eu/antitrust-and-cartels/cases_en: HTTP 404"
-    },
-    {
-     "id": "efta-surv-competition",
-     "status": "fetch_error",
-     "error": "https://www.eftasurv.int/internal-market/competition: HTTP 404"
+     "error": "https://eur-lex.europa.eu/EN/display-feed.rss?rssId=222: HTTPSConnectionPool(host='eur-lex.europa.eu', port=443): Read timed out. (read timeout=30)"
     },
     {
      "id": "echa",
@@ -86,6 +61,11 @@
      "error": "https://www.dlapiper.com/en/insights: HTTP 429"
     },
     {
+     "id": "bg-competition",
+     "status": "fetch_error",
+     "error": "https://www.cpc.bg/: HTTP 403"
+    },
+    {
      "id": "bg-food-safety",
      "status": "robots_disallowed",
      "error": "robots.txt disallows access"
@@ -111,11 +91,6 @@
      "error": "https://njt.hu/: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
     },
     {
-     "id": "hu-competition",
-     "status": "fetch_error",
-     "error": "https://www.gvh.hu/: HTTPSConnectionPool(host='www.gvh.hu', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError('A certificate chain processed, but terminated in a root certificate which is not trusted by the trust provider.')))"
-    },
-    {
      "id": "lt-food-safety",
      "status": "fetch_error",
      "error": "https://vmvt.lrv.lt/: HTTP 403"
@@ -124,6 +99,11 @@
      "id": "pl-legislation",
      "status": "robots_disallowed",
      "error": "robots.txt disallows access"
+    },
+    {
+     "id": "ro-legislation",
+     "status": "fetch_error",
+     "error": "https://legislatie.just.ro/: HTTP 502"
     },
     {
      "id": "se-competition",
@@ -139,11 +119,6 @@
      "id": "rechtspraak-nl",
      "status": "fetch_error",
      "error": "https://www.rechtspraak.nl: HTTP 403"
-    },
-    {
-     "id": "portal-just-ro",
-     "status": "fetch_error",
-     "error": "http://portal.just.ro: HTTPConnectionPool(host='portal.just.ro', port=80): Max retries exceeded with url: /SitePages/acasa.aspx (Caused by ConnectTimeoutError(<HTTPConnection(host='portal.just.ro', port=80) at 0x1506e9a6190>, 'Connection to portal.just.ro timed out. (connect timeout=30)'))"
     },
     {
      "id": "usda-fas",
@@ -163,9 +138,9 @@
    ]
   },
   "analysis": {
-   "analyzed": 245,
-   "relevant": 36,
-   "triaged_out": 209,
+   "analyzed": 398,
+   "relevant": 62,
+   "triaged_out": 336,
    "errors": 0
   },
   "brief_generated": true

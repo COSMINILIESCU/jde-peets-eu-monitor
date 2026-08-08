@@ -1,5 +1,5 @@
 registry_version: 1
-updated: '2026-07-20'
+updated: '2026-08-03'
 policy:
   auto_add_types:
   - eu_institution
@@ -1781,8 +1781,16 @@ sources:
   language:
   - en
   access:
-    method: auto
-    rss: ''
+    method: rss
+    rss: https://www.consilium.europa.eu/en/rss/pressreleases.ashx
+    notes: 'Specialist 2026-07-27: the HTML press-releases listing and even the
+      domain root/robots.txt return HTTP 403 to the collector''s bare User-Agent
+      (WAF blocks requests with no Accept-Language header). Adding a standard
+      browser User-Agent + Accept-Language header made /en/about-site/rss/ (200)
+      reachable, which links the official press-releases RSS feed at
+      /en/rss/pressreleases.ashx (200, valid RSS 2.0 with a10:updated timestamps,
+      confirmed current through 2026-07-25). Recommend the collector send an
+      Accept-Language header on this domain generally.'
   monitoring_focus: Council agreements, mandates, conclusions and adopted acts.
   categories:
   - eu_communications
@@ -1851,10 +1859,24 @@ sources:
     method: auto
     rss: ''
   monitoring_focus: National judgments identified by ECLI across member states.
+  status: unresolved
+  exclusion_reason: 'Specialist 2026-07-27: the legacy JSP search application
+    (/ecli/ECLI.jsp) is decommissioned/blocked (HTTP 403). The site was rebuilt
+    on Drupal (robots.txt/sitemap.xml serve fine, HTTP 200) but no equivalent
+    ECLI search or results-listing page exists there - the ECLI topic page
+    (/topics/legislation-and-case-law/european-case-law-identifier-ecli_en) is
+    only explanatory text with per-country info links, not a case listing.
+    Checked several plausible successor paths (/webapp/ecli/search,
+    /en/content/find_case_law-284-en.do, /ecli_search) - all 404 or timeout.
+    The ECLI search is fundamentally a federated live query across each member
+    state''s own case-law database (no single feed/API/sitemap of "new"
+    judgments to poll) and would need an interactive/JS-driven search form -
+    not rescuable via RSS/sitemap/API/alternate HTML per the tiered approach.
+    Would need a headless browser driving the search UI, which is out of scope.
+    Revisit if e-justice.europa.eu publishes a public ECLI results feed/API.'
   categories:
   - case_law_investigations
   trust_tier: official
-  status: active
   origin: pdf_inventar
 - id: ejustice-national-legislation
   name: European e-Justice - national legislation
@@ -1979,14 +2001,23 @@ sources:
   origin: pdf_inventar
 - id: eu-merger-cases
   name: EU merger cases
-  url: https://competition-policy.ec.europa.eu/mergers/cases_en
+  url: https://competition-policy.ec.europa.eu/mergers/latest-news_en
   type: official_register
   country: EU
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-07-27: original /mergers/cases_en returns HTTP 404 -
+      the static case-list page was retired. DG COMP moved the actual case
+      database to the JS-only Angular app at
+      https://competition-cases.ec.europa.eu/search?caseInstrument=M (same-length
+      HTML shell for every query, no server-rendered content, no discoverable
+      public API - would need a headless browser). The server-rendered
+      alternative is /mergers/latest-news_en (HTTP 200, confirmed in
+      sitemap.xml, dated press releases on merger clearances/investigations,
+      most recent items dated 22 and 10 July 2026), which is used instead.'
   monitoring_focus: Merger notifications and clearance decisions.
   categories: *id003
   trust_tier: official
@@ -1994,14 +2025,24 @@ sources:
   origin: pdf_inventar
 - id: eu-antitrust-cases
   name: EU antitrust and cartels cases
-  url: https://competition-policy.ec.europa.eu/antitrust-and-cartels/cases_en
+  url: https://competition-policy.ec.europa.eu/antitrust-and-cartels/latest-news_en
   type: official_register
   country: EU
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-07-27: original /antitrust-and-cartels/cases_en
+      returns HTTP 404 - the static case-list page was retired. The case
+      database moved to the JS-only Angular app at
+      https://competition-cases.ec.europa.eu/search?caseInstrument=InstrumentFS
+      (same issue as eu-merger-cases: no server-rendered content, no public
+      API, would need a headless browser). The server-rendered alternative is
+      /antitrust-and-cartels/latest-news_en (HTTP 200, confirmed in
+      sitemap.xml, dated press releases on antitrust/cartel
+      decisions/investigations, most recent items dated 20 July and 9-8 July
+      2026), which is used instead.'
   monitoring_focus: Antitrust investigations, decisions and inspections.
   categories: *id003
   trust_tier: official
@@ -2039,14 +2080,24 @@ sources:
   origin: pdf_inventar
 - id: efta-surv-competition
   name: EFTA Surveillance Authority - competition
-  url: https://www.eftasurv.int/internal-market/competition
+  url: https://www.eftasurv.int/competition/competition-cases
   type: regulator
   country: EEA
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-07-27: original /internal-market/competition returns
+      HTTP 404 (page moved/renamed in a site restructuring; robots.txt confirms
+      sitemap at /cms/api/sitemap, which itself 503''d during probing). The
+      current page is /competition/competition-cases (HTTP 200) - although the
+      body is a React app shell, the initial HTML response embeds the full
+      page content server-side as JSON in window.SERVER_DATA (nodesCount: 21,
+      each case with title/alias/summary), so it is parseable without executing
+      JS. /newsroom/updates (also SERVER_DATA-embedded, nodesCount 1800+, with
+      a "Competition" theme facet and per-item unix dates) is a fresher-signal
+      alternative if case-page cadence proves too slow.'
   monitoring_focus: EFTA antitrust and merger cases in the EEA.
   categories: *id003
   trust_tier: official
@@ -8496,3 +8547,118 @@ sources:
   status: review
   exclusion_reason: Magazine content largely paid; only free news section usable — verify.
   origin: pdf_catalog
+- id: thie-tea-herbal-infusions
+  name: Tea & Herbal Infusions Europe (THIE)
+  url: https://thie-online.eu/current-issues/
+  type: association
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'European tea and herbal/fruit infusions association: EU food-safety
+    regulation (contaminants, MRLs, novel foods), industry standards and sector positions
+    relevant to JDE Peet''s tea and infusions brands (Pickwick, Les 2 Marmottes).'
+  categories:
+  - legislation
+  - supply_chain
+  - sustainability
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: global-coffee-platform
+  name: Global Coffee Platform
+  url: https://www.globalcoffeeplatform.org/latest/
+  type: association
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Multi-stakeholder coffee-sustainability body of which JDE Peet''s
+    is a named member: Coffee Sustainability Reference Code, sustainability-scheme
+    equivalence, collective sustainable-purchase reporting and sector procurement principles.'
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: idh-sustainable-trade
+  name: IDH - The Sustainable Trade Initiative
+  url: https://idh.org/news/
+  type: ngo
+  country: NL
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Sustainable-trade initiative and JDE Peet''s partner: coffee living
+    income, EUDR-compliance systems (e.g. the Vietnam deforestation/coffee database)
+    and supply-chain due diligence relevant to EU deforestation and CSDDD obligations.'
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: fairtrade-international
+  name: Fairtrade International
+  url: https://www.fairtrade.net/en/get-involved/news.html
+  type: ngo
+  country: EU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Certification and advocacy body (Bonn): coffee living income,
+    deforestation and EU due-diligence positions; source of third-party sustainability
+    claims and green-claims/greenwashing-risk context for the coffee sector.'
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: rainforest-alliance
+  name: Rainforest Alliance - Press Releases
+  url: https://www.rainforest-alliance.org/resource/latest/press-release/
+  type: ngo
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Sustainability-certification body: coffee certification and regenerative-agriculture
+    standards adopted by competitors (Nespresso, Lavazza) and relevant to JDE Peet''s
+    sourcing claims and EUDR compliance.'
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: solidaridad-network
+  name: Solidaridad Network
+  url: https://www.solidaridadnetwork.org/news-and-resources
+  type: ngo
+  country: NL
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Sustainable supply-chain NGO and co-publisher of the annual Coffee
+    Barometer: coffee farmer economics, EUDR compliance and living-income advocacy
+    relevant to sourcing due diligence.'
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
