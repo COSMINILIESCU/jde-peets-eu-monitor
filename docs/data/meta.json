@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-08-08T07:58:25+00:00",
+ "generated_at": "2026-08-10T06:49:49+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W32",
+ "week": "2026-W33",
  "db_counts": {
-  "analyzed": 335,
-  "triaged_out": 1588
+  "analyzed": 343,
+  "triaged_out": 1636
  },
  "last_run": {
-  "run_id": 5,
-  "started_at": "2026-08-08T06:58:22+00:00",
+  "run_id": 6,
+  "started_at": "2026-08-10T06:26:54+00:00",
   "collection": {
-   "sources_total": 169,
-   "sources_failed": 23,
-   "new_items": 199,
-   "duplicates": 514,
+   "sources_total": 167,
+   "sources_failed": 18,
+   "new_items": 56,
+   "duplicates": 561,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -26,29 +26,9 @@
      "error": "https://eur-lex.europa.eu/EN/display-feed.rss?rssId=222: HTTPSConnectionPool(host='eur-lex.europa.eu', port=443): Read timed out. (read timeout=30)"
     },
     {
-     "id": "echa",
+     "id": "curia",
      "status": "fetch_error",
-     "error": "https://echa.europa.eu/: HTTP 403"
-    },
-    {
-     "id": "eudr-information-system",
-     "status": "fetch_error",
-     "error": "https://green-business.ec.europa.eu/deforestation-regulation-implementation/eudr-information-system_en: HTTP 404"
-    },
-    {
-     "id": "euipo",
-     "status": "fetch_error",
-     "error": "https://www.euipo.europa.eu/: HTTP 403"
-    },
-    {
-     "id": "clientearth",
-     "status": "fetch_error",
-     "error": "https://www.clientearth.org/europe/: HTTP 404"
-    },
-    {
-     "id": "euractiv",
-     "status": "fetch_error",
-     "error": "https://www.euractiv.com/: HTTP 403"
+     "error": "https://curia.europa.eu/: HTTP 503"
     },
     {
      "id": "whitecase-insights",
@@ -101,11 +81,6 @@
      "error": "robots.txt disallows access"
     },
     {
-     "id": "ro-legislation",
-     "status": "fetch_error",
-     "error": "https://legislatie.just.ro/: HTTP 502"
-    },
-    {
      "id": "se-competition",
      "status": "fetch_error",
      "error": "https://www.konkurrensverket.se/: HTTP 403"
@@ -138,11 +113,11 @@
    ]
   },
   "analysis": {
-   "analyzed": 398,
-   "relevant": 62,
-   "triaged_out": 336,
+   "analyzed": 56,
+   "relevant": 8,
+   "triaged_out": 48,
    "errors": 0
   },
-  "brief_generated": true
+  "brief_generated": false
  }
 }

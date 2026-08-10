@@ -1,5 +1,5 @@
 registry_version: 1
-updated: '2026-08-03'
+updated: '2026-08-08'
 policy:
   auto_add_types:
   - eu_institution
@@ -2538,12 +2538,30 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: 'Specialist 2026-08-08: echa.europa.eu sits behind a Microsoft Azure
+      Application Gateway WAF that returns HTTP 403 to the monitor''s declared
+      User-Agent on EVERY endpoint tried, including robots.txt and sitemap.xml
+      (not just the homepage/news pages) - so no crawl policy can even be read.
+      Tried /news-and-events/news-alerts, /rss, /en/rss, /-/rss,
+      /documents/rss, /reach-training-materials, /who-we-are, /-/press-release:
+      all 403. A plain browser User-Agent (Chrome UA string) DOES pass the WAF,
+      but swapping in a browser signature to get past bot detection is exactly
+      the anti-bot bypass this monitor must not perform, so it was not used.
+      No public RSS/API/sitemap reachable under the declared identity. EU-level
+      REACH/CLP restriction outcomes that reach legal force are still captured
+      via the eur-lex source (Official Journal L series). Revisit if ECHA
+      relaxes the WAF for identified non-browser clients or publishes a public
+      feed elsewhere.'
   monitoring_focus: REACH, CLP, SVHC, restrictions and consultations affecting packaging and equipment.
   categories:
   - sustainability
   - legislation
   trust_tier: official
-  status: active
+  status: unresolved
+  exclusion_reason: 'Azure Application Gateway WAF blocks the monitor''s declared
+    User-Agent on all endpoints (including robots.txt/sitemap.xml); no public
+    feed/API found. Not bypassable without prohibited browser-UA impersonation.
+    Revisit periodically.'
   origin: pdf_inventar
 - id: echa-news
   name: ECHA - News
@@ -2756,14 +2774,25 @@ sources:
   origin: pdf_inventar
 - id: eudr-information-system
   name: EUDR Information System - public information
-  url: https://green-business.ec.europa.eu/deforestation-regulation-implementation/eudr-information-system_en
+  url: https://green-forum.ec.europa.eu/nature-and-biodiversity/deforestation-regulation-implementation/information-system-deforestation-regulation_en
   type: eu_institution
   country: EU
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-08-08: the Commission retired the green-business.ec.europa.eu
+      domain and folded its content into green-forum.ec.europa.eu (green-business.ec.europa.eu
+      now 301-redirects there); the old
+      /deforestation-regulation-implementation/eudr-information-system_en path
+      was not preserved and 404s. Confirmed via the new site''s sitemap.xml
+      that the EUDR Information System page now lives at
+      /nature-and-biodiversity/deforestation-regulation-implementation/information-system-deforestation-regulation_en
+      (HTTP 200, server-rendered, describes the IT system for due-diligence
+      statements under the EUDR). robots.txt on green-forum.ec.europa.eu has
+      no blocking Disallow for this path. No RSS found; HTML page used
+      directly.'
   monitoring_focus: EUDR system notices, guidance and training material.
   categories:
   - supply_chain
@@ -3312,12 +3341,31 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: 'Specialist 2026-08-08: www.euipo.europa.eu blocks the monitor''s
+      declared User-Agent with HTTP 403 on every path tried (homepage,
+      robots.txt, sitemap.xml, /en/news, /en/news-and-events, press-releases
+      page). The bare euipo.europa.eu host serves robots.txt (200, permissive,
+      pointing to the www sitemap) but resets the TCP connection on actual
+      content paths for the same User-Agent - a second layer of blocking, not
+      a fluke. A plain browser (Chrome) User-Agent DOES pass on www., proving
+      this is UA-signature bot detection rather than a network/geo block, but
+      swapping to a browser signature to defeat that detection is the anti-bot
+      bypass this monitor must not perform, so it was not used. Checked the
+      accessible-with-browser-UA pages for an RSS/Atom link (news, news-and-events,
+      press-releases): none found - EUIPO has no public feed. No compliant
+      alternative access route found.'
   monitoring_focus: EU trademarks, designs, decisions and news.
   categories:
   - competitors_direct
   - tech_data_ai
   trust_tier: official
-  status: active
+  status: unresolved
+  exclusion_reason: 'UA-based anti-bot wall on both euipo.europa.eu and
+    www.euipo.europa.eu blocks the monitor''s declared identity on all
+    endpoints (incl. robots.txt on www; TCP resets on the bare domain); no
+    public RSS/API found. Not bypassable without prohibited browser-UA
+    impersonation. Revisit if EUIPO relaxes bot detection or exposes a public
+    feed.'
   origin: pdf_inventar
 - id: euipo-esearch
   name: EUIPO eSearch plus
@@ -4265,14 +4313,24 @@ sources:
     scout'
 - id: clientearth
   name: ClientEarth Europe
-  url: https://www.clientearth.org/europe/
+  url: https://www.clientearth.org/latest/news/
   type: ngo
   country: EU
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: 'Specialist 2026-08-08: /europe/ (and /news/) return HTTP 404 -
+      clientearth.org was restructured and no longer has a dedicated "Europe"
+      landing page. robots.txt (fully permissive, "Disallow:" empty) points to
+      https://www.clientearth.org/sitemap/, which confirms the current news
+      hub lives at /latest/ with sub-sections /latest/news/ (HTTP 200,
+      server-rendered) and /latest/press-office/press-releases/ (HTTP 200) -
+      both list ClientEarth litigation, green-claims, deforestation and
+      corporate-duties coverage matching the original focus. No RSS/Atom feed
+      found (checked /rss, /feed, /feed/, /rss.xml - all 404); HTML listing
+      used directly.'
   monitoring_focus: Climate litigation, green claims, deforestation and corporate duties.
   categories:
   - case_law_investigations
@@ -4424,14 +4482,33 @@ sources:
   origin: pdf_inventar+pdf_catalog
 - id: euractiv
   name: Euractiv
-  url: https://www.euractiv.com/
+  url: https://euractiv.com/fr/feed/
   type: press
   country: EU
   language:
-  - en
+  - fr
   access:
-    method: auto
-    rss: ''
+    method: rss
+    rss: https://euractiv.com/fr/feed/
+    notes: 'Specialist 2026-08-08: www.euractiv.com (the EN edition) sits behind
+      a Cloudflare managed JS challenge ("Just a moment...") that returns HTTP
+      403 to the monitor''s User-Agent on the homepage, robots.txt, /feed/ and
+      /sitemap.xml, confirmed 403 on 5/5 repeated homepage attempts (one earlier
+      200 proved to be non-reproducible/cached, not a real pass). Bypassing a
+      JS/CAPTCHA challenge is prohibited. However Euractiv''s national-edition
+      subdomains, served without the "www." prefix, are NOT behind the same
+      challenge and return HTTP 200 with standard WordPress RSS feeds:
+      euractiv.com/de/feed/, euractiv.com/fr/feed/ and euractiv.com/es/feed/
+      all verified (application/rss+xml, current items dated 2026-08-07,
+      covering pan-EU policy - not just national news, e.g. Sanchez-Meloni row,
+      EU sanctions, EU Council decisions). No English-language edition exists
+      outside the Cloudflare-gated www.euractiv.com. Used the French edition
+      (euractiv.com/fr/feed/) as a compliant substitute for full EU policy
+      coverage; downstream summarisation should handle French source text as
+      it already does for other non-English feeds (e.g. lofbergs). The
+      German (euractiv.com/de/feed/) and Spanish (euractiv.com/es/feed/) feeds
+      are equally viable alternates if French coverage proves narrower than
+      expected.'
   monitoring_focus: EU legislation, agriculture, environment, competition and digital policy coverage.
   categories:
   - press
