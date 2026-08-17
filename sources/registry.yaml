@@ -4632,8 +4632,14 @@ sources:
   - case_law_investigations
   - legislation
   trust_tier: professional
-  status: active
+  status: unresolved
   origin: pdf_inventar
+  exclusion_reason: 'specialist probe 2026-08-10: whole domain returns HTTP 403 to
+    non-browser requests, including /robots.txt, /rss.xml and /sitemap.xml (edge
+    bot-protection, likely Akamai/Cloudflare challenge). No RSS/Atom, sitemap or API
+    reachable without impersonating a browser session; would require a headless
+    browser to render/pass the challenge, which is out of scope. No legal unauthenticated
+    route found.'
 - id: cms-law-now
   name: CMS - Law-Now
   url: https://cms-lawnow.com/
@@ -4700,8 +4706,14 @@ sources:
   - legislation
   - tech_data_ai
   trust_tier: professional
-  status: active
+  status: unresolved
   origin: pdf_inventar
+  exclusion_reason: 'specialist probe 2026-08-10: whole domain returns HTTP 429 to
+    non-browser requests, including /robots.txt, /sitemap.xml and a probed /rss
+    path (edge bot/rate-limit protection, not a transient rate limit — persisted
+    across separate requests and endpoints). No RSS/Atom, sitemap or API reachable
+    without a browser session; would require a headless browser, which is out of
+    scope. No legal unauthenticated route found.'
 - id: bakermckenzie-insightplus
   name: Baker McKenzie - InsightPlus
   url: https://insightplus.bakermckenzie.com/
@@ -4953,8 +4965,14 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: unresolved
   origin: pdf_inventar
+  exclusion_reason: 'specialist probe 2026-08-10: robots.txt is "User-agent: * /
+    Disallow: /" for the entire bfsa.egov.bg domain (confirmed HTTP 200 on /robots.txt
+    itself). No RSS/sitemap exempted from the blanket disallow. Per hard rule, robots.txt
+    is respected, not bypassed. EU-level food safety alerts already covered by
+    ec-food-safety and rasff-window (RASFF Window), which include Bulgarian notifications;
+    no separate national replacement proposed.'
 - id: bg-data-protection
   name: Bulgaria - Commission for Personal Data Protection
   url: https://www.cpdp.bg/
@@ -5126,8 +5144,15 @@ sources:
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
-  status: active
+  status: unresolved
   origin: pdf_inventar
+  exclusion_reason: 'specialist probe 2026-08-10: robots.txt disallows "User-agent: *"
+    (and every named bot except Googlebot specifically, which alone is allowed).
+    Our collector correctly identifies as itself, not as Googlebot, so it is disallowed;
+    impersonating Googlebot''s user-agent to gain access it was not actually granted
+    would be deceptive and is not done. No RSS/sitemap alternative found. EU-level
+    competition coverage already exists via dg-competition, dg-comp-case-search
+    and ecn-ncas; no separate CY-specific replacement proposed.'
 - id: cy-food-safety
   name: Cyprus - Ministry of Health - Food Safety
   url: https://www.moh.gov.cy/
@@ -5583,8 +5608,23 @@ sources:
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: unresolved
   origin: pdf_inventar+pdf_catalog
+  exclusion_reason: 'specialist probe 2026-08-10: legifrance.gouv.fr returns HTTP
+    403 to non-browser requests on every path tried, including /robots.txt itself,
+    /rss, /liste/jorf and /eli/jorf (edge bot-protection). vie-publique.fr/rss requires
+    JS + cookies (client-side redirect wall). journal-officiel.gouv.fr is reachable
+    but is a different official register (association filings/JOAFE), not a
+    substitute for national legislation/consolidation content. Found the underlying
+    official open-data mirror DILA publishes for reuse, unauthenticated, updated
+    daily: https://echanges.dila.gouv.fr/OPENDATA/JORF/ (Journal Officiel texts)
+    and https://echanges.dila.gouv.fr/OPENDATA/LEGI/ (consolidated legislation) —
+    same content as Legifrance, served as daily tar.gz XML bundles. This is a real,
+    legal, unauthenticated route, but ingesting it needs a new collector type
+    (download+untar+parse XML), which the current pipeline does not support
+    (only rss/html/pdf). Flagging as needs-human-decision: either commission a
+    dedicated DILA-opendata collector, or accept fr-legislation as unresolved
+    until then.'
 - id: fr-competition
   name: France - Autorite de la concurrence
   url: https://www.autoritedelaconcurrence.fr/
