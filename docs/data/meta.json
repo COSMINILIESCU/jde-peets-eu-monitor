@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-08-17T06:23:22+00:00",
+ "generated_at": "2026-08-24T07:14:24+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W34",
+ "week": "2026-W35",
  "db_counts": {
-  "analyzed": 392,
-  "triaged_out": 1830
+  "analyzed": 420,
+  "triaged_out": 2010
  },
  "last_run": {
-  "run_id": 8,
-  "started_at": "2026-08-17T05:50:30+00:00",
+  "run_id": 10,
+  "started_at": "2026-08-24T06:42:34+00:00",
   "collection": {
-   "sources_total": 162,
-   "sources_failed": 14,
-   "new_items": 11,
-   "duplicates": 525,
+   "sources_total": 158,
+   "sources_failed": 9,
+   "new_items": 41,
+   "duplicates": 584,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -28,37 +28,12 @@
     {
      "id": "at-legislation",
      "status": "fetch_error",
-     "error": "https://www.ris.bka.gv.at/: HTTPSConnectionPool(host='www.ris.bka.gv.at', port=443): Read timed out. (read timeout=30)"
+     "error": "https://www.ris.bka.gv.at/: HTTP 503"
     },
     {
      "id": "bg-competition",
      "status": "fetch_error",
      "error": "https://www.cpc.bg/: HTTP 403"
-    },
-    {
-     "id": "de-competition",
-     "status": "robots_disallowed",
-     "error": "robots.txt disallows access"
-    },
-    {
-     "id": "hu-legislation",
-     "status": "fetch_error",
-     "error": "https://njt.hu/: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
-    },
-    {
-     "id": "lt-food-safety",
-     "status": "fetch_error",
-     "error": "https://vmvt.lrv.lt/: HTTP 403"
-    },
-    {
-     "id": "pl-legislation",
-     "status": "robots_disallowed",
-     "error": "robots.txt disallows access"
-    },
-    {
-     "id": "se-competition",
-     "status": "fetch_error",
-     "error": "https://www.konkurrensverket.se/: HTTP 403"
     },
     {
      "id": "li-competition",
@@ -71,11 +46,6 @@
      "error": "https://www.rechtspraak.nl: HTTP 403"
     },
     {
-     "id": "portal-just-ro",
-     "status": "fetch_error",
-     "error": "http://portal.just.ro: HTTP 504"
-    },
-    {
      "id": "usda-fas",
      "status": "fetch_error",
      "error": "https://fas.usda.gov: HTTP 403"
@@ -86,6 +56,11 @@
      "error": "https://www.gcrmag.com: HTTP 403"
     },
     {
+     "id": "comunicaffe",
+     "status": "fetch_error",
+     "error": "https://www.comunicaffe.com/feed/: HTTP 403"
+    },
+    {
      "id": "wwf-europe",
      "status": "fetch_error",
      "error": "https://www.wwf.eu: HTTP 403"
@@ -93,9 +68,9 @@
    ]
   },
   "analysis": {
-   "analyzed": 195,
-   "relevant": 40,
-   "triaged_out": 155,
+   "analyzed": 208,
+   "relevant": 28,
+   "triaged_out": 180,
    "errors": 0
   },
   "brief_generated": true

@@ -5726,11 +5726,41 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: >-
+      2026-08-17 specialist review. robots.txt (https://www.bundeskartellamt.de/robots.txt) disallows
+      /DE/Service/ and /EN/Service/ (allowing only /SiteGlobals/Modules|StyleBundles|Frontend/). The
+      site's real RSS feed, auto-discovered via <link rel=alternate> on the homepage, lives at
+      https://www.bundeskartellamt.de/DE/Service/RSS/_documents/rssnewsfeed.xml — confirmed working
+      (returns current 2026 Pressemitteilungen with correct pubDate) but its path is under the
+      disallowed /DE/Service/ prefix, so it cannot be fetched while respecting robots.txt.
+      Checked alternatives, none usable with the current collector without a code change:
+      (1) robots.txt explicitly allows and lists a sitemap at
+      https://www.bundeskartellamt.de/Sitemap_Index.xml -> https://www.bundeskartellamt.de/Sitemap_XML.xml,
+      which does include current-year SharedDocs/Meldung/.../Pressemitteilungen article URLs (allowed
+      paths), but it is a plain sitemap (no title/pubDate elements) — feedparser cannot parse it as an
+      RSS/Atom feed, so `method: rss` yields 0 entries. Would need a dedicated sitemap collector
+      (parse date/title from the URL slug, e.g. DD_MM_YYYY_Slug.html) - not currently implemented.
+      (2) Homepage https://www.bundeskartellamt.de/ and the allowed listing page
+      https://www.bundeskartellamt.de/DE/Infothek_Service/Aktuelles/aktuelles_node.html are both
+      robots-allowed but their real press-release list is either link text too short ("Mehr erfahren",
+      13 chars, below the generic HTML collector's 35-char title threshold) or loaded via a JS/AJAX
+      search widget hosted under the disallowed /SiteGlobals/Forms/ path — so generic `method: html`
+      returns only nav-menu links, not articles (silent 0-yield, would look "ok" while missing all news).
+      Fix requires either a small collector change (sitemap-aware method, using
+      https://www.bundeskartellamt.de/Sitemap_XML.xml with date parsed from the URL) or an accepted
+      robots.txt exception — flagging for engineering / human review rather than forcing a broken
+      html/rss mapping into the registry.
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
-  status: active
+  status: unresolved
   origin: pdf_inventar+pdf_catalog
+  exclusion_reason: >-
+    robots.txt disallows /DE/Service/, which is where the only working RSS feed
+    (rssnewsfeed.xml) lives. No robots-allowed URL yields usable structured items with the
+    current rss/html/pdf collectors (sitemap is allowed but not feed-parseable; allowed HTML
+    pages render their press list via JS from a disallowed search endpoint). Needs a collector
+    code change (sitemap-aware method) or explicit policy decision — see access.notes for detail.
 - id: de-food-safety
   name: Germany - BVL
   url: https://www.bvl.bund.de/
@@ -5886,17 +5916,29 @@ sources:
   exclusion_reason: 'triage: outside focused Legal & Corporate Affairs set (CEE reader); reversible via monthly
     scout'
 - id: hu-legislation
-  name: Hungary - National Legislation Database (NJT)
-  url: https://njt.hu/
+  name: Hungary - Official Gazette (Magyar Kozlony)
+  url: https://magyarkozlony.hu/
   type: official_register
   country: HU
   language: &id023
   - hu
   access:
-    method: auto
-    rss: ''
-  monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
-    database.
+    method: rss
+    rss: https://magyarkozlony.hu/feed
+    notes: 'Specialist 2026-08-17: njt.hu (National Legislation Database) resets the
+      TCP/TLS connection for every request (including robots.txt), reproduced both
+      from the local network and from a separate Anthropic-infra network path -
+      this is a network-layer anti-bot block, not a transient outage, so it was not
+      bypassed. Replaced with the Hungarian Official Gazette (Magyar Kozlony),
+      which is the primary official publication of all new legislation (njt.hu is
+      only a secondary consolidated-text database that republishes the same acts
+      after Magyar Kozlony). magyarkozlony.hu/robots.txt allows all crawlers
+      (Disallow: none) and the site exposes a working public RSS feed at /feed
+      with per-issue items (Magyar Kozlony, Hivatalos Ertesito, Indokolasok Tara),
+      real pubDate timestamps and direct PDF enclosure links. Old njt.hu URL kept
+      only as metadata; not used for fetching.'
+  monitoring_focus: New laws, decrees, EU transposition acts and national measures published in Hungary's official
+    gazette.
   categories: *id006
   trust_tier: official
   status: active
@@ -6300,8 +6342,17 @@ sources:
   monitoring_focus: Food safety alerts, controls, contaminants, food fraud and labelling enforcement.
   categories: *id009
   trust_tier: official
-  status: active
+  status: unresolved
   origin: pdf_inventar
+  exclusion_reason: 'specialist probe 2026-08-17: entire vmvt.lrv.lt domain (and the
+    shared lrv.lt government portal it runs on) is behind a Cloudflare bot-challenge
+    ("Just a moment...", Cf-Mitigated: challenge) returning HTTP 403 for every path
+    tried, including /, /robots.txt, /sitemap.xml, /lt/naujienos, /rss and /en/ -
+    robots.txt itself cannot even be fetched to check for an exempted feed. No RSS,
+    sitemap, or API endpoint is reachable without solving a JS challenge, which is
+    an anti-bot measure this monitor does not bypass. EU-level food safety alerts
+    already covered by ec-food-safety and rasff-window (RASFF Window), which include
+    Lithuanian notifications; no separate national replacement proposed.'
 - id: lt-data-protection
   name: Lithuania - State Data Protection Inspectorate
   url: https://vdai.lrv.lt/
@@ -6647,11 +6698,39 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: >
+      2026-08-17 specialist review: isap.sejm.gov.pl/robots.txt disallows all crawlers except
+      Googlebot/Nekstbot (User-agent: * / Disallow: /), which is why every fetch attempt is
+      correctly blocked -- this is intentional site policy, not a transient error. The same
+      blanket "Disallow: /" (with only Google/AdsBot-Google exceptions) applies to the mirror
+      dziennikustaw.gov.pl, so neither host has any legally accessible path (no feed/sitemap
+      is exempted). No RSS/Atom feed exists on either host.
+      Found a working, robots-compliant alternative: the official Sejm ELI API at
+      https://api.sejm.gov.pl/eli/acts/DU/{year} (e.g. https://api.sejm.gov.pl/eli/acts/DU/2026)
+      -- a different host with NO robots.txt (404, i.e. no crawl restriction declared) that
+      returns the full current-year Dziennik Ustaw index as JSON (title, ELI id, announcementDate,
+      promulgation date, status, type) and is clearly built for public/programmatic consumption.
+      Confirmed reachable and returning live 2026 data during this review.
+      BLOCKED ON CODE: this repo's collector only implements method in {rss, html, pdf}
+      (src/collectors/collect.py, src/collectors/html_page.py) -- there is no JSON/API collector,
+      and any access.rss value forces RSS/XML parsing regardless of access.method, so the JSON
+      endpoint cannot be wired through the registry alone. Needs a small collector addition
+      (a `method: api` branch that GETs the URL and parses the `items` JSON array) before this
+      source can resume. Recommended target once implemented:
+      access.method: api, access.rss: https://api.sejm.gov.pl/eli/acts/DU/2026 (roll the year,
+      or use the API's date-range/search params if available).
   monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
     database.
   categories: *id006
   trust_tier: official
-  status: active
+  status: unresolved
+  exclusion_reason: >
+    isap.sejm.gov.pl and its mirror dziennikustaw.gov.pl both disallow all crawlers via
+    robots.txt (Disallow: / for User-agent: *, with narrow Googlebot-only exceptions) and
+    neither publishes a feed/sitemap that is exempted. A working replacement was found
+    (official JSON API at api.sejm.gov.pl/eli/acts, no robots.txt restriction) but the
+    collector pipeline has no JSON/API method (only rss/html/pdf) -- see access.notes.
+    Requires a collector code change, out of scope for a registry-only fix.
   origin: pdf_inventar
 - id: pl-competition
   name: Poland - UOKiK
@@ -7220,10 +7299,22 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: >-
+      2026-08-17: Entire domain (root, /en/, /en/news/, robots.txt-listed sitemap
+      at /om-oss/om-webbplatsen/webbkarta/?type=xml, /rss/) returns HTTP 403 with
+      a Cloudflare "Just a moment..." JS challenge page (challenges.cloudflare.com),
+      not a plain 403. This is an anti-bot/CAPTCHA wall — no RSS, sitemap, or API
+      endpoint is reachable without executing the JS challenge, which is explicitly
+      disallowed. No official alternative (EU ECN portal, EC IP Helpdesk directory)
+      republishes Konkurrensverket's own press releases/decisions as primary source.
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
-  status: active
+  status: unresolved
+  exclusion_reason: >-
+    Cloudflare JS-challenge bot wall on entire domain (incl. robots.txt sitemap
+    and /rss/ path); no feed/sitemap/API reachable without solving CAPTCHA/JS
+    challenge. Would require a headless browser to bypass, which is out of scope.
   origin: pdf_inventar
 - id: se-food-safety
   name: Sweden - Swedish Food Agency
