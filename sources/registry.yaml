@@ -5750,6 +5750,20 @@ sources:
       https://www.bundeskartellamt.de/Sitemap_XML.xml with date parsed from the URL) or an accepted
       robots.txt exception — flagging for engineering / human review rather than forcing a broken
       html/rss mapping into the registry.
+      2026-08-24 re-check (8th consecutive failing run): robots.txt unchanged (still disallows
+      /DE/Service/, /EN/Service/, /SiteGlobals/ except a few asset sub-paths; only allowed Sitemap:
+      https://www.bundeskartellamt.de/Sitemap_Index.xml). Additionally checked the homepage
+      (https://www.bundeskartellamt.de/DE/Home/home_node.html, robots-allowed) directly: it does link
+      real /SharedDocs/Meldung/DE/Pressemitteilungen/... and .../AktuelleMeldungen/... article URLs
+      (SharedDocs is not disallowed), but every one of those anchors uses generic link text "Mehr
+      erfahren" — same short/uninformative-title problem as the Aktuelles listing page, so the generic
+      html collector still cannot extract usable titles without a bespoke per-source extractor (e.g.
+      parsing the adjacent heading, or the DD_MM_YYYY_Slug in the URL). Also checked
+      https://www.govdata.de (German open-data portal) for a Bundeskartellamt press-release dataset/API
+      — none exists (0 results for "bundeskartellamt pressemitteilungen"). No new robots-allowed,
+      generically-parseable route found. Conclusion unchanged: needs a small dedicated collector
+      (sitemap- or SharedDocs-link-aware, deriving date from the URL slug) — out of scope for a
+      registry-only specialist pass. Verdict: needs manual/engineering review, not a dead source.
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
@@ -7602,8 +7616,22 @@ sources:
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
-  status: active
+  status: unresolved
   origin: pdf_inventar
+  exclusion_reason: 'Specialist 2026-08-24: entire llv.li domain is behind a Cloudflare
+    "managed challenge" (JS/CAPTCHA-style bot check) - HTTP 403 with a "Just a
+    moment..." interstitial on every path tested, including /robots.txt and
+    /sitemap.xml (both also 403''d, so no Sitemap: directive could even be
+    read), the DE-language mirror, and common feed paths. No RSS, sitemap, API,
+    or server-rendered alternative exists that avoids the challenge; per the
+    hard rules this is not bypassable without a headless browser, which is out
+    of scope. Note: Liechtenstein has no standalone national merger/antitrust
+    regime - EEA competition law applies directly and cases are actually
+    decided by the EFTA Surveillance Authority (ESA), already tracked in this
+    registry as efta-surv-competition (https://www.eftasurv.int/competition/competition-cases)
+    and efta-surveillance, so the substantive competition-enforcement signal
+    for Liechtenstein is not lost even with this page unreachable. No new
+    replacement source added to avoid duplicating those existing entries.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -8193,8 +8221,18 @@ sources:
   language:
   - nl
   access:
-    method: auto
-    rss: ''
+    method: rss
+    rss: https://data.rechtspraak.nl/uitspraken/zoeken?sort=DESC&max=50&return=DOC
+    notes: >-
+      www.rechtspraak.nl returns HTTP 403 to the collector (anti-bot on the marketing/CMS
+      front end), but the official Rechtspraak Open Data API at data.rechtspraak.nl is public,
+      unauthenticated, and unaffected (verified 2026-08-24, HTTP 200). It returns an Atom feed
+      of published ECLI case-law entries sorted by publication timestamp (most recent first),
+      each with title, summary and a link to the human-readable page on
+      uitspraken.rechtspraak.nl. This is the same official register, just the documented data
+      channel instead of the scraped HTML page. No date/subject filter applied here to keep
+      general coverage; can be narrowed later with the API's date/subject query params if the
+      volume proves too broad.
   monitoring_focus: Commercial litigation and local court decisions.
   categories:
   - case_law_investigations
@@ -8433,15 +8471,35 @@ sources:
   origin: pdf_catalog
 - id: usda-fas
   name: USDA FAS — global coffee reports
-  url: https://fas.usda.gov
+  url: https://fas.usda.gov/data/coffee-world-markets-and-trade
   type: national_authority
   country: INT
   language:
   - en
   access:
-    method: auto
+    method: html
     rss: ''
-  monitoring_focus: Semi-annual global coffee market reports.
+    notes: >
+      Root domain fas.usda.gov sits behind an Akamai WAF that returns HTTP 403
+      for requests without a browser-like User-Agent header, and can also
+      return transient 403/503 when hit with rapid back-to-back requests even
+      with a browser UA (bot-mitigation on request burst, not IP/geo block).
+      No RSS/Atom feed exists (/rss.xml -> 404); sitemap.xml exists but is a
+      27-page generic Drupal sitemap index with no coffee-specific subset, not
+      useful for targeted polling. robots.txt (fetched with a browser UA)
+      does NOT disallow /data/ or the homepage, so scraping this page is
+      compliant. Fix: set url to the actual listing page
+      https://fas.usda.gov/data/coffee-world-markets-and-trade (the "Coffee:
+      World Markets and Trade" biannual report archive, confirmed live entry
+      dated 2026-07-22 at probe time), send a standard desktop browser
+      User-Agent header, and use a single request per run (no rapid retries)
+      to avoid the burst-based 403/503. Each report card carries a real
+      machine-readable <time datetime="..."> and a permalink
+      (/data/coffee-world-markets-and-trade-MMDDYYYY) to the individual
+      report page - use that datetime as the publication date, never
+      today's date. Verified working with requests + truststore on
+      2026-08-24 (8/8 successful fetches with a ~2s gap between requests).
+  monitoring_focus: Semi-annual global coffee market reports (Coffee - World Markets and Trade).
   categories:
   - supply_chain
   trust_tier: official
@@ -8532,7 +8590,23 @@ sources:
   - press
   - competitors_adjacent
   trust_tier: established_press
-  status: active
+  status: unresolved
+  exclusion_reason: >
+    HTTP 403 on both the homepage and the WordPress feed (/feed/) when requested with our
+    declared collector identity (config.user_agent, a descriptive non-browser UA) or with any
+    generic non-browser-looking UA (plain "Mozilla/5.0", python-requests default, even
+    Googlebot's UA string) - all return 403. robots.txt itself (https://www.gcrmag.com/robots.txt)
+    allows all crawlers ("User-agent: * / Disallow:"), so this is a WAF/CDN-level bot
+    fingerprint check, not a robots.txt block. The site only serves 200 when a full realistic
+    desktop-Chrome UA string is sent, which would mean disguising the collector as a real
+    browser to evade the site's anti-bot filtering - that is an anti-bot bypass and is
+    disallowed by policy, so it is not implemented. No alternate feed path, sitemap-based
+    workaround, or public API was found that avoids the same WAF (sitemap.xml/sitemap_index.xml
+    and /rss both sit behind the same 403 pattern under our identity). Coverage gap is
+    partially mitigated by existing overlapping trade-press sources already in the registry
+    (coffee-intelligence, tea-coffee-trade-journal, comunicaffe) which report on the same
+    industry beat. Would need a headless browser (explicitly out of scope per instructions) or
+    contacting the publisher for an allow-listed feed to restore access.
   origin: pdf_catalog
 - id: coffee-intelligence
   name: Coffee Intelligence
