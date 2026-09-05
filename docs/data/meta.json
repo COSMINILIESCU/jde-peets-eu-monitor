@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-08-30T09:37:42+00:00",
+ "generated_at": "2026-09-05T11:31:30+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W35",
+ "week": "2026-W36",
  "db_counts": {
-  "analyzed": 439,
-  "triaged_out": 2197
+  "analyzed": 457,
+  "triaged_out": 2404
  },
  "last_run": {
-  "run_id": 11,
-  "started_at": "2026-08-30T09:01:54+00:00",
+  "run_id": 13,
+  "started_at": "2026-09-05T10:56:37+00:00",
   "collection": {
-   "sources_total": 156,
-   "sources_failed": 6,
-   "new_items": 206,
-   "duplicates": 609,
+   "sources_total": 155,
+   "sources_failed": 4,
+   "new_items": 225,
+   "duplicates": 584,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -36,26 +36,16 @@
      "error": "https://www.cpc.bg/: HTTP 403"
     },
     {
-     "id": "usda-fas",
-     "status": "fetch_error",
-     "error": "https://fas.usda.gov/data/coffee-world-markets-and-trade: HTTP 403"
-    },
-    {
      "id": "comunicaffe",
      "status": "fetch_error",
      "error": "https://www.comunicaffe.com/feed/: HTTP 403"
-    },
-    {
-     "id": "wwf-europe",
-     "status": "fetch_error",
-     "error": "https://www.wwf.eu: HTTP 403"
     }
    ]
   },
   "analysis": {
-   "analyzed": 206,
-   "relevant": 19,
-   "triaged_out": 187,
+   "analyzed": 225,
+   "relevant": 18,
+   "triaged_out": 207,
    "errors": 0
   },
   "brief_generated": true
