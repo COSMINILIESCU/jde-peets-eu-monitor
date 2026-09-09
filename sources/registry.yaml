@@ -4948,10 +4948,35 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: >
+      2026-09-05 specialist probe: entire domain (www.cpc.bg and cpc.bg, http and https)
+      returns HTTP 403 with header "Cf-Mitigated: challenge" and a Cloudflare
+      "Just a moment..." interstitial (JS proof-of-work challenge), for every path
+      tried including /, /robots.txt, /sitemap.xml, /feed, /rss, /rss.xml, /news,
+      /press - the challenge is served before any of those paths are distinguished,
+      so no feed/sitemap/API can be reached without solving it. No <link rel=alternate>
+      discoverable (HTML never served). Web search found no RSS/API/mirrored register
+      republishing CPC decisions in full (found only secondary commentary: Global
+      Competition Review, Concurrences.com, Lexology, Kluwer Competition Law Blog -
+      none of these are official or complete substitutes and were not added).
+      Archive.org CDX check was inconclusive (tool timeout in this environment) and
+      would in any case only give historical snapshots, not a live weekly feed.
+      Per hard rule, will not attempt to bypass the Cloudflare challenge (would
+      require a headless/JS-solving browser, explicitly out of scope per SOP step 7).
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
-  status: active
+  status: unresolved
+  exclusion_reason: >
+    Cloudflare JS challenge ("Cf-Mitigated: challenge") blocks the entire domain
+    (all paths, http and https, www and bare domain) with HTTP 403 before any
+    content - including robots.txt and sitemap.xml - can be read. No RSS/Atom
+    feed, sitemap, public API, or alternative official mirror was found. Bypassing
+    the challenge would require a headless/JS-capable browser, which is excluded
+    by the hard "no anti-bot bypass" rule. Needs re-probe if CPC changes its
+    hosting/WAF configuration, or human approval to add a non-official secondary
+    source (e.g. Concurrences.com, Global Competition Review) as a lower-tier
+    substitute.
   origin: pdf_inventar
 - id: bg-food-safety
   name: Bulgaria - Bulgarian Food Safety Agency
@@ -5788,6 +5813,21 @@ sources:
       unchanged: unresolved, needs a collector code change (SharedDocs-link + per-article
       <h1>/<title> extraction, bypassing the short-anchor-text filter for this allowed path), not a
       registry-only fix.
+      2026-09-05 re-check (4th specialist pass): robots.txt re-fetched, byte-for-byte unchanged
+      (Disallow /SiteGlobals/, /DE/Service/, /EN/Service/; Allow only
+      /SiteGlobals/Modules|StyleBundles|Frontend/; Sitemap: https://www.bundeskartellamt.de/Sitemap_Index.xml).
+      Searched for a syndication route outside bundeskartellamt.de: checked whether Bundesnetzagentur
+      (sister federal authority) republishes Bundeskartellamt press releases with its own feed —
+      https://www.bundesnetzagentur.de/SharedDocs/ExterneLinks/Presse/BKart-PM.html returns 200 but is
+      only a static redirect/link stub to bundeskartellamt.de content, not an independent republished
+      feed with its own dates, so not usable. Searched for a presseportal.de or similar press-wire
+      syndication of Bundeskartellamt releases — none exists; Bundeskartellamt only distributes via its
+      own RSS (disallowed path) and an opt-in email Presseverteiler (not a public feed). Re-confirmed
+      /SharedDocs/Meldung/DE/Pressemitteilungen/ has no directory listing (redirects to homepage) and
+      the homepage/Aktuelles listing still expose only "Mehr erfahren" anchor text. No new
+      robots-allowed, feed-parseable route found; no viable replacement source found. Verdict
+      unchanged: unresolved, needs the collector code change described above (out of scope for a
+      registry-only specialist pass).
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
@@ -7655,7 +7695,10 @@ sources:
     registry as efta-surv-competition (https://www.eftasurv.int/competition/competition-cases)
     and efta-surveillance, so the substantive competition-enforcement signal
     for Liechtenstein is not lost even with this page unreachable. No new
-    replacement source added to avoid duplicating those existing entries.'
+    replacement source added to avoid duplicating those existing entries.
+    Re-verified 2026-09-05: still HTTP 403 (Cloudflare managed challenge) on
+    the target page, /robots.txt, /sitemap.xml, and the DE mirror. No change
+    in status.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -8618,6 +8661,15 @@ sources:
   trust_tier: established_press
   status: unresolved
   exclusion_reason: >
+    2026-09-05 specialist re-check confirms prior finding below still holds: HTTP 403 on
+    homepage, article pages, /feed, /rss and /wp-json/* under our declared collector
+    User-Agent (config/settings.yaml) -- only the Yoast sitemap XML paths
+    (/sitemap_index.xml, /post-sitemap*.xml) return 200, but those give URLs/lastmod dates
+    only, no title or body text, since every article page itself is still 403. A generic
+    browser User-Agent does return 200 everywhere, but spoofing one is exactly the anti-bot
+    bypass this project's hard rules forbid, so it was not adopted. Verdict unchanged:
+    unresolved, no code-free fix exists.
+    ---
     HTTP 403 on both the homepage and the WordPress feed (/feed/, /rss) when requested with our
     declared collector identity (config.user_agent, a descriptive non-browser UA) or with any
     generic non-browser-looking UA (plain "Mozilla/5.0", python-requests default, even
@@ -8851,6 +8903,16 @@ sources:
       infrequent/shallow to serve as a recurring weekly feed. Per hard
       rules, did not attempt to bypass the block with a spoofed browser
       User-Agent (that would be circumventing an anti-bot measure).
+      Re-verified 2026-09-05: identical site-wide HTTP 403 on /, /robots.txt,
+      /sitemap.xml, /feed, /rss, /en/newsroom, /en/news with our identifying
+      User-Agent; confirmed with a browser User-Agent (diagnostic only, not
+      used for collection) that the block is UA-based, not IP-based, and that
+      /sitemap.xml still lists only the homepage. wwf.panda.org still 403s
+      too. No DNS record for media.wwf.eu or newsroom.wwf.eu. No change in
+      status; deforestation/supply-chain advocacy signal remains covered by
+      clientearth, mighty-earth, fairtrade-international and
+      rainforest-alliance already in this registry, so no replacement entry
+      was added.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability
