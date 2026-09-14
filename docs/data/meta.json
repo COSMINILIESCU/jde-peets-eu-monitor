@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-09-09T04:05:21+00:00",
+ "generated_at": "2026-09-14T07:01:38+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W37",
+ "week": "2026-W38",
  "db_counts": {
-  "analyzed": 473,
-  "triaged_out": 2575
+  "analyzed": 502,
+  "triaged_out": 2735
  },
  "last_run": {
-  "run_id": 14,
-  "started_at": "2026-09-09T03:35:24+00:00",
+  "run_id": 15,
+  "started_at": "2026-09-14T06:28:50+00:00",
   "collection": {
    "sources_total": 154,
-   "sources_failed": 3,
-   "new_items": 187,
-   "duplicates": 585,
+   "sources_failed": 4,
+   "new_items": 189,
+   "duplicates": 609,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -31,6 +31,11 @@
      "error": "https://www.ris.bka.gv.at/: HTTP 503"
     },
     {
+     "id": "conab-brazil",
+     "status": "fetch_error",
+     "error": "https://www.conab.gov.br: HTTPSConnectionPool(host='www.conab.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.conab.gov.br', port=443) at 0x1f73ea35310>, 'Connection to www.conab.gov.br timed out. (connect timeout=30)'))"
+    },
+    {
      "id": "comunicaffe",
      "status": "fetch_error",
      "error": "https://www.comunicaffe.com/feed/: HTTP 403"
@@ -38,11 +43,11 @@
    ]
   },
   "analysis": {
-   "analyzed": 187,
-   "relevant": 16,
-   "triaged_out": 171,
+   "analyzed": 189,
+   "relevant": 29,
+   "triaged_out": 160,
    "errors": 0
   },
-  "brief_generated": true
+  "brief_generated": false
  }
 }
