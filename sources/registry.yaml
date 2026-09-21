@@ -543,11 +543,41 @@ sources:
       /company section is dead. Official illycaffe press room pressroom.illy.com (HTTP
       200, server-rendered) carries corporate press releases on strategy, products,
       sustainability and hospitality. Its /feed/ RSS is auth-gated (requires a Feed Key),
-      so the public HTML listing is used instead.'
+      so the public HTML listing is used instead.
+
+
+      Specialist 2026-09-14: pressroom.illy.com now returns HTTP 503 on every path
+      tested (homepage, /page/2/, /en/, an individual post URL, /wp-sitemap.xml).
+      The 503 body is the site''s own "wp-maintenance" WordPress plugin page (Retry-After:
+      86400) - a genuine publisher-side outage, not a Cloudflare/WAF anti-bot block.
+      Only https://pressroom.illy.com/sitemap.xml still serves (HTTP 200, a static
+      XSL sitemap index); its post.xml sub-sitemap shows lastmod dates only up to
+      2026-02-24, so the press room had already stopped publishing new posts about
+      seven months before the maintenance page appeared - even once access is restored
+      the feed may need to resume publishing before it is useful again. Checked replacements:
+      illy.com/en-ww/company and /en-us/company/store-events/press/press-releases
+      are still HTTP 502 (same dead /company section as 2026-07-19); the illy.com
+      en-ww sitemap.xml only lists Salesforce Commerce Cloud product/category URLs,
+      no press content. PR Newswire''s org page https://www.prnewswire.com/news/illycaffe/
+      is reachable (HTTP 200, server-rendered) but every illycaffe release linked
+      from it is from 2019-2022 (e.g. illycaffe-returns-to-frieze-new-york...,
+      illycaffe-named-one-of-the-2019-...-ethisphere...) - illycaffe evidently stopped
+      using PR Newswire as a channel years ago, so it is not a live substitute and
+      was not adopted. No RSS/API/mirror found. Set to unresolved pending the press
+      room coming back online; needs re-probe, not a code change or bypass.'
   monitoring_focus: 'Direct competitor: strategy, products, sustainability and hospitality.'
   categories: *id001
   trust_tier: corporate
-  status: active
+  status: unresolved
+  exclusion_reason: 'pressroom.illy.com (the only working access route previously
+    found for this source) is currently returning HTTP 503 on every path via the
+    site''s own WordPress "wp-maintenance" plugin (Retry-After: 86400) - a genuine
+    publisher-side outage, not an anti-bot block. Its sitemap (still reachable) shows
+    no new posts since 2026-02-24, so the outage has effectively lasted months. The
+    /company section on illy.com remains HTTP 502 (dead, per 2026-07-19 finding) and
+    illycaffe''s old PR Newswire channel (prnewswire.com/news/illycaffe/) has not
+    carried a release since ~2022, so no live replacement was found. Needs re-probe
+    once pressroom.illy.com resumes normal service.'
   origin: pdf_inventar
 - id: illy-press
   name: illycaffe - press room
@@ -4963,6 +4993,10 @@ sources:
       would in any case only give historical snapshots, not a live weekly feed.
       Per hard rule, will not attempt to bypass the Cloudflare challenge (would
       require a headless/JS-solving browser, explicitly out of scope per SOP step 7).
+
+      Re-verified 2026-09-14: unchanged. www.cpc.bg still returns HTTP 403 with a
+      Cloudflare "challenge" interstitial on every path tried. No new bypass-free
+      route found.
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
@@ -4976,7 +5010,7 @@ sources:
     by the hard "no anti-bot bypass" rule. Needs re-probe if CPC changes its
     hosting/WAF configuration, or human approval to add a non-official secondary
     source (e.g. Concurrences.com, Global Competition Review) as a lower-tier
-    substitute.
+    substitute. Re-verified 2026-09-14, still blocked, no change.
   origin: pdf_inventar
 - id: bg-food-safety
   name: Bulgaria - Bulgarian Food Safety Agency
@@ -7698,7 +7732,9 @@ sources:
     replacement source added to avoid duplicating those existing entries.
     Re-verified 2026-09-05: still HTTP 403 (Cloudflare managed challenge) on
     the target page, /robots.txt, /sitemap.xml, and the DE mirror. No change
-    in status.'
+    in status.
+    Re-verified 2026-09-14: unchanged, still HTTP 403 with a certificate/Cloudflare
+    challenge served on the target page and /robots.txt. No new route found.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -8705,6 +8741,10 @@ sources:
     comunicaffe) which report on the same industry beat. Would need a headless browser
     (explicitly out of scope per instructions) or contacting the publisher for an allow-listed
     feed to restore full access.
+    ---
+    Re-verified 2026-09-14: unchanged. Homepage, /feed/, and /wp-json/* still HTTP 403 under
+    the declared collector UA; /sitemap_index.xml still 200 but article pages behind it still
+    403. No code-free fix found; verdict stands.
   origin: pdf_catalog
 - id: coffee-intelligence
   name: Coffee Intelligence
@@ -8913,6 +8953,10 @@ sources:
       clientearth, mighty-earth, fairtrade-international and
       rainforest-alliance already in this registry, so no replacement entry
       was added.
+      Re-verified 2026-09-14: unchanged, still HTTP 403 site-wide with our
+      declared User-Agent; /sitemap.xml now also returns 403 (previously it
+      was reachable but homepage-only) -- the WAF appears to have tightened,
+      not loosened. No new route found.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability

@@ -1,39 +1,29 @@
 {
- "generated_at": "2026-09-14T07:01:38+00:00",
+ "generated_at": "2026-09-21T07:08:28+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W38",
+ "week": "2026-W39",
  "db_counts": {
-  "analyzed": 502,
-  "triaged_out": 2735
+  "analyzed": 543,
+  "triaged_out": 2932
  },
  "last_run": {
-  "run_id": 15,
-  "started_at": "2026-09-14T06:28:50+00:00",
+  "run_id": 16,
+  "started_at": "2026-09-21T06:31:53+00:00",
   "collection": {
-   "sources_total": 154,
-   "sources_failed": 4,
-   "new_items": 189,
-   "duplicates": 609,
+   "sources_total": 153,
+   "sources_failed": 2,
+   "new_items": 238,
+   "duplicates": 603,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
     {
-     "id": "illy-company",
-     "status": "fetch_error",
-     "error": "https://pressroom.illy.com/: HTTP 503"
-    },
-    {
      "id": "at-legislation",
      "status": "fetch_error",
      "error": "https://www.ris.bka.gv.at/: HTTP 503"
-    },
-    {
-     "id": "conab-brazil",
-     "status": "fetch_error",
-     "error": "https://www.conab.gov.br: HTTPSConnectionPool(host='www.conab.gov.br', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.conab.gov.br', port=443) at 0x1f73ea35310>, 'Connection to www.conab.gov.br timed out. (connect timeout=30)'))"
     },
     {
      "id": "comunicaffe",
@@ -43,11 +33,11 @@
    ]
   },
   "analysis": {
-   "analyzed": 189,
-   "relevant": 29,
-   "triaged_out": 160,
+   "analyzed": 238,
+   "relevant": 41,
+   "triaged_out": 197,
    "errors": 0
   },
-  "brief_generated": false
+  "brief_generated": true
  }
 }
