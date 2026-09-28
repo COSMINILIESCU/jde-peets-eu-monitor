@@ -564,20 +564,39 @@ sources:
       illycaffe-named-one-of-the-2019-...-ethisphere...) - illycaffe evidently stopped
       using PR Newswire as a channel years ago, so it is not a live substitute and
       was not adopted. No RSS/API/mirror found. Set to unresolved pending the press
-      room coming back online; needs re-probe, not a code change or bypass.'
+      room coming back online; needs re-probe, not a code change or bypass.
+
+
+      Specialist 2026-09-21 re-probe: outage unchanged, one week later. pressroom.illy.com/
+      still HTTP 503 (wp-maintenance plugin), /wp-sitemap.xml still 503, /feed/
+      now HTTP 403 (was auth-gated before, still blocked). /sitemap.xml is still
+      the only reachable path (HTTP 200) and its post.xml sub-sitemap lastmod is
+      still 2026-02-24T16:50:00+00:00, i.e. the site has published zero new press
+      releases in the ~7 months since, both before and during the maintenance outage
+      - so even a workaround to read the sitemap directly would surface no new
+      content. illy.com/en-ww/company and /en-us/company/.../press-releases are
+      still HTTP 502 (dead, unchanged). prnewswire.com/news/illycaffe/ re-checked:
+      still only 19 illycaffe releases, all dated 2013-2022, nothing newer - confirms
+      it is an abandoned channel, not a viable substitute. No fix found; this is
+      a genuine, prolonged publisher-side outage/abandonment, not an anti-bot wall
+      - correctly left unresolved rather than bypassed. Needs re-probe again in a
+      future run; do not build a headless browser or bypass wp-maintenance to force
+      access.'
   monitoring_focus: 'Direct competitor: strategy, products, sustainability and hospitality.'
   categories: *id001
   trust_tier: corporate
   status: unresolved
   exclusion_reason: 'pressroom.illy.com (the only working access route previously
-    found for this source) is currently returning HTTP 503 on every path via the
-    site''s own WordPress "wp-maintenance" plugin (Retry-After: 86400) - a genuine
-    publisher-side outage, not an anti-bot block. Its sitemap (still reachable) shows
-    no new posts since 2026-02-24, so the outage has effectively lasted months. The
-    /company section on illy.com remains HTTP 502 (dead, per 2026-07-19 finding) and
-    illycaffe''s old PR Newswire channel (prnewswire.com/news/illycaffe/) has not
-    carried a release since ~2022, so no live replacement was found. Needs re-probe
-    once pressroom.illy.com resumes normal service.'
+    found for this source) is still returning HTTP 503 on every path via the site''s
+    own WordPress "wp-maintenance" plugin, confirmed again on 2026-09-21 (one week
+    after the 2026-09-14 finding) - a genuine publisher-side outage, not an anti-bot
+    block. Its sitemap (still reachable) shows no new posts since 2026-02-24, unchanged
+    across both probes, so the site had stopped publishing even before the outage
+    began. The /company section on illy.com remains HTTP 502 (dead, per 2026-07-19
+    finding) and illycaffe''s old PR Newswire channel (prnewswire.com/news/illycaffe/)
+    has not carried a release since ~2022 (re-checked 2026-09-21, still 19 releases
+    all 2013-2022), so no live replacement was found. Needs re-probe again once
+    pressroom.illy.com resumes normal service.'
   origin: pdf_inventar
 - id: illy-press
   name: illycaffe - press room
@@ -4770,12 +4789,52 @@ sources:
   access:
     method: auto
     rss: ''
+    notes: >
+      2026-09-21 specialist review: www.ris.bka.gv.at (the citizen-facing UI) returns
+      HTTP 503 Service Unavailable on every path, including /robots.txt and
+      /UI/Ogd.aspx, confirmed both via direct script requests and via an independent
+      WebFetch call -- i.e. not a per-client anti-bot block but an outage/overload
+      affecting the whole front-end domain at review time.
+      Found a working official alternative on a different host: the OGD-RIS REST
+      API at https://data.bka.gv.at/ris/api/v2.6/Bundesrecht (documented at
+      https://data.bka.gv.at/ris/ogd/v2.6/Documents/Dokumentation_OGD-RIS_API.pdf).
+      It is public, unauthenticated, unaffected by the ris.bka.gv.at 503s, and
+      returns JSON with real publication dates. Verified working example (HTTP 200,
+      live 2026 entries with Ausgabedatum):
+      https://data.bka.gv.at/ris/api/v2.6/Bundesrecht?Applikation=BgblAuth&Kundmachung.Periode=ZweiWochen&DokumenteProSeite=Fifty
+      (Applikation=BrKons for consolidated federal law instead of Bundesgesetzblatt
+      notices; Kundmachung.Periode also accepts EinerWoche/EinemMonat/etc.).
+      BLOCKED ON CODE, same gap already flagged for pl-legislation: this repo's
+      collector only implements method in {rss, html, pdf} (src/collectors/collect.py,
+      src/collectors/html_page.py, src/collectors/rss.py) -- there is no JSON/API
+      collector, and any non-empty access.rss value forces feedparser/RSS parsing
+      regardless of access.method (see collect_source: "if registry_rss ... method,
+      feed_url = 'rss', registry_rss"). Feeding this JSON endpoint to feedparser
+      would silently return 0 entries every run with status "ok" -- exactly the
+      silent-failure anti-pattern this project's CLAUDE.md warns against -- so it is
+      deliberately NOT wired into access.rss here. Leaving method: auto/rss: '' so
+      the pipeline keeps trying html discovery against www.ris.bka.gv.at (visible,
+      honest failure) until either the site recovers or a `method: api` branch is
+      added to collect.py. Recommended target once implemented: access.method: api,
+      access.rss: https://data.bka.gv.at/ris/api/v2.6/Bundesrecht?Applikation=BgblAuth&Kundmachung.Periode=EinerWoche&DokumenteProSeite=Fifty
+      (or BrKons for consolidated law).
   monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
     database.
   categories: &id006
   - legislation
   trust_tier: official
-  status: active
+  status: unresolved
+  exclusion_reason: >
+    ris.bka.gv.at returned HTTP 503 on every path at review time (2026-09-21),
+    likely a transient outage/overload rather than anti-bot blocking (see
+    access.notes). No fix possible from the registry alone: a working official
+    JSON API was found on a different host (data.bka.gv.at/ris/api/v2.6) but this
+    repo's collector has no JSON/API method (only rss/html/pdf), so wiring the API
+    URL into access.rss would be silently misparsed as an RSS feed and return 0
+    items forever under status "ok". Needs a small collector code change
+    (a `method: api` branch) before it can be resolved -- see access.notes for the
+    exact recommended endpoint. Re-check html access next run in case the 503 was
+    transient.
   origin: pdf_inventar
 - id: at-competition
   name: Austria - Bundeswettbewerbsbehorde (BWB)
@@ -7734,7 +7793,10 @@ sources:
     the target page, /robots.txt, /sitemap.xml, and the DE mirror. No change
     in status.
     Re-verified 2026-09-14: unchanged, still HTTP 403 with a certificate/Cloudflare
-    challenge served on the target page and /robots.txt. No new route found.'
+    challenge served on the target page and /robots.txt. No new route found.
+    Re-verified 2026-09-21: unchanged, still HTTP 403 on the target page,
+    /robots.txt, /sitemap.xml, and the DE mirror. No new route found; status
+    remains unresolved.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -8745,6 +8807,12 @@ sources:
     Re-verified 2026-09-14: unchanged. Homepage, /feed/, and /wp-json/* still HTTP 403 under
     the declared collector UA; /sitemap_index.xml still 200 but article pages behind it still
     403. No code-free fix found; verdict stands.
+    ---
+    Re-verified 2026-09-21: unchanged. Direct probe of /, /feed, /rss, /wp-json/ all HTTP 403
+    under declared UA; /sitemap.xml and /sitemap_index.xml still 200 (URLs/lastmod only, no
+    titles/body). No new RSS/API/alt-page/PDF route found. Verdict stands: unresolved, no
+    code-free fix; coverage gap still mitigated by coffee-intelligence, tea-coffee-trade-journal,
+    comunicaffe.
   origin: pdf_catalog
 - id: coffee-intelligence
   name: Coffee Intelligence
@@ -8957,6 +9025,18 @@ sources:
       declared User-Agent; /sitemap.xml now also returns 403 (previously it
       was reachable but homepage-only) -- the WAF appears to have tightened,
       not loosened. No new route found.
+      Re-verified 2026-09-21: unchanged, still HTTP 403 site-wide (/, /robots.txt,
+      /sitemap.xml, /feed, /rss, /rss.xml, /atom.xml, /en/newsroom, /en/news) with
+      our declared User-Agent, TLS via truststore. wwf.panda.org still 403 too.
+      Checked worldwildlife.org (WWF Global/US, different scope but same
+      organisation) as a possible alternative: robots.txt is retrievable and
+      permissive, but the site itself returns HTTP 403 with a Cloudflare "Just a
+      moment..." JS-challenge interstitial -- a different anti-bot mechanism, but
+      equally unusable without a JS-capable browser client, so not adopted as a
+      substitute. Status remains unresolved; note that this source id was already
+      correctly excluded from active collection (status: unresolved, not active),
+      so any "9 fails" reported for it in a run report reflects historical/stale
+      source_state rows from before 2026-08-30, not live re-attempts.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability

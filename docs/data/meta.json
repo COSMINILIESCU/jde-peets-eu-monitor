@@ -1,29 +1,39 @@
 {
- "generated_at": "2026-09-21T07:08:28+00:00",
+ "generated_at": "2026-09-28T07:09:14+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W39",
+ "week": "2026-W40",
  "db_counts": {
-  "analyzed": 543,
-  "triaged_out": 2932
+  "analyzed": 579,
+  "triaged_out": 3150
  },
  "last_run": {
-  "run_id": 16,
-  "started_at": "2026-09-21T06:31:53+00:00",
+  "run_id": 17,
+  "started_at": "2026-09-28T06:32:00+00:00",
   "collection": {
-   "sources_total": 153,
-   "sources_failed": 2,
-   "new_items": 238,
-   "duplicates": 603,
+   "sources_total": 152,
+   "sources_failed": 4,
+   "new_items": 254,
+   "duplicates": 580,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
     {
-     "id": "at-legislation",
+     "id": "nespresso-newsroom",
      "status": "fetch_error",
-     "error": "https://www.ris.bka.gv.at/: HTTP 503"
+     "error": "https://nestle-nespresso.com/newsandfeatures: HTTP 502"
+    },
+    {
+     "id": "caffitaly",
+     "status": "fetch_error",
+     "error": "https://caffitaly.com/international/feed/: HTTPSConnectionPool(host='caffitaly.com', port=443): Max retries exceeded with url: /international/feed/ (Caused by SSLError(SSLCertVerificationError(\"The certificate's CN name does not match the passed value.\")))"
+    },
+    {
+     "id": "curia",
+     "status": "fetch_error",
+     "error": "https://curia.europa.eu/: HTTP 504"
     },
     {
      "id": "comunicaffe",
@@ -33,11 +43,11 @@
    ]
   },
   "analysis": {
-   "analyzed": 238,
-   "relevant": 41,
-   "triaged_out": 197,
+   "analyzed": 254,
+   "relevant": 36,
+   "triaged_out": 218,
    "errors": 0
   },
-  "brief_generated": true
+  "brief_generated": false
  }
 }
