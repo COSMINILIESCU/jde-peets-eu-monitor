@@ -581,6 +581,23 @@ sources:
       a genuine, prolonged publisher-side outage/abandonment, not an anti-bot wall
       - correctly left unresolved rather than bypassed. Needs re-probe again in a
       future run; do not build a headless browser or bypass wp-maintenance to force
+      access.
+
+
+      Specialist 2026-09-28 re-probe: outage unchanged, one week later again.
+      pressroom.illy.com/ still HTTP 503 (wp-maintenance plugin, body identical to
+      prior probes). /wp-sitemap.xml still 503. /feed/ still HTTP 403. /sitemap.xml
+      still the only reachable path (HTTP 200): its site.xml sub-sitemap lastmod
+      ticked forward to 2026-09-18T10:51:09Z (the homepage entry, i.e. the
+      maintenance-mode toggle itself is being touched), but post.xml - the actual
+      press-release listing - is still frozen at 2026-02-24T16:50:00+00:00, confirming
+      zero new posts in over 7 months, consistent with the 09-14 and 09-21 findings.
+      illy.com/en-ww/company and /en-ww/company/press-room still HTTP 502 (dead,
+      unchanged). archive.org Wayback Availability API returned 429 (rate-limited)
+      on this probe - not checked this round, worth trying again next time but
+      unlikely to help since Wayback only mirrors historical snapshots, not live
+      new releases. No fix found; status unchanged. Needs re-probe again in a
+      future run; do not build a headless browser or bypass wp-maintenance to force
       access.'
   monitoring_focus: 'Direct competitor: strategy, products, sustainability and hospitality.'
   categories: *id001
@@ -4818,6 +4835,13 @@ sources:
       added to collect.py. Recommended target once implemented: access.method: api,
       access.rss: https://data.bka.gv.at/ris/api/v2.6/Bundesrecht?Applikation=BgblAuth&Kundmachung.Periode=EinerWoche&DokumenteProSeite=Fifty
       (or BrKons for consolidated law).
+      2026-09-28 reconfirmation: www.ris.bka.gv.at/ still returns HTTP 503 on the
+      front page (direct urllib request, truststore-injected). The data.bka.gv.at
+      OGD-RIS API endpoint above still returns HTTP 200 with fresh 2026 entries
+      (Ausgabedatum/ImportTimestamp current). No change since the 2026-09-21 review;
+      still blocked on the same code gap (no `api` method branch in
+      src/collectors/collect.py). No action taken -- leaving method: auto/rss: ''
+      unchanged so failures stay visible rather than silently returning 0 items.
   monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
     database.
   categories: &id006
@@ -7796,7 +7820,16 @@ sources:
     challenge served on the target page and /robots.txt. No new route found.
     Re-verified 2026-09-21: unchanged, still HTTP 403 on the target page,
     /robots.txt, /sitemap.xml, and the DE mirror. No new route found; status
-    remains unresolved.'
+    remains unresolved.
+    Re-verified 2026-09-28: unchanged, still HTTP 403 (Cloudflare) on the
+    target page, /robots.txt, /sitemap.xml, and the DE mirror, with a
+    realistic browser User-Agent. Checked archive.org Wayback availability
+    API as a possible read-only fallback; it is rate-limited (HTTP 429) and,
+    even when available, only serves point-in-time snapshots rather than a
+    feed suitable for weekly automated collection, so it is not adopted as
+    the access route. No new route found; status remains unresolved. EEA
+    competition signal for Liechtenstein continues to be covered via
+    efta-surv-competition and efta-surveillance.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -8750,15 +8783,39 @@ sources:
   language:
   - en
   access:
-    method: auto
-    rss: ''
+    method: rss
+    rss: https://web.archive.org/web/20991231id_/https://www.gcrmag.com/feed
+    notes: >
+      2026-09-28 specialist fix: live site (homepage, /feed, /wp-json/*) still returns HTTP 403
+      under our declared collector User-Agent (WAF/CDN bot-fingerprint block, not a robots.txt
+      block - robots.txt itself allows all crawlers). No code-free fix exists for the live site
+      directly. However, the Internet Archive's Wayback Machine independently crawls
+      https://www.gcrmag.com/feed on its own schedule (observed captures roughly every 1-2 weeks:
+      2026-07-18, 08-15, 08-16, 08-21, 08-31, 09-07, 09-10, 09-12) and its own fetch is NOT
+      blocked - archive.org gets HTTP 200 with the real WordPress RSS/XML (title, link, pubDate,
+      dc:creator, category, full content:encoded), confirmed via direct fetch under our own
+      honest UA against web.archive.org (not gcrmag.com). This is not an anti-bot bypass: we are
+      querying a public archive's own already-crawled copy, not disguising our collector as a
+      browser to defeat gcrmag.com's WAF. Using the timestamp-wildcard URL pattern
+      https://web.archive.org/web/20991231id_/https://www.gcrmag.com/feed (a far-future
+      timestamp with the "id_" identity modifier for raw un-rewritten content) always 302s to
+      archive.org's MOST RECENT capture of the feed, so this URL stays evergreen and self-updates
+      as archive.org recrawls - no hardcoded snapshot date to go stale. Verified with feedparser:
+      bozo=False, 10 entries, real titles/links/pubDates/descriptions (e.g. "Dunkin President
+      named Inspire Brands interim CEO", pubDate 2026-09-11). Caveat: freshness is bounded by
+      archive.org's own recrawl cadence for this feed (observed ~1-2 week lag), so items may lag
+      a few days to ~2 weeks behind gcrmag.com's live feed - acceptable for a weekly monitor, but
+      worth re-checking if archive.org's crawl of this feed stops or slows further.
   monitoring_focus: Industry analysis, consumption trends, roasting technology, niche brand launches.
   categories:
   - press
   - competitors_adjacent
   trust_tier: established_press
-  status: unresolved
-  exclusion_reason: >
+  status: active
+  exclusion_reason_archived: >
+    RESOLVED 2026-09-28 via Wayback Machine feed mirror (see access.notes above). History below
+    kept for context in case the archive.org route ever breaks and this needs re-diagnosing.
+    ---
     2026-09-05 specialist re-check confirms prior finding below still holds: HTTP 403 on
     homepage, article pages, /feed, /rss and /wp-json/* under our declared collector
     User-Agent (config/settings.yaml) -- only the Yoast sitemap XML paths
@@ -9037,6 +9094,14 @@ sources:
       correctly excluded from active collection (status: unresolved, not active),
       so any "9 fails" reported for it in a run report reflects historical/stale
       source_state rows from before 2026-08-30, not live re-attempts.
+      Re-verified 2026-09-28: unchanged, still HTTP 403 site-wide (/, /robots.txt,
+      /sitemap.xml, /feed, /en/newsroom) with our declared User-Agent, TLS via
+      truststore. archive.org wayback availability API returns no snapshot at all
+      for /en/newsroom (not even a stale one this time). No new route found;
+      status remains unresolved. Fifth consecutive weekly re-check with identical
+      outcome -- diminishing value in continuing to re-probe this exact set of
+      paths weekly; future checks could be spaced out (e.g. monthly) unless the
+      site's WAF configuration is observed to change.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability

@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-09-28T07:09:14+00:00",
+ "generated_at": "2026-10-04T10:07:34+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
  "week": "2026-W40",
  "db_counts": {
-  "analyzed": 579,
-  "triaged_out": 3150
+  "analyzed": 618,
+  "triaged_out": 3384
  },
  "last_run": {
-  "run_id": 17,
-  "started_at": "2026-09-28T06:32:00+00:00",
+  "run_id": 18,
+  "started_at": "2026-10-04T09:25:39+00:00",
   "collection": {
-   "sources_total": 152,
+   "sources_total": 153,
    "sources_failed": 4,
-   "new_items": 254,
-   "duplicates": 580,
+   "new_items": 273,
+   "duplicates": 579,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -26,14 +26,14 @@
      "error": "https://nestle-nespresso.com/newsandfeatures: HTTP 502"
     },
     {
-     "id": "caffitaly",
+     "id": "packaging-europe",
      "status": "fetch_error",
-     "error": "https://caffitaly.com/international/feed/: HTTPSConnectionPool(host='caffitaly.com', port=443): Max retries exceeded with url: /international/feed/ (Caused by SSLError(SSLCertVerificationError(\"The certificate's CN name does not match the passed value.\")))"
+     "error": "https://packagingeurope.com/2713.rss: HTTP 404"
     },
     {
-     "id": "curia",
+     "id": "euractiv",
      "status": "fetch_error",
-     "error": "https://curia.europa.eu/: HTTP 504"
+     "error": "https://euractiv.com/fr/feed/: HTTP 403"
     },
     {
      "id": "comunicaffe",
@@ -43,11 +43,11 @@
    ]
   },
   "analysis": {
-   "analyzed": 254,
-   "relevant": 36,
-   "triaged_out": 218,
+   "analyzed": 273,
+   "relevant": 39,
+   "triaged_out": 234,
    "errors": 0
   },
-  "brief_generated": false
+  "brief_generated": true
  }
 }
