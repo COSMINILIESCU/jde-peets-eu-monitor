@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-10-04T10:07:34+00:00",
+ "generated_at": "2026-10-05T07:08:24+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W40",
+ "week": "2026-W41",
  "db_counts": {
-  "analyzed": 618,
-  "triaged_out": 3384
+  "analyzed": 620,
+  "triaged_out": 3458
  },
  "last_run": {
-  "run_id": 18,
-  "started_at": "2026-10-04T09:25:39+00:00",
+  "run_id": 19,
+  "started_at": "2026-10-05T06:45:31+00:00",
   "collection": {
-   "sources_total": 153,
-   "sources_failed": 4,
-   "new_items": 273,
-   "duplicates": 579,
+   "sources_total": 155,
+   "sources_failed": 5,
+   "new_items": 76,
+   "duplicates": 618,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -36,6 +36,11 @@
      "error": "https://euractiv.com/fr/feed/: HTTP 403"
     },
     {
+     "id": "bg-legislation",
+     "status": "fetch_error",
+     "error": "https://dv.parliament.bg/: HTTPSConnectionPool(host='dv.parliament.bg', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='dv.parliament.bg', port=443) at 0x22979b95950>, 'Connection to dv.parliament.bg timed out. (connect timeout=30)'))"
+    },
+    {
      "id": "comunicaffe",
      "status": "fetch_error",
      "error": "https://www.comunicaffe.com/feed/: HTTP 403"
@@ -43,9 +48,9 @@
    ]
   },
   "analysis": {
-   "analyzed": 273,
-   "relevant": 39,
-   "triaged_out": 234,
+   "analyzed": 76,
+   "relevant": 2,
+   "triaged_out": 74,
    "errors": 0
   },
   "brief_generated": true

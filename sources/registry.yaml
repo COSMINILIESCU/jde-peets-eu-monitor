@@ -529,7 +529,7 @@ sources:
     scout'
 - id: illy-company
   name: illycaffe - company
-  url: https://pressroom.illy.com/
+  url: https://www.prnewswire.com/news/illycaff%C3%A8/
   type: corporate
   country: IT
   language:
@@ -598,22 +598,36 @@ sources:
       unlikely to help since Wayback only mirrors historical snapshots, not live
       new releases. No fix found; status unchanged. Needs re-probe again in a
       future run; do not build a headless browser or bypass wp-maintenance to force
-      access.'
+      access.
+
+
+      Specialist 2026-10-04 re-probe: pressroom.illy.com/ still HTTP 503 (wp-maintenance
+      plugin), /wp-sitemap.xml still 503, /feed/ still HTTP 403. /sitemap.xml still
+      the only reachable path and its post.xml sub-sitemap lastmod is still frozen
+      at 2026-02-24 - no change, outage/abandonment persists. illy.com/en-ww/company
+      still HTTP 502 (dead, unchanged). FIX FOUND this round: all four prior probes
+      tested the ASCII-slug PR Newswire org page prnewswire.com/news/illycaffe/
+      (without the accent) and found it stale (19 releases, 2013-2022) - but that
+      is the wrong/legacy slug. The correct, currently-used org page is
+      https://www.prnewswire.com/news/illycaff%C3%A8/ (accented e, URL-encoded),
+      confirmed via the "News provided by" link on a live September 2026 illycaffe
+      release (illy-promotes-coffee-and-connection-with-a-cup-of-love-pop-up-in-hudson-yards-302882210.html,
+      published 2026-09-17). That accented org page lists releases up to 2026-09-24
+      ("illycaffe confirms B Corp(TM) certification under the new V2 standards"),
+      i.e. an active, current, server-rendered HTML listing with releases roughly
+      every 2-6 weeks through the present - a live substitute for the dead pressroom.illy.com,
+      not just an archival mirror. No organization-specific RSS feed was found for
+      this PR Newswire profile (only the site-wide /rss/ hub, not filterable to one
+      company; /rss/organization-profile/illycaff%C3%A8.rss returns 404), so the
+      HTML listing page itself is adopted as the access method, same as the
+      pre-outage pressroom.illy.com convention. url and access.rss updated to this
+      page. Re-probe pressroom.illy.com again in a future run in case it resumes -
+      if so, compare publication coverage between the two before switching back.'
   monitoring_focus: 'Direct competitor: strategy, products, sustainability and hospitality.'
   categories: *id001
   trust_tier: corporate
-  status: unresolved
-  exclusion_reason: 'pressroom.illy.com (the only working access route previously
-    found for this source) is still returning HTTP 503 on every path via the site''s
-    own WordPress "wp-maintenance" plugin, confirmed again on 2026-09-21 (one week
-    after the 2026-09-14 finding) - a genuine publisher-side outage, not an anti-bot
-    block. Its sitemap (still reachable) shows no new posts since 2026-02-24, unchanged
-    across both probes, so the site had stopped publishing even before the outage
-    began. The /company section on illy.com remains HTTP 502 (dead, per 2026-07-19
-    finding) and illycaffe''s old PR Newswire channel (prnewswire.com/news/illycaffe/)
-    has not carried a release since ~2022 (re-checked 2026-09-21, still 19 releases
-    all 2013-2022), so no live replacement was found. Needs re-probe again once
-    pressroom.illy.com resumes normal service.'
+  status: active
+  exclusion_reason: ''
   origin: pdf_inventar
 - id: illy-press
   name: illycaffe - press room
@@ -4842,6 +4856,24 @@ sources:
       still blocked on the same code gap (no `api` method branch in
       src/collectors/collect.py). No action taken -- leaving method: auto/rss: ''
       unchanged so failures stay visible rather than silently returning 0 items.
+      2026-10-04 reconfirmation: www.ris.bka.gv.at/ is intermittent -- this time it
+      returned HTTP 200 (also /robots.txt and /UI/Ogd.aspx, both 200), confirming
+      the 2026-09-21 diagnosis of an overloaded/flaky front-end rather than a
+      permanent block (the collector's 8 consecutive fails are the 503 episodes).
+      However, even when the front page loads, src/collectors/html_page.collect_html
+      against it extracts only 5 chrome/navigation links (skip-nav anchors,
+      Datenschutz/Barrierefreiheit links) and zero real legislative items --
+      confirmed by running collect_html directly against the live 200 response.
+      This is expected: the RIS citizen UI is a JS-driven search portal with no
+      server-rendered results list, so html method cannot work here even on the
+      runs where the site responds. No RSS/Atom feed or news sitemap exists on this
+      host (robots.txt has no Sitemap: line; checked /sitemap.xml -> 404 via the
+      same 200-capable connection). The OGD-RIS JSON API
+      (https://data.bka.gv.at/ris/api/v2.6/Bundesrecht?Applikation=BgblAuth&Kundmachung.Periode=EinerWoche&DokumenteProSeite=Fifty)
+      remains the only real fix and remains unimplementable from the registry alone
+      (still no `api` method in src/collectors/collect.py as of this run). Leaving
+      method: auto/rss: '' and status: unresolved unchanged -- html discovery will
+      keep producing an honest 0-items/503 signal rather than a silent false "ok".
   monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
     database.
   categories: &id006
@@ -4859,6 +4891,13 @@ sources:
     (a `method: api` branch) before it can be resolved -- see access.notes for the
     exact recommended endpoint. Re-check html access next run in case the 503 was
     transient.
+    2026-10-04 reconfirmation: the 503 is intermittent, not permanent (today's
+    probe got HTTP 200), but html scraping still cannot work even when the site is
+    up -- the front page is a JS-driven search portal with no server-rendered
+    item list (collect_html extracted only nav/chrome links, 0 legislative items).
+    No RSS/sitemap exists on www.ris.bka.gv.at. Still blocked on the same code
+    gap; status stays unresolved until an `api` method is added to
+    src/collectors/collect.py.
   origin: pdf_inventar
 - id: at-competition
   name: Austria - Bundeswettbewerbsbehorde (BWB)
@@ -5054,46 +5093,37 @@ sources:
   origin: pdf_inventar
 - id: bg-competition
   name: Bulgaria - Commission for Protection of Competition
-  url: https://www.cpc.bg/
+  url: https://www.cpc.bg/news
   type: national_authority
   country: BG
   language: *id013
   access:
-    method: auto
+    method: html
     rss: ''
     notes: >
-      2026-09-05 specialist probe: entire domain (www.cpc.bg and cpc.bg, http and https)
-      returns HTTP 403 with header "Cf-Mitigated: challenge" and a Cloudflare
-      "Just a moment..." interstitial (JS proof-of-work challenge), for every path
-      tried including /, /robots.txt, /sitemap.xml, /feed, /rss, /rss.xml, /news,
-      /press - the challenge is served before any of those paths are distinguished,
-      so no feed/sitemap/API can be reached without solving it. No <link rel=alternate>
-      discoverable (HTML never served). Web search found no RSS/API/mirrored register
-      republishing CPC decisions in full (found only secondary commentary: Global
-      Competition Review, Concurrences.com, Lexology, Kluwer Competition Law Blog -
-      none of these are official or complete substitutes and were not added).
-      Archive.org CDX check was inconclusive (tool timeout in this environment) and
-      would in any case only give historical snapshots, not a live weekly feed.
-      Per hard rule, will not attempt to bypass the Cloudflare challenge (would
-      require a headless/JS-solving browser, explicitly out of scope per SOP step 7).
-
-      Re-verified 2026-09-14: unchanged. www.cpc.bg still returns HTTP 403 with a
-      Cloudflare "challenge" interstitial on every path tried. No new bypass-free
-      route found.
+      2026-10-04 specialist re-probe: the previously-blocking Cloudflare challenge
+      is gone. www.cpc.bg now runs on a redesigned site (OrchardCore/IIS, no
+      Cloudflare headers at all) and returns HTTP 200 on every path tried
+      (/, /news, /en/news, robots.txt, sitemap.xml) with a plain Python
+      requests default User-Agent - no browser UA or JS execution needed.
+      https://www.cpc.bg/news is a server-rendered, plain-HTML news listing
+      (OrchardCore CMS) with dated items (verified dates up to 28.09.2026 at
+      probe time), each with a title and a same-site permalink
+      (e.g. href="news-528"), i.e. standard listing+detail structure a
+      generic html collector can parse. No RSS/Atom feed exists (/rss,
+      /rss.xml, /feed all 404). The site's sitemap.xml/sitemapindex.xml only
+      list static pages (About, Legislation, etc.), not individual news/decision
+      items, so sitemap-based discovery would miss content - /news is the
+      right entry point. Separately, the legacy ASP.NET public register at
+      reg.cpc.bg/AllActs.aspx was checked as a possible alternative/supplement:
+      it is reachable (HTTP 200) but its year selector only lists 2022, 2021,
+      2012, 2011, 2009 (no 2013-2020, no 2023-2026) - it looks stale/abandoned
+      and was not used. Re-probe again if www.cpc.bg/news starts erroring;
+      the Cloudflare block may return if the WAF config is reinstated.
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
-  status: unresolved
-  exclusion_reason: >
-    Cloudflare JS challenge ("Cf-Mitigated: challenge") blocks the entire domain
-    (all paths, http and https, www and bare domain) with HTTP 403 before any
-    content - including robots.txt and sitemap.xml - can be read. No RSS/Atom
-    feed, sitemap, public API, or alternative official mirror was found. Bypassing
-    the challenge would require a headless/JS-capable browser, which is excluded
-    by the hard "no anti-bot bypass" rule. Needs re-probe if CPC changes its
-    hosting/WAF configuration, or human approval to add a non-official secondary
-    source (e.g. Concurrences.com, Global Competition Review) as a lower-tier
-    substitute. Re-verified 2026-09-14, still blocked, no change.
+  status: active
   origin: pdf_inventar
 - id: bg-food-safety
   name: Bulgaria - Bulgarian Food Safety Agency
@@ -7829,7 +7859,18 @@ sources:
     feed suitable for weekly automated collection, so it is not adopted as
     the access route. No new route found; status remains unresolved. EEA
     competition signal for Liechtenstein continues to be covered via
-    efta-surv-competition and efta-surveillance.'
+    efta-surv-competition and efta-surveillance.
+    Re-verified 2026-10-04: unchanged, still HTTP 403 (Cloudflare managed
+    challenge) on the target page, /robots.txt, /sitemap.xml, the DE mirror,
+    and candidate /feed paths, with a realistic browser User-Agent.
+    archive.org Wayback availability API does have a crawled snapshot
+    (2026-07-06) confirming the page is reachable to the Internet Archive
+    crawler, but a static point-in-time snapshot is not a feed and cannot
+    support weekly automated collection, so it is still not adopted. No RSS,
+    sitemap, API, or server-rendered alternative found; a headless browser
+    remains the only bypass and is out of scope per the hard rules. Status
+    remains unresolved. EEA competition-enforcement signal for Liechtenstein
+    continues to be covered via efta-surv-competition and efta-surveillance.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -9102,6 +9143,20 @@ sources:
       outcome -- diminishing value in continuing to re-probe this exact set of
       paths weekly; future checks could be spaced out (e.g. monthly) unless the
       site's WAF configuration is observed to change.
+      Re-verified 2026-10-04: unchanged, still HTTP 403 site-wide (/, /robots.txt,
+      /sitemap.xml, /feed, /en/newsroom) with our declared User-Agent, TLS via
+      truststore. archive.org wayback availability API again returns zero
+      snapshots for /en/newsroom. Sixth consecutive weekly re-check with
+      identical outcome and no change in the site's WAF posture. Per the
+      diminishing-value note above, this is the last weekly re-check at full
+      frequency; absent a reported change, next re-verification should be
+      monthly rather than weekly. Deforestation/supply-chain advocacy signal
+      remains covered by clientearth, mighty-earth, fairtrade-international and
+      rainforest-alliance already active in this registry -- no replacement
+      entry needed. Confirmed source_state "9 consecutive fails" is stale
+      historical data predating the 2026-08-30 exclusion; this source has been
+      correctly excluded (status: unresolved) from active collection since
+      then, so it is not actually being retried 9 times weekly.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability
@@ -9262,5 +9317,122 @@ sources:
   - sustainability
   - supply_chain
   trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: jab-holding
+  name: JAB Holding Company - News
+  url: https://www.jabholco.com/news/
+  type: corporate
+  country: LU
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'JDE Peet''s largest shareholder and controlling investor (JAB /
+    Reimann family, Luxembourg): ownership strategy, portfolio and leadership moves,
+    IPO plans and coffee/tea divestment signals material to JDE Peet''s governance
+    and corporate affairs.'
+  categories:
+  - jde_peets
+  - competitors_direct
+  trust_tier: corporate
+  status: pending_approval
+  origin: scout
+- id: mokate-group
+  name: Mokate Group (PL) - News
+  url: https://mokate.com/en/news/
+  type: corporate
+  country: PL
+  language:
+  - en
+  - pl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'CEE coffee, tea and instant-beverage manufacturer (Poland): competitor
+    product launches, capacity investments and private-label activity across Central
+    & Eastern Europe directly relevant to the CEE reader.'
+  categories:
+  - competitors_direct
+  trust_tier: corporate
+  status: pending_approval
+  origin: scout
+- id: jura-coffee-machines
+  name: JURA - Press Room
+  url: https://www.jura.com/en/about-jura/press-room
+  type: corporate
+  country: CH
+  language:
+  - en
+  - de
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Premium fully-automatic coffee-machine manufacturer: adjacent
+    competitor/disruptor product launches, results and market positioning relevant
+    to the machines/systems segment around JDE Peet''s capsule and appliance partners.'
+  categories:
+  - competitors_adjacent
+  trust_tier: corporate
+  status: pending_approval
+  origin: scout
+- id: 4c-services
+  name: 4C Services - Coffee Certification
+  url: https://www.4c-services.org/4c-news/
+  type: association
+  country: DE
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Coffee sustainability-certification scheme (4C Services GmbH):
+    certification-standard updates, EUDR-compliance solutions and scheme-equivalence
+    decisions relevant to JDE Peet''s sourcing claims and deforestation due diligence.'
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: sai-platform
+  name: SAI Platform - News
+  url: https://saiplatform.org/news/
+  type: association
+  country: INT
+  language:
+  - en
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Sustainable Agriculture Initiative Platform of which JDE Peet''s
+    is a member: Regenerating Together framework, sustainability-claims guidance and
+    regulatory-landscape positions relevant to EUDR and CSDDD due diligence.'
+  categories:
+  - sustainability
+  - supply_chain
+  trust_tier: advocacy
+  status: pending_approval
+  origin: scout
+- id: portal-spozywczy
+  name: Portal Spozywczy (PL) - Coffee & Tea
+  url: https://www.portalspozywczy.pl/kawa-herbata/
+  type: trade_press
+  country: PL
+  language:
+  - pl
+  access:
+    method: auto
+    rss: ''
+  monitoring_focus: 'Polish FMCG / food-retail trade press, coffee & tea section: CEE
+    market prices, retail and discounter dynamics, product launches and inspection/regulatory
+    actions. Freemium: a Strefa Premium paywall covers some articles; the free news
+    section is the monitorable output.'
+  categories:
+  - press
+  - competitors_direct
+  - competitors_adjacent
+  trust_tier: established_press
   status: pending_approval
   origin: scout
