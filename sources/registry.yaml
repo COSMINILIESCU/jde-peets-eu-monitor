@@ -4874,6 +4874,15 @@ sources:
       (still no `api` method in src/collectors/collect.py as of this run). Leaving
       method: auto/rss: '' and status: unresolved unchanged -- html discovery will
       keep producing an honest 0-items/503 signal rather than a silent false "ok".
+      2026-10-05 reconfirmation: www.ris.bka.gv.at/, /robots.txt both returned
+      HTTP 200 again this run (direct urllib, truststore-injected) -- consistent
+      with the 2026-10-04 finding that the 503s are intermittent overload, not a
+      permanent block. The OGD-RIS JSON API
+      (https://data.bka.gv.at/ris/api/v2.6/Bundesrecht?Applikation=BgblAuth&Kundmachung.Periode=EinerWoche&DokumenteProSeite=Fifty)
+      again returned HTTP 200. Re-inspected src/collectors/collect.py: still only
+      rss/pdf/html branches in collect_source, no api branch -- the code gap
+      flagged on 2026-09-21/09-28/10-04 is unchanged. No registry-only fix exists.
+      Leaving method: auto/rss: '' and status: unresolved unchanged.
   monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
     database.
   categories: &id006
@@ -5975,6 +5984,19 @@ sources:
       robots-allowed, feed-parseable route found; no viable replacement source found. Verdict
       unchanged: unresolved, needs the collector code change described above (out of scope for a
       registry-only specialist pass).
+      2026-10-05 re-check (5th specialist pass, 8th consecutive failing run): robots.txt re-fetched,
+      byte-for-byte unchanged since 2026-08-17 (Disallow /SiteGlobals/, /DE/Service/, /EN/Service/;
+      Allow only /SiteGlobals/Modules|StyleBundles|Frontend/; Crawl-delay 30; Sitemap:
+      https://www.bundeskartellamt.de/Sitemap_Index.xml). No code or site-structure change since the
+      last four passes, so the prior exhaustive analysis (RSS path disallowed, sitemap allowed but not
+      feed-parseable/date-reliable, allowed HTML pages expose only generic "Mehr erfahren" anchors
+      below the generic collector's title-length threshold, no sister-authority or press-wire
+      syndication, no govdata.de dataset) still holds verbatim. Re-affirming verdict: unresolved —
+      this is a collector-engineering gap (needs a sitemap-aware or SharedDocs-link-aware collector
+      with per-article title extraction), not a registry-fixable access problem, and not a dead
+      source. No further specialist re-checks are expected to change this outcome until either the
+      site changes or the collector gains sitemap/SharedDocs support; recommend routing to engineering
+      backlog rather than continuing weekly re-probes.
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
@@ -7866,8 +7888,11 @@ sources:
     archive.org Wayback availability API does have a crawled snapshot
     (2026-07-06) confirming the page is reachable to the Internet Archive
     crawler, but a static point-in-time snapshot is not a feed and cannot
-    support weekly automated collection, so it is still not adopted. No RSS,
-    sitemap, API, or server-rendered alternative found; a headless browser
+    support weekly automated collection, so it is still not adopted.
+    Re-verified 2026-10-05: unchanged, still HTTP 403 (Cloudflare managed
+    challenge) on the target page, /robots.txt, /sitemap.xml, the DE mirror,
+    and /feed paths, with a realistic browser User-Agent. No RSS, sitemap,
+    API, or server-rendered alternative found; a headless browser
     remains the only bypass and is out of scope per the hard rules. Status
     remains unresolved. EEA competition-enforcement signal for Liechtenstein
     continues to be covered via efta-surv-competition and efta-surveillance.'
@@ -8955,8 +8980,27 @@ sources:
   - en
   - it
   access:
-    method: auto
+    method: html
     rss: ''
+    notes: >
+      2026-10-05 specialist fix: /feed/, /feed, /rss all return HTTP 403 under our declared
+      collector UA (WAF/CDN-level block on the WordPress feed endpoint specifically) -
+      confirmed unchanged from prior runs. However, unlike before, direct probing found the
+      homepage (https://www.comunicaffe.com/) and individual article pages BOTH return HTTP 200
+      under the same declared UA (config.user_agent, no browser spoofing) - only the feed/rss
+      paths are blocked, not the site itself. robots.txt (https://www.comunicaffe.com/robots.txt)
+      has "User-agent: * / Disallow: /wp-admin, /mailster, /?_dnlink*" - homepage and article
+      paths are not disallowed. Set access.method: html pointing at the homepage: the generic
+      HTML collector (src/collectors/html_page.py) extracts article links from the homepage
+      listing (verified: finds real, current article links with full titles, e.g. dated
+      2026-10-02) then fetches each article page for body text - both the listing and every
+      article page tested returned 200 with the current article HTML. This matches the existing
+      html-method pattern already used for 13 other sources in this registry. Note: the site's
+      WordPress REST API (/wp-json/wp/v2/posts) also returns 200 with structured JSON incl. exact
+      dates/titles/excerpts, which would be a cleaner route, but no "api" collection method exists
+      in src/collectors/collect.py (only rss/html/pdf) - flag for engineering if a generic JSON/API
+      collector is ever built, as it would also give exact publish dates (html method captures
+      published_at: None per source code, relying on fetched_at instead).
   monitoring_focus: Daily coffee industry news.
   categories:
   - press
@@ -9157,6 +9201,16 @@ sources:
       historical data predating the 2026-08-30 exclusion; this source has been
       correctly excluded (status: unresolved) from active collection since
       then, so it is not actually being retried 9 times weekly.
+      Re-verified 2026-10-05 (specialist dispatch re: reported "Fails: 9"):
+      unchanged, still HTTP 403 site-wide on /, /robots.txt, /sitemap.xml,
+      /feed, /rss, /rss.xml, /atom.xml, /en/newsroom, /en/news with our
+      declared User-Agent, TLS via truststore. archive.org wayback
+      availability API again returns zero snapshots for /en/newsroom.
+      Reconfirmed the "Fails: 9" figure is stale source_state predating the
+      2026-08-30 exclusion, not a live retry count -- this source is already
+      status: unresolved and excluded from active collection. Seventh
+      consecutive weekly re-check with identical outcome; no new route found,
+      no change in WAF posture. No action needed beyond this log entry.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability

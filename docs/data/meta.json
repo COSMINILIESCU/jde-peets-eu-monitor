@@ -1,29 +1,34 @@
 {
- "generated_at": "2026-10-05T07:08:24+00:00",
+ "generated_at": "2026-10-11T15:49:21+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
  "week": "2026-W41",
  "db_counts": {
-  "analyzed": 620,
-  "triaged_out": 3458
+  "analyzed": 663,
+  "triaged_out": 3681
  },
  "last_run": {
-  "run_id": 19,
-  "started_at": "2026-10-05T06:45:31+00:00",
+  "run_id": 20,
+  "started_at": "2026-10-11T15:02:54+00:00",
   "collection": {
    "sources_total": 155,
-   "sources_failed": 5,
-   "new_items": 76,
-   "duplicates": 618,
+   "sources_failed": 7,
+   "new_items": 266,
+   "duplicates": 591,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
     {
      "id": "nespresso-newsroom",
      "status": "fetch_error",
-     "error": "https://nestle-nespresso.com/newsandfeatures: HTTP 502"
+     "error": "https://nestle-nespresso.com/newsandfeatures: HTTP 403"
+    },
+    {
+     "id": "dallmayr-coffee",
+     "status": "fetch_error",
+     "error": "https://www.presseportal.de/rss/pm_122269.rss2: HTTP 503"
     },
     {
      "id": "packaging-europe",
@@ -36,9 +41,14 @@
      "error": "https://euractiv.com/fr/feed/: HTTP 403"
     },
     {
-     "id": "bg-legislation",
+     "id": "portal-just-ro",
      "status": "fetch_error",
-     "error": "https://dv.parliament.bg/: HTTPSConnectionPool(host='dv.parliament.bg', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='dv.parliament.bg', port=443) at 0x22979b95950>, 'Connection to dv.parliament.bg timed out. (connect timeout=30)'))"
+     "error": "http://portal.just.ro: HTTP 403"
+    },
+    {
+     "id": "conab-brazil",
+     "status": "fetch_error",
+     "error": "https://www.conab.gov.br: HTTPSConnectionPool(host='www.conab.gov.br', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='www.conab.gov.br', port=443): Failed to establish a new connection: [WinError 10061] No connection could be made because the target "
     },
     {
      "id": "comunicaffe",
@@ -48,9 +58,9 @@
    ]
   },
   "analysis": {
-   "analyzed": 76,
-   "relevant": 2,
-   "triaged_out": 74,
+   "analyzed": 266,
+   "relevant": 43,
+   "triaged_out": 223,
    "errors": 0
   },
   "brief_generated": true
