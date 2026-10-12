@@ -4883,6 +4883,11 @@ sources:
       rss/pdf/html branches in collect_source, no api branch -- the code gap
       flagged on 2026-09-21/09-28/10-04 is unchanged. No registry-only fix exists.
       Leaving method: auto/rss: '' and status: unresolved unchanged.
+      2026-10-11 reconfirmation: www.ris.bka.gv.at/ returned HTTP 200 (intermittent 503s
+      confirmed, not permanent). The data.bka.gv.at OGD-RIS API endpoint again returned
+      HTTP 200 with fresh entries. src/collectors/collect.py still has no api method branch
+      (only rss/html/pdf). No registry-only fix available; leaving method: auto/rss: '' and
+      status: unresolved unchanged.
   monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
     database.
   categories: &id006
@@ -7895,7 +7900,10 @@ sources:
     API, or server-rendered alternative found; a headless browser
     remains the only bypass and is out of scope per the hard rules. Status
     remains unresolved. EEA competition-enforcement signal for Liechtenstein
-    continues to be covered via efta-surv-competition and efta-surveillance.'
+    continues to be covered via efta-surv-competition and efta-surveillance.
+    Re-verified 2026-10-11: unchanged, still HTTP 403 (Cloudflare managed
+    challenge) on the target page and /robots.txt with the project''s
+    declared User-Agent. No new route found; status remains unresolved.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -9211,6 +9219,10 @@ sources:
       status: unresolved and excluded from active collection. Seventh
       consecutive weekly re-check with identical outcome; no new route found,
       no change in WAF posture. No action needed beyond this log entry.
+      Re-verified 2026-10-11 (specialist dispatch re: reported "Fails: 9"):
+      unchanged, still HTTP 403 site-wide on / and /robots.txt with our
+      declared User-Agent. "Fails: 9" remains stale source_state predating the
+      2026-08-30 exclusion. No new route found; status remains unresolved.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability
