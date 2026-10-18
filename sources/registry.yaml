@@ -4888,6 +4888,11 @@ sources:
       HTTP 200 with fresh entries. src/collectors/collect.py still has no api method branch
       (only rss/html/pdf). No registry-only fix available; leaving method: auto/rss: '' and
       status: unresolved unchanged.
+      2026-10-12 reconfirmation: www.ris.bka.gv.at/ returned HTTP 200 this run (the 503s remain
+      intermittent, not permanent). The data.bka.gv.at OGD-RIS API endpoint again returned HTTP
+      200 with current entries. No api method branch added to src/collectors/collect.py since
+      the last check. No registry-only fix available; leaving method: auto/rss: '' and status:
+      unresolved unchanged.
   monitoring_focus: New laws, consolidations, EU transposition acts and national measures in the official legislation
     database.
   categories: &id006
@@ -6002,6 +6007,11 @@ sources:
       source. No further specialist re-checks are expected to change this outcome until either the
       site changes or the collector gains sitemap/SharedDocs support; recommend routing to engineering
       backlog rather than continuing weekly re-probes.
+      2026-10-12 reconfirmation: robots.txt re-fetched, unchanged (still disallows /DE/Service/,
+      /EN/Service/, /SiteGlobals/ except allowed asset sub-paths; Sitemap: Sitemap_Index.xml). No
+      code change in src/collectors (still no sitemap-aware or SharedDocs-link-aware method). Same
+      collector-engineering gap as previously documented; no registry-only fix available. Status
+      unchanged.
   monitoring_focus: Competition investigations, decisions, merger control and retail pricing enforcement.
   categories: *id008
   trust_tier: official
@@ -7903,7 +7913,12 @@ sources:
     continues to be covered via efta-surv-competition and efta-surveillance.
     Re-verified 2026-10-11: unchanged, still HTTP 403 (Cloudflare managed
     challenge) on the target page and /robots.txt with the project''s
-    declared User-Agent. No new route found; status remains unresolved.'
+    declared User-Agent. No new route found; status remains unresolved.
+    Re-verified 2026-10-12: unchanged, still HTTP 403 (Cloudflare managed
+    challenge) on the target page and /robots.txt with the project''s declared
+    User-Agent. No new route found; status remains unresolved. EEA
+    competition-enforcement signal for Liechtenstein continues to be covered
+    via efta-surv-competition and efta-surveillance.'
 - id: li-food-safety
   name: Liechtenstein - Office of Food Control and Veterinary Affairs
   url: https://www.llv.li/en/national-administration/office-of-food-control-and-veterinary-affairs
@@ -9009,6 +9024,34 @@ sources:
       in src/collectors/collect.py (only rss/html/pdf) - flag for engineering if a generic JSON/API
       collector is ever built, as it would also give exact publish dates (html method captures
       published_at: None per source code, relying on fetched_at instead).
+      2026-10-12 specialist follow-up: the 2026-10-05 fix above (access.method: html, access.rss: '')
+      is still correct at the network level -- re-verified https://www.comunicaffe.com/ returns HTTP
+      200 and https://www.comunicaffe.com/feed/ still returns HTTP 403 under our declared UA, no
+      change. BUT the run report shows this source still failing (fail_count 11, last_run_at
+      2026-10-12) with the SAME stale error (feed/ 403) that predates the fix, and inspecting
+      data/monitor.db confirms source_state still has method='rss',
+      feed_url='https://www.comunicaffe.com/feed/' -- i.e. the registry fix has never actually been
+      picked up by the collector. Root cause found in src/collectors/collect.py (collect_source,
+      ~lines 70-86): `method = state["method"] if state and state["method"] != "auto" else "auto"` --
+      once source_state.method is cached as anything other than "auto" (here: "rss", cached before
+      2026-10-05), the function falls straight into `if method == "rss":` and NEVER re-reads
+      access.method from the registry; the registry is only consulted when (a) access.rss is
+      non-empty and differs from the cached feed_url (which forces method back to "rss", not away
+      from it), or (b) the cached state.method is literally "auto". Since this source's registry
+      access.method was changed from implicit auto to explicit "html" with access.rss left empty,
+      neither condition triggers, so the stale cached method="rss"/feed_url=.../feed/ from before the
+      fix keeps being used indefinitely -- the fix is correctly recorded in the registry but is inert
+      given the current collector code. This is a collector bug (stale per-source method cache never
+      re-syncs with a registry method change unless the override is specifically an access.rss value),
+      not a new access problem, and it is NOT fixable from the registry alone: setting access.rss to a
+      non-empty value would only force method back to "rss" (which is the blocked path), and this
+      specialist is restricted to editing sources/registry.yaml (no DB or code changes allowed).
+      Recommend engineering fix either in src/collectors/collect.py (re-sync method with
+      access.method on every run, not just when state.method=="auto") or a one-off manual reset of
+      the comunicaffe row in data/monitor.db's source_state table (DELETE or UPDATE method='auto') so
+      the already-correct html method in this registry entry gets picked up on the next run. Leaving
+      status: active and access.method: html unchanged here since the registry configuration itself
+      is correct; the blocker is purely in collector state-caching behavior.
   monitoring_focus: Daily coffee industry news.
   categories:
   - press
@@ -9223,6 +9266,15 @@ sources:
       unchanged, still HTTP 403 site-wide on / and /robots.txt with our
       declared User-Agent. "Fails: 9" remains stale source_state predating the
       2026-08-30 exclusion. No new route found; status remains unresolved.
+      Re-verified 2026-10-12 (specialist dispatch re: reported "Fails: 9"):
+      unchanged, still HTTP 403 site-wide on / and /robots.txt with our
+      declared User-Agent, TLS via truststore. Confirmed via data/monitor.db
+      source_state that fail_count is still 9 and last_ok_at is still null,
+      i.e. this source has not been live-retried since the 2026-08-30
+      exclusion (it stays excluded/unresolved, so the collector never calls
+      it) -- the "Fails: 9" figure in run reports is the frozen historical
+      count, not evidence of new weekly failures. No new route found; status
+      remains unresolved.
   monitoring_focus: EU deforestation and supply-chain policy advocacy.
   categories:
   - sustainability

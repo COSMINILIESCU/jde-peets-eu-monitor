@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T06:34:25+00:00",
+ "generated_at": "2026-10-18T09:54:15+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
@@ -7,16 +7,17 @@
  "week": "2026-W42",
  "db_counts": {
   "analyzed": 663,
+  "new": 246,
   "triaged_out": 3697
  },
  "last_run": {
-  "run_id": 21,
-  "started_at": "2026-10-12T04:56:29+00:00",
+  "run_id": 22,
+  "started_at": "2026-10-18T09:30:03+00:00",
   "collection": {
    "sources_total": 155,
-   "sources_failed": 7,
-   "new_items": 16,
-   "duplicates": 646,
+   "sources_failed": 8,
+   "new_items": 246,
+   "duplicates": 586,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -48,21 +49,26 @@
     {
      "id": "conab-brazil",
      "status": "fetch_error",
-     "error": "https://www.conab.gov.br: HTTPSConnectionPool(host='www.conab.gov.br', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='www.conab.gov.br', port=443): Failed to establish a new connection: [WinError 10061] No connection could be made because the target "
+     "error": "https://www.conab.gov.br: HTTPSConnectionPool(host='www.conab.gov.br', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(\"The certificate's CN name does not match the passed value.\")))"
     },
     {
      "id": "comunicaffe",
      "status": "fetch_error",
      "error": "https://www.comunicaffe.com/feed/: HTTP 403"
+    },
+    {
+     "id": "mighty-earth",
+     "status": "fetch_error",
+     "error": "https://mightyearth.org/feed/: HTTP 403"
     }
    ]
   },
   "analysis": {
-   "analyzed": 16,
+   "analyzed": 0,
    "relevant": 0,
-   "triaged_out": 16,
-   "errors": 0
+   "triaged_out": 0,
+   "errors": 246
   },
-  "brief_generated": true
+  "brief_generated": false
  }
 }
