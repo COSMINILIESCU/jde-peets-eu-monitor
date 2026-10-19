@@ -1,23 +1,23 @@
 {
- "generated_at": "2026-10-18T09:54:15+00:00",
+ "generated_at": "2026-10-19T06:57:58+00:00",
  "project": "JDE Peet's EU/EEA Intelligence Monitor",
  "provider_name": "Păcuraru Iliescu Măzăreanu, Societate Civilă de Avocați",
  "provider_url": "https://www.pimasociates.ro/",
  "repo_url": "https://github.com/COSMINILIESCU/jde-peets-eu-monitor",
- "week": "2026-W42",
+ "week": "2026-W43",
  "db_counts": {
   "analyzed": 663,
-  "new": 246,
+  "new": 276,
   "triaged_out": 3697
  },
  "last_run": {
-  "run_id": 22,
-  "started_at": "2026-10-18T09:30:03+00:00",
+  "run_id": 23,
+  "started_at": "2026-10-19T06:35:32+00:00",
   "collection": {
    "sources_total": 155,
-   "sources_failed": 8,
-   "new_items": 246,
-   "duplicates": 586,
+   "sources_failed": 10,
+   "new_items": 30,
+   "duplicates": 626,
    "skipped_old": 0,
    "since": null,
    "failed_sources": [
@@ -40,6 +40,16 @@
      "id": "euractiv",
      "status": "fetch_error",
      "error": "https://euractiv.com/fr/feed/: HTTP 403"
+    },
+    {
+     "id": "lt-legislation",
+     "status": "fetch_error",
+     "error": "https://e-seimas.lrs.lt/: HTTP 403"
+    },
+    {
+     "id": "si-food-safety",
+     "status": "fetch_error",
+     "error": "https://www.gov.si/en/state-authorities/bodies-within-ministries/administration-for-food-safety-veterinary-sector-and-plant-protection/: HTTPSConnectionPool(host='www.gov.si', port=443): Read timed out. (read timeout=30)"
     },
     {
      "id": "portal-just-ro",
@@ -67,7 +77,7 @@
    "analyzed": 0,
    "relevant": 0,
    "triaged_out": 0,
-   "errors": 246
+   "errors": 276
   },
   "brief_generated": false
  }
