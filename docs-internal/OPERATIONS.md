@@ -4,6 +4,25 @@ Dashboard public: **https://cosminiliescu.github.io/jde-peets-eu-monitor/**
 Totul de mai jos se rulează din PowerShell, din folderul proiectului:
 `cd "C:\Users\CI\CLAUDE CODE\jde-peets-eu-monitor"`
 
+## ⏸️ SUSPENDAT din 19.10.2026
+
+**Rularea săptămânală automată este oprită**, la cererea utilizatorului. Ultima rulare publicată:
+luni, 19 octombrie 2026. Dashboardul rămâne online, dar nu se mai actualizează singur.
+
+Sarcini dezactivate: `JDE Monitor - Weekly Run` și `JDE Monitor - Catch-up`
+(recuperarea a fost oprită și ea — altfel ar fi repornit singură pipeline-ul după 6 zile).
+`JDE Monitor - Monthly Source Scout` a rămas activ.
+
+**Ca să reluați automatizarea**, o singură comandă în PowerShell:
+
+```
+Enable-ScheduledTask -TaskName "JDE Monitor - Weekly Run"; Enable-ScheduledTask -TaskName "JDE Monitor - Catch-up"
+```
+
+**O rulare unică, fără a relua programarea:** `python scripts\run_weekly.py`
+
+---
+
 ## Ce se întâmplă automat
 - **Luni, 07:00** — rularea săptămânală completă (colectare → analiză AI → publicare pe dashboard).
   Dacă PC-ul e oprit, rularea pornește automat la prima pornire a PC-ului.
@@ -12,6 +31,7 @@ Totul de mai jos se rulează din PowerShell, din folderul proiectului:
   ultimele 6 zile; dacă nu (rulare întreruptă, PC oprit toată săptămâna etc.), pornește singură
   una. Nu face nimic dacă totul e la zi.
 - Nu trebuie să faceți nimic. Dashboardul se actualizează singur în ~2 minute după rulare.
+- *(Primele două sunt momentan suspendate — vezi secțiunea de mai sus.)*
 
 > **Lecție din 03.08.2026:** o rulare a fost omorâtă după 18 minute pentru că Windows, implicit,
 > oprește sarcinile programate când laptopul trece pe baterie. Setările sunt acum dezactivate pe
